@@ -1,0 +1,7 @@
+{
+    "name": "TRUSTEDSearch Developers",
+    "description": "Simple API reference",
+    "version": "1.0.0",
+    "local": ["boot"],
+    "paths": ["lib"]
+}
