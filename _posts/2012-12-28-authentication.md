@@ -5,7 +5,7 @@ title: 'Authenticate'
 layout: nil
 ---
 
-### Request Signing
+## Request Signing
 The API uses HMAC hashing with a public/private key pair to sign all requests.
 
 To sign each request, you will need the following:

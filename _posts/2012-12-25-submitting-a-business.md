@@ -6,44 +6,45 @@ type: 'POST'
 layout: nil
 ---
 
-## Submitting a Location
+# Submitting a Location
 
-Submitting a location is the equivalent of placing an order. The API request contains the information about the business (name, address, phone number, description, hours of operation, etc.), the primary contact for the location (unpublished), the directories/packages to be fulfilled, some white-labelling options, and an optional user account to associate with the location for dashboard access.
+Submitting a location is the equivalent of placing an order. The API request contains the information about the business (name, address, phone number, description, hours of operation, etc.), the primary contact for the location (unpublished), the products/packages to be fulfilled, some white-labelling options, and optionally a user account to associate with the location for dashboard access.
 
 ## External ID
 
-We provide a pass-through parameter for partners to specify their unique ID for each client. This external ID will be passed back in all API-based communcations about a business. The use of an external ID is required, and must be unique within the partner's account.
+We provide a pass-through parameter for partners to specify their unique ID for each location. This external ID will be passed back in all API-based communcations about a location. The use of an external ID is required, and must be unique within the partner's account.
 
 ## Universally Unique Identifier (UUID)
 
-All businesses are identified by a UUID (defined in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)). A UUID will be created for each location received and passed back in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.
+All locations are identified by a UUID (defined in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)). A UUID will be created for each location received and passed back in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.
 
 ## Phone Verification and "On Behalf Of"
 
-For Business Listings Management, there are a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist (PVS) will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide or ask for a PIN. In the event that a PIN is provided to the business, that PIN must be relayed back to the PVS; in the event a PIN is requested, that PIN will be given by the PVS.
+There are a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist (PVS) will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide a PIN over the phone which must be communciated to the PVS in real time, or there will be a prompt for the merchant to enter a PIN, which will be provided by the PVS.
 
-To facilitate this, A PVS must be on a phone call or an online chat with the business (typically through http://verifymylistings.com), and when we make initial contact, we provide the option to our partners to request that we call "on behalf of" them. The text provided in this field will be used verbatim in any communication with the client to maintain a white-labelled experience. Any online interaction (email, website) will be conducted in a similar manner.
+To facilitate this, A PVS must be on a phone call or an online chat with an employee at the business location. We provide the option to our partners to request that a PVS call "on behalf of" a business or entity. The text provided in this field will be used verbatim in any communication with the location to maintain a white-labelled experience. Any online interaction (email, website) will be conducted in a similar manner.
 
-## Packages and Directories
+## Packages and Products
 
-Depending upon your partner relationship, either the ``packages`` or ``directories`` nodes will be used within ``order``. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with directory-based relationships, a list of available directories will be provided to you prior to integration.
+Depending upon your partner relationship, either the ```packages``` or ```products``` nodes will be used within ```order```. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.
 
-Only one of ``packages`` or ``directories`` may be specified within a request.
+Only one of ```packages``` or ```products``` may be specified within a request.
 
 ## Updating Business Data
 
 When sending updated business data (after the initial submission), essentially the same request can be triggered with any number of data fields provided. In other words, if there is only a change to the business' phone number, a request may be made that only includes the phone number; all other data will remain untouched.
 
-Please note that any content within the ``order`` or ``user`` blocks (detailed below) will be ignored in reubsmissions.
+Please note that any content within the ```order``` or ```user``` blocks (detailed below) will be ignored in reubsmissions.
 
 ### Request
 
 #### Request Data Format
 
 When preparing to submit business information to the API server, data must be packaged into JSON objects and organized in the following way. There are three main sections of data:
-business: all details about the business location, as well as related meta data.
-order: details about the services being requested (generally a list of product or package skus).
-contact: unpublished data about the primary contact at the location, typically so that we know who to ask for when performing phone verification.
+
+- business: all details about the business location, as well as related meta data.
+- order: details about the services being requested (generally a list of product or package skus).
+- contact: unpublished data about the primary contact at the location, typically so that we know who to ask for when performing phone verification.
 
 It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.
 
@@ -54,62 +55,59 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 | field | type( length ) | required | options | Description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| externalId | string | * |-| A unique identifier to be used by developers to keep track of their own locations. |
-| order | object | * |-| The details about which types of products or packages the developer wants applied to the locations in this order. |
-| contact | object | * |-| The listing status of this listing |
-| url | varchar |  |-| Listing url |
-| duplicate_url | text |  |-| Any duplicate urls, comma delimited |
-| username | varchar |  |-| For login to this listing |
-| password | varchar |  |-| For login to this listing |
-| verification | enum |  |-| Verification type |
-| created_at | timestamp | * |-| automatic |
-| updated_at | timestamp | * |-| automatic |
-| deleted_at | timestamp |  |-| only if deleted |
+| externalId | string | * |-| The partner's unique identifier for the location |
+| order | object | * |-| Details related to the requested fulfillment of the location |
+| business | object | * |-| The location's NAP+W and any associated data |
+| contact | object | * |-| The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published. |
 
 
 #### order object
 | field | type( length ) | required | options | Description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| onBehalfOf | string | - |-| Name of Partner for whome this order is being placed on behalf of. |
-| packages | array | - |-| Array of string names representing packages available to developer. These will be custom provided by sales rep. |
-| products | array | - |-| Array of string names representing products available to developer. These will be custom provided by sales rep. |
+| onBehalfOf | string | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
+| packages | array | * |-| Array of string names representing packages available to partner. These will be provided prior to integration. |
+| products | array | * |-| Array of string names representing products available to partner. These will be provided prior to integration. |
 
 
 #### contact object
 | field | type( length ) | required | options | Description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| firstName | string | * |-| First name of person trustedsearch should contact for non public issues. |
-| lastName | string | * |-| Last name of person trustedsearch should contact for non public issues. |
-| email | string | * |-| Email of person trustedsearch should contact for non public issues. |
-| phone | string | * |-| Phone number of person trustedsearch should contact for non public issues. |
+| firstName | string | * |-| First name of the primary contact for data- or verification-related issues. |
+| lastName | string | * |-| Last name of the primary contact. |
+| email | string | * |-| Email address of the primary contact. |
+| phone | string | * |-| Phone number of the primary contact. |
+
 
 #### business object
 | field | type( length ) | required | options | Description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| name | string | * |-| First name of person trustedsearch should contact for non public issues. |
-| street | string | * |-| Last name of person trustedsearch should contact for non public issues. |
-| city | string | * |-| Email of person trustedsearch should contact for non public issues. |
-| state | string(2) | * |-| State abbreviation uppercased. |
-| postalCode | string | * |-| 5 digit postal code |
-| phoneLocal | string | * |-| Local phone number. Format: (555) 555-5555 |
-| phoneTollFree | string | - |-| Toll Free phone number. Format: (800) 555-5555|
-| fax | string | - |-| Fax number |
-| website | string | * |-| Well formed url of the company. ex: http://www.trustedsearch.org |
-| email | string | - |-| Published contact email address. ex: info@yoursitehere.com |
-| slogan | string | - |-| "A diamond is forever." |
-| descriptionLong | string | - |-| A long description describing the business. |
-| descriptionShort | string | - |-| A shorter description of the business. |
-| keywords | string | - |-| comma separated list of keywords that should be assigned to business for SEO purposes. |
-| paymentMethods | array | - |-| Array of options business supports. Options : "mastercard", "visa", "discover", "amex", "check", "cash" |
-| yearEstablish | string(4) | - |-| Year business was established. |
-| numberEmployees | int | - |-| Number of employees. |
-| productsOffered | string | - |-| Comma separated list of products offered. |
-| languagesSpoken | string | - |-| Comma separated list of languages spoken. |
-| hoursOfOperation | string | - |-| YellowPages standards for hours of operation. |
-| logoUrl | string | - |-| Well formed url of business logo. |
-| logoSquaredUrl | string | - |-| Well formed url for a square version of your business logo. Ideally 640px. We will scale it up so make it good quality.|
-| imageUrl | array(5) | - |-| Well formed array of images. |
-| videoUrl | string | - |-| A youtube.com video url. ex: http://www.youtube.com/watch?v=VIrBecB746c |
+| name | string | * |-| The full name of the business as it should be published. |
+| street | string | * |-| The physical street address of the business (may be standardized). |
+| privateStreet | boolean | - |-| Indicates whether or not the street address should be published (defaults to true if not specified). |
+| city | string | * |-| The city in which the business is located (may be standardized). |
+| state | string(2) | * |-| The 2-digit state code in which the business is located (US only). |
+| postalCode | string | * |-| The 5-digit ZIP code for the business (US only). |
+| countryCode | string(2) | - |-| The 2-digit ISO 3166-1-alpha-2 country code (currently only US is accepted). |
+| phoneLocal | string | * |-| The 10-digit local (non-toll-free) phone number of the location. This number will be used for verification purposes and must ring at the business location. No extensions are allowed. |
+| phoneTollFree | string | - |-| The 10-digit toll-free phone number of the location. |
+| fax | string | - |-| The 10-digit fax number of the location. |
+| website | string | - |-| Well-formed URL of the company's website (strongly recommended). ex: http://www.trustedsearch.org |
+| email | string | - |-| Business contact email address (to be published). ex: info@yoursitehere.com |
+| slogan | string | - |-| A short motto or slogan for the business. ex: "A diamond is forever." |
+| descriptionLong | string(1000) | - |-| A long description for the business (max 1000 characters). |
+| descriptionMedium | string(200) | - |-| A medium-length description for the business (max 200 characters). |
+| descriptionShort | string(140) | - |-| A short description for the business (max 140 characters). |
+| keywords | string | - |-| A comma-separated list of keywords that are relevent to the business (for SEO purposes). |
+| paymentMethods | array | - |-| Array of payment methods the business accepts. Options: "mastercard", "visa", "discover", "amex", "check", "cash" |
+| yearEstablished | string(4) | - |-| Year business was established. |
+| numberEmployees | int | - |-| The number of employees. |
+| productsOffered | string | - |-| Comma-separated list of products offered. |
+| languagesSpoken | string | - |-| Comma-separated list of languages spoken. |
+| hoursOfOperation | string | - |-| YellowPages standard for hours of operation. ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
+| logoUrl | string | - |-| Well-formed URL of the business logo. (JPG, PNG, GIF) |
+| logoSquaredUrl | string | - |-| Well-formed URL for a square version of the business logo. (JPG, PNG, GIF) |
+| imageUrl | array(5) | - |-| An array of well-formed URLs of images for the business. (JPG, PNG, GIF) |
+| videoUrl | string | - |-| A youtube.com video URL for the business. ex: http://www.youtube.com/watch?v=VIrBecB746c |
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.
 
@@ -122,7 +120,7 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
          "packages":[
             "see note above"
          ],
-         "directories":[
+         "products":[
             "see note above"
          ]
       },
@@ -180,7 +178,7 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
 
 ### Response
 
-Sends back a collection of things.
+Sends back an array of JSON objects, one for each submitted location containing the status, externalId, and assigned UUID.
 
 ```Status: 200 OK```
 ```[
@@ -191,7 +189,7 @@ Sends back a collection of things.
    },...
 ]```
 
-### status codes and their meanings
+### Status codes and their meanings
 
 The status will indicate the success of that particular location:
 
