@@ -53,5 +53,6 @@ Once the signature is generated, simply append it to the query string of the req
 ```
 https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&timestamp=1362648813
 ```
-
+<!--
 For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
+-->
