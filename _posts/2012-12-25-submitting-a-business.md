@@ -26,15 +26,15 @@ To facilitate this, A PVS must be on a phone call or an online chat with an empl
 
 ## Packages and Products
 
-Depending upon your partner relationship, either the `packages` or `products` nodes will be used within `order`. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.
+Depending upon your partner relationship, either the "packages" or "products" nodes will be used within "order". If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.
 
-Only one of `packages` or `products` may be specified within a request.
+Only one of "packages" or "products" may be specified within a request.
 
 ## Updating Business Data
 
 When sending updated business data (after the initial submission), essentially the same request can be triggered with any number of data fields provided. In other words, if there is only a change to the business' phone number, a request may be made that only includes the phone number; all other data will remain untouched.
 
-Please note that any content within the `order` or `user` blocks (detailed below) will be ignored in reubsmissions.
+Please note that any content within the "order" or "user" blocks (detailed below) will be ignored in reubsmissions.
 
 ### Request
 
@@ -52,7 +52,6 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 #### Fields
 
 #### Top Level
-
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | externalId | string | * |-| The partner's unique identifier for the location |
@@ -111,8 +110,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.
 
-```
-[
+```[
    {
       "externalId":"ABC12345678",
       "order":{
