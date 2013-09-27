@@ -3,7 +3,6 @@ category: v1
 path: '/v1/local-business/:id'
 title: 'Submitting a Business'
 type: 'POST'
-
 layout: nil
 ---
 
@@ -54,7 +53,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | created_at | timestamp | * |-| automatic |
 | updated_at | timestamp | * |-| automatic |
 | deleted_at | timestamp |  |-| only if deleted |
-||||||
+
 
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.

@@ -1,24 +1,24 @@
-<h2>Universally Unique Identifier (UUID)</h2>
+<h2 id="toc_0">Universally Unique Identifier (UUID)</h2>
 
 <p>All businesses are identified by a version 4 or version 5 UUID (defined in <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>). A UUID will be created for each location received and passed back to you in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.</p>
 
-<h2>Phone Verification and &quot;On Behalf Of&quot;</h2>
+<h2 id="toc_1">Phone Verification and &quot;On Behalf Of&quot;</h2>
 
 <p>For Business Listings Management, there is a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide or ask for a PIN. In the event that a PIN is provided to the business, that PIN must be relayed back to LML; in the event a PIN is requested, that PIN will be given by LML.</p>
 
 <p>To facilitate this, we must be on a phone call or a chat with the business, and when we make initial contact, we provide the option to our partners to request that we call &quot;on behalf of&quot; them. This text will be used verbatim in any communication with the client to maintain as white-labelled an experience as possible. Any online interaction (email, website) will be through the intentionally unbranded verifymylistings.com.</p>
 
-<h2>External ID</h2>
+<h2 id="toc_2">External ID</h2>
 
 <p>We allow a pass-through parameter for our partners to specify their unique ID for each client. This external ID will be passed back in all responses. The use of an external ID is encouraged.</p>
 
-<h2>Updating Business Data</h2>
+<h2 id="toc_3">Updating Business Data</h2>
 
 <p>When sending updated business data (after the initial submission), there are changes that need to be made to the request, other than the omission of the &quot;order&quot; block (if the &quot;order&quot; block is included in a resubmission, it will be ignored).</p>
 
-<h3>Request</h3>
+<h3 id="toc_4">Request</h3>
 
-<h4>Request Data Format</h4>
+<h4 id="toc_5">Request Data Format</h4>
 
 <p>When preparing to submit business information to the API server, data must be packaged into JSON objects and organized in the following way. There are three main sections of data:
 business: all details about the business location, as well as related meta data.
@@ -27,21 +27,100 @@ contact: unpublished data about the primary contact at the location, typically s
 
 <p>It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.</p>
 
-<p>| field | type( length ) | required | options | Description |
-|-------|:--------------:|:--------:|:-------:|-------------|
-| id | int | * |-| A unique identifier for the listing |
-| listing<em>id | int | * |-| The listing this listing is associated with |
-| directory</em>id | int | * |-| The directory this listing is associated with |
-| listing<em>status</em>id | int | * |-| The listing status of this listing |
-| url | varchar |  |-| Listing url |
-| duplicate<em>url | text |  |-| Any duplicate urls, comma delimited |
-| username | varchar |  |-| For login to this listing |
-| password | varchar |  |-| For login to this listing |
-| verification | enum |  |-| Verification type |
-| created</em>at | timestamp | * |-| automatic |
-| updated<em>at | timestamp | * |-| automatic |
-| deleted</em>at | timestamp |  |-| only if deleted |
-||||||</p>
+<table><thead>
+<tr>
+<th>field</th>
+<th align="center">type( length )</th>
+<th align="center">required</th>
+<th align="center">options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td align="center">int</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>A unique identifier for the listing</td>
+</tr>
+<tr>
+<td>listing_id</td>
+<td align="center">int</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>The listing this listing is associated with</td>
+</tr>
+<tr>
+<td>directory_id</td>
+<td align="center">int</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>The directory this listing is associated with</td>
+</tr>
+<tr>
+<td>listing_status_id</td>
+<td align="center">int</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>The listing status of this listing</td>
+</tr>
+<tr>
+<td>url</td>
+<td align="center">varchar</td>
+<td align="center"></td>
+<td align="center">-</td>
+<td>Listing url</td>
+</tr>
+<tr>
+<td>duplicate_url</td>
+<td align="center">text</td>
+<td align="center"></td>
+<td align="center">-</td>
+<td>Any duplicate urls, comma delimited</td>
+</tr>
+<tr>
+<td>username</td>
+<td align="center">varchar</td>
+<td align="center"></td>
+<td align="center">-</td>
+<td>For login to this listing</td>
+</tr>
+<tr>
+<td>password</td>
+<td align="center">varchar</td>
+<td align="center"></td>
+<td align="center">-</td>
+<td>For login to this listing</td>
+</tr>
+<tr>
+<td>verification</td>
+<td align="center">enum</td>
+<td align="center"></td>
+<td align="center">-</td>
+<td>Verification type</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td align="center">timestamp</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>automatic</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td align="center">timestamp</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>automatic</td>
+</tr>
+<tr>
+<td>deleted_at</td>
+<td align="center">timestamp</td>
+<td align="center"></td>
+<td align="center">-</td>
+<td>only if deleted</td>
+</tr>
+</tbody></table>
 
 <p>Requests should be made with the POST method to <code>https://[api_endpoint]/v1/local-business</code>.</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">[
@@ -104,7 +183,7 @@ contact: unpublished data about the primary contact at the location, typically s
    },{...}
 ]
 </code></pre></div>
-<h3>Response</h3>
+<h3 id="toc_6">Response</h3>
 
 <p>Sends back a collection of things.</p>
 
@@ -117,7 +196,7 @@ contact: unpublished data about the primary contact at the location, typically s
    },...
 ]</code></p>
 
-<h3>status codes and their meanings</h3>
+<h3 id="toc_7">status codes and their meanings</h3>
 
 <p>The status will indicate the success of that particular location:</p>
 

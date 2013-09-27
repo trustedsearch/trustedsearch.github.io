@@ -395,6 +395,36 @@ table {
     border-spacing: 0;
 }
 
+body table
+{
+  display:block;
+  overflow:auto;
+  width:100%;
+  margin-bottom:20px;
+}
+
+body table th
+{
+  font-weight:700;
+  font-size:1.5em;
+}
+
+body table th,body table td
+{
+  border:1px solid #ddd;
+  padding:6px 13px;
+}
+
+body table tr
+{
+  background-color:#fff;
+  border-top:1px solid #ccc;
+}
+
+body table tr:nth-child(2n)
+{
+  background-color:#f8f8f8;
+}
 
 
 /* GENERAL */

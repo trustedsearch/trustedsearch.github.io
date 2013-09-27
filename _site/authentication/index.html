@@ -1,4 +1,4 @@
-<h3>Request Signing</h3>
+<h3 id="toc_0">Request Signing</h3>
 
 <p>The API uses HMAC hashing with a public/private key pair to sign all requests.</p>
 
@@ -20,7 +20,7 @@ $stringToSign = request_uri . content_md5 . timestamp;
 $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKey, true ) ); =&gt; wnl1AVcJAwHoCm7FK9l13ZuMx8g=
 </code></p>
 
-<h4>Sample Post Data</h4>
+<h4 id="toc_1">Sample Post Data</h4>
 
 <ul>
 <li>  Public key: 1234567890abcdeffedcba0987654321</li>
@@ -44,12 +44,12 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 }
 </code></p>
 
-<h4>Request Params</h4>
+<h4 id="toc_2">Request Params</h4>
 
 <p>Once the signature is generated, simply append it to the query string of the request, along with the public key and timestamp from above:</p>
 <div class="highlight"><pre><code class="text language-text" data-lang="text">https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&amp;signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&amp;timestamp=1362648813
 </code></pre></div>
-<h3>Response</h3>
+<h3 id="toc_3">Response</h3>
 
 <p>Sends back a collection of things.</p>
 
