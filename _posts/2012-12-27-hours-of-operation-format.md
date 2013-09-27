@@ -1,5 +1,5 @@
 ---
-path: '/login'
+path: '/hours-of-operation'
 title: 'Hours of Operation'
 
 layout: nil
