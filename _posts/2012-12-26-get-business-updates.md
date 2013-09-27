@@ -15,13 +15,17 @@ A number of mechanisms are in place to allow a partner to receive the latest inf
 
 As this is a GET request, there is no entity or body associated with the call. All filtering is done in the query string parameters, but at the most basic level, a request to obtain details about a specific location would look like the following. Of course, all requests must be signed and authenticated. ":uuid" would be replaced by the location's UUID provided in the response of the /local-business call.
 
-```https://[api_endpoint]/v1/directory-listings/:uuid```
+```
+https://[api_endpoint]/v1/directory-listings/:uuid
+```
 
 ## Regular Polling for Updates
 
 There is also a mechanism to request changes since a given point in time. This would be useful if there was a recurring call set up to poll for changes. By recording the timestamp of the previous request, that same timestamp can be used as a "since" parameter to indicate that only changes made since that last time should be returned. The since time is exclusive, meaning that any changes made at that second are not included in the response.
 
-```https://[api_endpoint]/v1/directory-listings?since=1363385995```
+```
+https://[api_endpoint]/v1/directory-listings?since=1363385995
+```
 
 ## Update Pushes (Callbacks)
 
@@ -229,6 +233,3 @@ For a /directory-listings/:uuid request, a response might look like:
   }
 }
 ```
-<!---
-For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
--->

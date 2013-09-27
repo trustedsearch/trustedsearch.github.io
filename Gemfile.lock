@@ -47,3 +47,4 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  redcarpet
