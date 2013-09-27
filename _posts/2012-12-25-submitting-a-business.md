@@ -1,29 +1,40 @@
 ---
 category: v1
-path: '/v1/local-business/:id'
+path: '/v1/local-business'
 title: 'Submitting a Business'
 type: 'POST'
 layout: nil
 ---
 
+## Submitting a Location
 
-## Universally Unique Identifier (UUID)
-
-All businesses are identified by a version 4 or version 5 UUID (defined in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)). A UUID will be created for each location received and passed back to you in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.
-
-## Phone Verification and "On Behalf Of"
-
-For Business Listings Management, there is a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide or ask for a PIN. In the event that a PIN is provided to the business, that PIN must be relayed back to LML; in the event a PIN is requested, that PIN will be given by LML.
-
-To facilitate this, we must be on a phone call or a chat with the business, and when we make initial contact, we provide the option to our partners to request that we call "on behalf of" them. This text will be used verbatim in any communication with the client to maintain as white-labelled an experience as possible. Any online interaction (email, website) will be through the intentionally unbranded verifymylistings.com.
+Submitting a location is the equivalent of placing an order. The API request contains the information about the business (name, address, phone number, description, hours of operation, etc.), the primary contact for the location (unpublished), the directories/packages to be fulfilled, some white-labelling options, and an optional user account to associate with the location for dashboard access.
 
 ## External ID
 
-We allow a pass-through parameter for our partners to specify their unique ID for each client. This external ID will be passed back in all responses. The use of an external ID is encouraged.
+We provide a pass-through parameter for partners to specify their unique ID for each client. This external ID will be passed back in all API-based communcations about a business. The use of an external ID is required, and must be unique within the partner's account.
+
+## Universally Unique Identifier (UUID)
+
+All businesses are identified by a UUID (defined in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)). A UUID will be created for each location received and passed back in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.
+
+## Phone Verification and "On Behalf Of"
+
+For Business Listings Management, there are a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist (PVS) will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide or ask for a PIN. In the event that a PIN is provided to the business, that PIN must be relayed back to the PVS; in the event a PIN is requested, that PIN will be given by the PVS.
+
+To facilitate this, A PVS must be on a phone call or an online chat with the business (typically through http://verifymylistings.com), and when we make initial contact, we provide the option to our partners to request that we call "on behalf of" them. The text provided in this field will be used verbatim in any communication with the client to maintain a white-labelled experience. Any online interaction (email, website) will be conducted in a similar manner.
+
+## Packages and Directories
+
+Depending upon your partner relationship, either the ``packages`` or ``directories`` nodes will be used within ``order``. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with directory-based relationships, a list of available directories will be provided to you prior to integration.
+
+Only one of ``packages`` or ``directories`` may be specified within a request.
 
 ## Updating Business Data
 
-When sending updated business data (after the initial submission), there are changes that need to be made to the request, other than the omission of the "order" block (if the "order" block is included in a resubmission, it will be ignored).
+When sending updated business data (after the initial submission), essentially the same request can be triggered with any number of data fields provided. In other words, if there is only a change to the business' phone number, a request may be made that only includes the phone number; all other data will remain untouched.
+
+Please note that any content within the ``order`` or ``user`` blocks (detailed below) will be ignored in reubsmissions.
 
 ### Request
 
@@ -109,31 +120,34 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
       "order":{
          "onBehalfOf":"Partner ABC",
          "packages":[
-            "abc001",
-            "abc017"
+            "see note above"
+         ],
+         "directories":[
+            "see note above"
          ]
       },
       "contact":{
-         "firstName":"Travis",
-         "lastName":"Purdy",
-         "email":"travis@localmarketlaunch.com",
-         "phone":"8007203291"
+         "firstName":"Bob",
+         "lastName":"Jones",
+         "email":"bob@domain.com",
+         "phone":"8005551234"
       },
       "business":{
-         "name":"Local Market Launch",
-         "street":"419 State St",
-         "city":"Santa Barbara",
+         "name":"Bob's Fish Tacos",
+         "street":"247 Ocean Way",
+         "city":"San Luis Obispo",
          "state":"CA",
-         "postalCode":"93101",
-         "phoneLocal":"(805) 960-5545",
-         "phoneTollFree":"(800) 720-3291",
-         "fax":"(805) 960-5571",
-         "website":"http://localmarketlaunch.com",
-         "email":"info@localmarketlaunch.com",
-         "slogan":"Your business first.",
-         "descriptionLong":"A really long desc....",
-         "descriptionShort":"Our team has been helping businesses like yours navigate the complexities of online marketing since the beginning of the Internet.",
-         "keywords":"internet marketing, local search optimization, local search engine optimization, search portals, directory listing service, local directory listing, local search portals, directory listing, advertising yellow pages, businessdirectory",
+         "postalCode":"93401",
+         "phoneLocal":"(805) 555-9876",
+         "phoneTollFree":"(800) 555-4567",
+         "fax":"(805) 555-0142",
+         "website":"http://www.bobsfishtacos.com",
+         "email":"greatfood@bobsfishtacos.com",
+         "slogan":"The freshest Mexican food you'll ever eat.",
+         "descriptionLong":"A really long description (maximum 1000 characters)",
+         "descriptionMedium":A description that is no longer than 200 characters.",
+         "descriptionShort":"A description that is no longer than 140 characters.",
+         "keywords":"fish taco, mexican food, salsa",
          "paymentMethods":[
             "mastercard",
             "visa",
@@ -143,21 +157,21 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
             "cash"
          ],
          "yearEstablished":"2011",
-         "numberEmployees":"25",
-         "productsOffered":"directory listing service, internet marketing",
+         "numberEmployees":"7",
+         "productsOffered":"mexican food, fish tacos",
          "languagesSpoken":"english, spanish",
          "hoursOfOperation":"MF08001700H",
-         "logoUrl":"http://clientimages.localmarketlaunch.com/100702_5009d2a1d45a4_.jpg",
-         "logoSquareUrl":"http://clientimages.localmarketlaunch.com/100702_5009d2a2a319f.jpg",
+         "logoUrl":"http://www.bobsfishtacos.com/logo.jpg",
+         "logoSquareUrl":"http://www.bobsfishtacos.com/logo.jpg",
          "imageUrl":[
-            "http://clientimages.localmarketlaunch.com/100702_5009d194859b4_1.jpg",
-            "http://clientimages.localmarketlaunch.com/100702_5009d195016e0_2.jpg",
-            "http://clientimages.localmarketlaunch.com/100702_5009d19577a6b_3.jpg",
-            "http://clientimages.localmarketlaunch.com/100702_5009ccdf00535_4.jpg",
-            "http://clientimages.localmarketlaunch.com/100702_5009ccdf4d062_5.jpg"
+            "http://images.bobsfishtacos.com/100702_5009d194859.jpg",
+            "http://images.bobsfishtacos.com/100702_5009d195016.jpg",
+            "http://images.bobsfishtacos.com/100702_5009d19577a.jpg",
+            "http://images.bobsfishtacos.com/100702_5009ccdf005.jpg",
+            "http://images.bobsfishtacos.com/100702_5009ccdf4d0.jpg"
          ],
          "videoUrl":[
-            "http://www.youtube.com/watch?v=cXuTiAHdwTg"
+            "http://www.youtube.com/watch?v=cXuTiAHdxTg"
          ]
       }
    },{...}
