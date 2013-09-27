@@ -53,7 +53,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 #### Top Level
 
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | externalId | string | * |-| The partner's unique identifier for the location |
 | order | object | * |-| Details related to the requested fulfillment of the location |
@@ -62,7 +62,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 
 #### order object
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | onBehalfOf | string | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
 | packages | array | * |-| Array of string names representing packages available to partner. These will be provided prior to integration. |
@@ -70,7 +70,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 
 #### contact object
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | firstName | string | * |-| First name of the primary contact for data- or verification-related issues. |
 | lastName | string | * |-| Last name of the primary contact. |
@@ -79,7 +79,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 
 #### business object
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | name | string | * |-| The full name of the business as it should be published. |
 | street | string | * |-| The physical street address of the business (may be standardized). |
