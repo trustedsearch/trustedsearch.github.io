@@ -25,8 +25,6 @@ We allow a pass-through parameter for our partners to specify their unique ID fo
 
 When sending updated business data (after the initial submission), there are changes that need to be made to the request, other than the omission of the "order" block (if the "order" block is included in a resubmission, it will be ignored).
 
-
-
 ### Request
 
 #### Request Data Format
@@ -39,12 +37,15 @@ contact: unpublished data about the primary contact at the location, typically s
 It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.
 
 
+#### Fields
+
+#### Top Level
+
 | field | type( length ) | required | options | Description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| id | int | * |-| A unique identifier for the listing |
-| listing_id | int | * |-| The listing this listing is associated with |
-| directory_id | int | * |-| The directory this listing is associated with |
-| listing_status_id | int | * |-| The listing status of this listing |
+| externalId | string | * |-| A unique identifier to be used by developers to keep track of their own locations. |
+| order | object | * |-| The details about which types of products or packages the developer wants applied to the locations in this order. |
+| contact | object | * |-| The listing status of this listing |
 | url | varchar |  |-| Listing url |
 | duplicate_url | text |  |-| Any duplicate urls, comma delimited |
 | username | varchar |  |-| For login to this listing |
@@ -55,6 +56,49 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | deleted_at | timestamp |  |-| only if deleted |
 
 
+#### order object
+| field | type( length ) | required | options | Description |
+|-------|:--------------:|:--------:|:-------:|-------------|
+| onBehalfOf | string | - |-| Name of Partner for whome this order is being placed on behalf of. |
+| packages | array | - |-| Array of string names representing packages available to developer. These will be custom provided by sales rep. |
+| products | array | - |-| Array of string names representing products available to developer. These will be custom provided by sales rep. |
+
+
+#### contact object
+| field | type( length ) | required | options | Description |
+|-------|:--------------:|:--------:|:-------:|-------------|
+| firstName | string | * |-| First name of person trustedsearch should contact for non public issues. |
+| lastName | string | * |-| Last name of person trustedsearch should contact for non public issues. |
+| email | string | * |-| Email of person trustedsearch should contact for non public issues. |
+| phone | string | * |-| Phone number of person trustedsearch should contact for non public issues. |
+
+#### business object
+| field | type( length ) | required | options | Description |
+|-------|:--------------:|:--------:|:-------:|-------------|
+| name | string | * |-| First name of person trustedsearch should contact for non public issues. |
+| street | string | * |-| Last name of person trustedsearch should contact for non public issues. |
+| city | string | * |-| Email of person trustedsearch should contact for non public issues. |
+| state | string(2) | * |-| State abbreviation uppercased. |
+| postalCode | string | * |-| 5 digit postal code |
+| phoneLocal | string | * |-| Local phone number. Format: (555) 555-5555 |
+| phoneTollFree | string | - |-| Toll Free phone number. Format: (800) 555-5555|
+| fax | string | - |-| Fax number |
+| website | string | * |-| Well formed url of the company. ex: http://www.trustedsearch.org |
+| email | string | - |-| Published contact email address. ex: info@yoursitehere.com |
+| slogan | string | - |-| "A diamond is forever." |
+| descriptionLong | string | - |-| A long description describing the business. |
+| descriptionShort | string | - |-| A shorter description of the business. |
+| keywords | string | - |-| comma separated list of keywords that should be assigned to business for SEO purposes. |
+| paymentMethods | array | - |-| Array of options business supports. Options : "mastercard", "visa", "discover", "amex", "check", "cash" |
+| yearEstablish | string(4) | - |-| Year business was established. |
+| numberEmployees | int | - |-| Number of employees. |
+| productsOffered | string | - |-| Comma separated list of products offered. |
+| languagesSpoken | string | - |-| Comma separated list of languages spoken. |
+| hoursOfOperation | string | - |-| YellowPages standards for hours of operation. |
+| logoUrl | string | - |-| Well formed url of business logo. |
+| logoSquaredUrl | string | - |-| Well formed url for a square version of your business logo. Ideally 640px. We will scale it up so make it good quality.|
+| imageUrl | array(5) | - |-| Well formed array of images. |
+| videoUrl | string | - |-| A youtube.com video url. ex: http://www.youtube.com/watch?v=VIrBecB746c |
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.
 
