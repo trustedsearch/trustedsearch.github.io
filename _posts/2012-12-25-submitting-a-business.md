@@ -52,7 +52,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 #### Top Level
 
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | externalId | string | * |-| A unique identifier to be used by developers to keep track of their own locations. |
 | order | object | * |-| The details about which types of products or packages the developer wants applied to the locations in this order. |
@@ -68,7 +68,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 
 #### order object
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | onBehalfOf | string | - |-| Name of Partner for whome this order is being placed on behalf of. |
 | packages | array | - |-| Array of string names representing packages available to developer. These will be custom provided by sales rep. |
@@ -76,7 +76,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 
 #### contact object
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | firstName | string | * |-| First name of person trustedsearch should contact for non public issues. |
 | lastName | string | * |-| Last name of person trustedsearch should contact for non public issues. |
@@ -84,7 +84,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | phone | string | * |-| Phone number of person trustedsearch should contact for non public issues. |
 
 #### business object
-| field | type( length ) | required | options | Description |
+| field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | name | string | * |-| First name of person trustedsearch should contact for non public issues. |
 | street | string | * |-| Last name of person trustedsearch should contact for non public issues. |
