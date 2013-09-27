@@ -25,3 +25,17 @@ view changes in the browser:
 
 
 More details: [https://help.github.com/articles/using-jekyll-with-pages]()
+
+
+## How to make changes
+Don't edit the files in the 
+_site directory.
+
+You may make changes to all the other files and folders.
+
+commit and push to master.
+
+
+#Important note:
+
+It may take up to 20 minutes for github to update the page.
