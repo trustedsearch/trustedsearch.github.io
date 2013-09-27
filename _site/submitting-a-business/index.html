@@ -1,0 +1,119 @@
+<h2 id='universally_unique_identifier_uuid'>Universally Unique Identifier (UUID)</h2>
+
+<p>All businesses are identified by a version 4 or version 5 UUID (defined in <a href='http://www.ietf.org/rfc/rfc4122.txt'>RFC 4122</a>). A UUID will be created for each location received and passed back to you in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.</p>
+
+<h2 id='phone_verification_and_on_behalf_of'>Phone Verification and &#8220;On Behalf Of&#8221;</h2>
+
+<p>For Business Listings Management, there is a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide or ask for a PIN. In the event that a PIN is provided to the business, that PIN must be relayed back to LML; in the event a PIN is requested, that PIN will be given by LML.</p>
+
+<p>To facilitate this, we must be on a phone call or a chat with the business, and when we make initial contact, we provide the option to our partners to request that we call &#8220;on behalf of&#8221; them. This text will be used verbatim in any communication with the client to maintain as white-labelled an experience as possible. Any online interaction (email, website) will be through the intentionally unbranded verifymylistings.com.</p>
+
+<h2 id='external_id'>External ID</h2>
+
+<p>We allow a pass-through parameter for our partners to specify their unique ID for each client. This external ID will be passed back in all responses. The use of an external ID is encouraged.</p>
+
+<h2 id='updating_business_data'>Updating Business Data</h2>
+
+<p>When sending updated business data (after the initial submission), there are changes that need to be made to the request, other than the omission of the &#8220;order&#8221; block (if the &#8220;order&#8221; block is included in a resubmission, it will be ignored).</p>
+
+<h3 id='request'>Request</h3>
+
+<h4 id='request_data_format'>Request Data Format</h4>
+
+<p>When preparing to submit business information to the API server, data must be packaged into JSON objects and organized in the following way. There are three main sections of data: business: all details about the business location, as well as related meta data. order: details about the services being requested (generally a list of product or package skus). contact: unpublished data about the primary contact at the location, typically so that we know who to ask for when performing phone verification.</p>
+
+<p>It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.</p>
+
+<p>Requests should be made with the POST method to <code>https://[api_endpoint]/v1/local-business</code>.</p>
+
+<p><code>
+[
+   {
+      &quot;externalId&quot;:&quot;ABC12345678&quot;,
+      &quot;order&quot;:{
+         &quot;onBehalfOf&quot;:&quot;Partner ABC&quot;,
+         &quot;packages&quot;:[
+            &quot;abc001&quot;,
+            &quot;abc017&quot;
+         ]
+      },
+      &quot;contact&quot;:{
+         &quot;firstName&quot;:&quot;Travis&quot;,
+         &quot;lastName&quot;:&quot;Purdy&quot;,
+         &quot;email&quot;:&quot;travis@localmarketlaunch.com&quot;,
+         &quot;phone&quot;:&quot;8007203291&quot;
+      },
+      &quot;business&quot;:{
+         &quot;name&quot;:&quot;Local Market Launch&quot;,
+         &quot;street&quot;:&quot;419 State St&quot;,
+         &quot;city&quot;:&quot;Santa Barbara&quot;,
+         &quot;state&quot;:&quot;CA&quot;,
+         &quot;postalCode&quot;:&quot;93101&quot;,
+         &quot;phoneLocal&quot;:&quot;(805) 960-5545&quot;,
+         &quot;phoneTollFree&quot;:&quot;(800) 720-3291&quot;,
+         &quot;fax&quot;:&quot;(805) 960-5571&quot;,
+         &quot;website&quot;:&quot;http://localmarketlaunch.com&quot;,
+         &quot;email&quot;:&quot;info@localmarketlaunch.com&quot;,
+         &quot;slogan&quot;:&quot;Your business first.&quot;,
+         &quot;descriptionLong&quot;:&quot;A really long desc....&quot;,
+         &quot;descriptionShort&quot;:&quot;Our team has been helping businesses like yours navigate the complexities of online marketing since the beginning of the Internet.&quot;,
+         &quot;keywords&quot;:&quot;internet marketing, local search optimization, local search engine optimization, search portals, directory listing service, local directory listing, local search portals, directory listing, advertising yellow pages, businessdirectory&quot;,
+         &quot;paymentMethods&quot;:[
+            &quot;mastercard&quot;,
+            &quot;visa&quot;,
+            &quot;discover&quot;,
+            &quot;amex&quot;,
+            &quot;check&quot;,
+            &quot;cash&quot;
+         ],
+         &quot;yearEstablished&quot;:&quot;2011&quot;,
+         &quot;numberEmployees&quot;:&quot;25&quot;,
+         &quot;productsOffered&quot;:&quot;directory listing service, internet marketing&quot;,
+         &quot;languagesSpoken&quot;:&quot;english, spanish&quot;,
+         &quot;hoursOfOperation&quot;:&quot;MF08001700H&quot;,
+         &quot;logoUrl&quot;:&quot;http://clientimages.localmarketlaunch.com/100702_5009d2a1d45a4_.jpg&quot;,
+         &quot;logoSquareUrl&quot;:&quot;http://clientimages.localmarketlaunch.com/100702_5009d2a2a319f.jpg&quot;,
+         &quot;imageUrl&quot;:[
+            &quot;http://clientimages.localmarketlaunch.com/100702_5009d194859b4_1.jpg&quot;,
+            &quot;http://clientimages.localmarketlaunch.com/100702_5009d195016e0_2.jpg&quot;,
+            &quot;http://clientimages.localmarketlaunch.com/100702_5009d19577a6b_3.jpg&quot;,
+            &quot;http://clientimages.localmarketlaunch.com/100702_5009ccdf00535_4.jpg&quot;,
+            &quot;http://clientimages.localmarketlaunch.com/100702_5009ccdf4d062_5.jpg&quot;
+         ],
+         &quot;videoUrl&quot;:[
+            &quot;http://www.youtube.com/watch?v=cXuTiAHdwTg&quot;
+         ]
+      }
+   },{...}
+]
+</code></p>
+
+<h3 id='response'>Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code> <code>[
+   {
+      &quot;externalId&quot;:&quot;ABC12345678&quot;,
+      &quot;uuid&quot;:&quot;94c459ea-7064-4ff0-8da1-43b669bf62f6&quot;,
+      &quot;status&quot;:201
+   },...
+]</code></p>
+
+<h3 id='status_codes_and_their_meanings'>status codes and their meanings</h3>
+
+<p>The status will indicate the success of that particular location:</p>
+
+<ul>
+<li>200 indicates general success</li>
+
+<li>201 indicates that a new business was created</li>
+
+<li>202 indicates that the data was received and enqueued (but not yet processed). No further action is needed.</li>
+
+<li>400 indicates an error in the request</li>
+
+<li>401 indicates an authentication error</li>
+</ul>
+
+<p>For errors responses, see the <a href='#/response-status-codes'>response status codes documentation</a>.</p>
