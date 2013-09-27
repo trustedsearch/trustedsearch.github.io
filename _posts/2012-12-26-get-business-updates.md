@@ -15,12 +15,16 @@ At any time, a GET request can be made to retrieve the latest information about 
 
 As this is a GET request, there is no entity or body associated with the call. All filtering is done in the query string parameters, but at the most basic level, a request to obtain details about a specific business would look like the following. Of course, all requests must be signed and authenticated.
 
-```https://[api_endpoint]/v1/directory-listings/:uuid```
+```
+https://[api_endpoint]/v1/directory-listings/:uuid
+```
 
 
 There is also a mechanism to request changes since a given point in time. This would be useful if there was a recurring call set up to poll for changes. By recording the timestamp of the previous request, that same timestamp can be used as a "since" parameter to indicate that only changes made since that last time should be returned. The since time is exclusive, meaning that any changes made at that second are not included in the response.
 
-```https://[api_endpoint]/v1/directory-listings?since=1363385995```
+```
+https://[api_endpoint]/v1/directory-listings?since=1363385995
+```
 
 ### Response
 
@@ -226,6 +230,3 @@ For a /directory-listings/:uuid request, a response might look like:
   }
 }
 ```
-<!---
-For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
--->

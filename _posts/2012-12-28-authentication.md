@@ -64,5 +64,3 @@ Sends back a collection of things.
     id: thing_2,
     name: 'My second thing'
 }```
-
-For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).

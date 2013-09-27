@@ -51,7 +51,3 @@ Sends back a collection of things.
 "private_key": "9Ho2spIEW1Ou6lajOap4Oaci",
 "settings": ""
 }```
-
-<!---
-For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
--->

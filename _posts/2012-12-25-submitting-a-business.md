@@ -7,6 +7,7 @@ type: 'POST'
 layout: nil
 ---
 
+
 ## Universally Unique Identifier (UUID)
 
 All businesses are identified by a version 4 or version 5 UUID (defined in [RFC 4122](http://www.ietf.org/rfc/rfc4122.txt)). A UUID will be created for each location received and passed back to you in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.
@@ -37,6 +38,24 @@ order: details about the services being requested (generally a list of product o
 contact: unpublished data about the primary contact at the location, typically so that we know who to ask for when performing phone verification.
 
 It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.
+
+
+| field | type( length ) | required | options | Description |
+|-------|:--------------:|:--------:|:-------:|-------------|
+| id | int | * |-| A unique identifier for the listing |
+| listing_id | int | * |-| The listing this listing is associated with |
+| directory_id | int | * |-| The directory this listing is associated with |
+| listing_status_id | int | * |-| The listing status of this listing |
+| url | varchar |  |-| Listing url |
+| duplicate_url | text |  |-| Any duplicate urls, comma delimited |
+| username | varchar |  |-| For login to this listing |
+| password | varchar |  |-| For login to this listing |
+| verification | enum |  |-| Verification type |
+| created_at | timestamp | * |-| automatic |
+| updated_at | timestamp | * |-| automatic |
+| deleted_at | timestamp |  |-| only if deleted |
+||||||
+
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.
 
@@ -124,7 +143,3 @@ The status will indicate the success of that particular location:
 - 202 indicates that the data was received and enqueued (but not yet processed). No further action is needed.
 - 400 indicates an error in the request
 - 401 indicates an authentication error
-
-<!---
-For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
--->
