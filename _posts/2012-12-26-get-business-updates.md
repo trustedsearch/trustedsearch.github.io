@@ -22,12 +22,6 @@ There is also a mechanism to request changes since a given point in time. This w
 
 ```https://[api_endpoint]/v1/directory-listings?since=1363385995```
 
-
-```Authentication: bearer TOKEN```
-```{
-    name: 'My new thing'
-}```
-
 ### Response
 
 The entity or body of the response will contact a JSON object with details specific to the request.
