@@ -52,4 +52,6 @@ Sends back a collection of things.
 "settings": ""
 }```
 
+<!---
 For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
+-->

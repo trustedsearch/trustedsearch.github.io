@@ -13,10 +13,6 @@
 <ul id='links'>
   
     
-    <li><a href='#/response-status-codes'>Response status codes</a></li>
-    
-  
-    
     <li><a href='#/authentication'>Authenticate</a></li>
     
   
@@ -53,59 +49,6 @@
 
 Contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a> for integration help.
 
-
-  <article class=''>
-    <a name='/response-status-codes' href='#/response-status-codes'><h2>Response status codes</h2></a>
-    <section class='body'>
-      <h3 id='success'>Success</h3>
-
-<p>Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:</p>
-
-<ul>
-<li><code>GET</code>, <code>PUT</code>, <code>DELETE</code> returns <code>200 OK</code> on success,</li>
-
-<li><code>POST </code> returns 201 on success,</li>
-</ul>
-
-<p>When <a href='#get-stuff'>retrieving stuff</a> for example:</p>
-
-<p><code>Status: 200 OK</code> <code>{
-    {
-        id: thing_1,
-        name: &#39;My first thing&#39;
-    },
-    {
-        id: thing_2,
-        name: &#39;My second thing&#39;
-    }
-}</code></p>
-
-<h3 id='error'>Error</h3>
-
-<p>Error responses are simply returning <a href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html'>standard HTTP error codes</a> along with some additional information:</p>
-
-<ul>
-<li>The error code is sent back as a status header,</li>
-
-<li>The body includes an object describing both the code and message (for debugging and/or display purposes),</li>
-</ul>
-
-<p>For a call with an invalid authentication token for example:</p>
-
-<p><code>Status: 401 Access denied</code> <code>{
-    code: 401,
-    message: &#39;Access denied: invalid authentication token.&#39;
-}</code></p>
-
-<h3 id='error_codes'>Error Codes</h3>
-
-<ul>
-<li>400 indicates a general error in the request</li>
-
-<li>401 indicates an authentication error</li>
-</ul>
-    </section>
-  </article>
 
   <article class=''>
     <a name='/authentication' href='#/authentication'><h2>Authenticate</h2></a>
@@ -180,7 +123,7 @@ https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321
     name: &#39;My second thing&#39;
 }</code></p>
 
-<p>For errors responses, see the <a href='#/response-status-codes'>response status codes documentation</a>.</p>
+<p>For errors responses, see the <a href='##'>response status codes documentation</a>.</p>
     </section>
   </article>
 
@@ -241,8 +184,9 @@ https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321
 &quot;private_key&quot;: &quot;9Ho2spIEW1Ou6lajOap4Oaci&quot;,
 &quot;settings&quot;: &quot;&quot;
 }</code></p>
-
-<p>For errors responses, see the <a href='#/response-status-codes'>response status codes documentation</a>.</p>
+<!---
+For errors responses, see the [response status codes documentation](##).
+-->
     </section>
   </article>
 
@@ -469,9 +413,9 @@ https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321
      },...
   }
 }
-</code></p>
-
-<p>For errors responses, see the <a href='#/response-status-codes'>response status codes documentation</a>.</p>
+</code> <!---
+For errors responses, see the [response status codes documentation](##).
+--></p>
     </section>
   </article>
 
@@ -595,8 +539,9 @@ https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321
 
 <li>401 indicates an authentication error</li>
 </ul>
-
-<p>For errors responses, see the <a href='#/response-status-codes'>response status codes documentation</a>.</p>
+<!---
+For errors responses, see the [response status codes documentation](##).
+-->
     </section>
   </article>
 

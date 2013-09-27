@@ -125,4 +125,6 @@ The status will indicate the success of that particular location:
 - 400 indicates an error in the request
 - 401 indicates an authentication error
 
+<!---
 For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
+-->

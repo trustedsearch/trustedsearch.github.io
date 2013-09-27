@@ -232,5 +232,6 @@ For a /directory-listings/:uuid request, a response might look like:
   }
 }
 ```
-
+<!---
 For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).
+-->
