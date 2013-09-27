@@ -1,41 +1,44 @@
-<h2 id="toc_0">Submitting a Location</h2>
+<h1 id="toc_0">Submitting a Location</h1>
 
-<p>Submitting a location is the equivalent of placing an order. The API request contains the information about the business (name, address, phone number, description, hours of operation, etc.), the primary contact for the location (unpublished), the directories/packages to be fulfilled, some white-labelling options, and an optional user account to associate with the location for dashboard access.</p>
+<p>Submitting a location is the equivalent of placing an order. The API request contains the information about the business (name, address, phone number, description, hours of operation, etc.), the primary contact for the location (unpublished), the products/packages to be fulfilled, some white-labelling options, and optionally a user account to associate with the location for dashboard access.</p>
 
 <h2 id="toc_1">External ID</h2>
 
-<p>We provide a pass-through parameter for partners to specify their unique ID for each client. This external ID will be passed back in all API-based communcations about a business. The use of an external ID is required, and must be unique within the partner&#39;s account.</p>
+<p>We provide a pass-through parameter for partners to specify their unique ID for each location. This external ID will be passed back in all API-based communcations about a location. The use of an external ID is required, and must be unique within the partner&#39;s account.</p>
 
 <h2 id="toc_2">Universally Unique Identifier (UUID)</h2>
 
-<p>All businesses are identified by a UUID (defined in <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>). A UUID will be created for each location received and passed back in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.</p>
+<p>All locations are identified by a UUID (defined in <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>). A UUID will be created for each location received and passed back in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.</p>
 
 <h2 id="toc_3">Phone Verification and &quot;On Behalf Of&quot;</h2>
 
-<p>For Business Listings Management, there are a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist (PVS) will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide or ask for a PIN. In the event that a PIN is provided to the business, that PIN must be relayed back to the PVS; in the event a PIN is requested, that PIN will be given by the PVS.</p>
+<p>There are a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist (PVS) will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide a PIN over the phone which must be communciated to the PVS in real time, or there will be a prompt for the merchant to enter a PIN, which will be provided by the PVS.</p>
 
-<p>To facilitate this, A PVS must be on a phone call or an online chat with the business (typically through <a href="http://verifymylistings.com">http://verifymylistings.com</a>), and when we make initial contact, we provide the option to our partners to request that we call &quot;on behalf of&quot; them. The text provided in this field will be used verbatim in any communication with the client to maintain a white-labelled experience. Any online interaction (email, website) will be conducted in a similar manner.</p>
+<p>To facilitate this, A PVS must be on a phone call or an online chat with an employee at the business location. We provide the option to our partners to request that a PVS call &quot;on behalf of&quot; a business or entity. The text provided in this field will be used verbatim in any communication with the location to maintain a white-labelled experience. Any online interaction (email, website) will be conducted in a similar manner.</p>
 
-<h2 id="toc_4">Packages and Directories</h2>
+<h2 id="toc_4">Packages and Products</h2>
 
-<p>Depending upon your partner relationship, either the <code>packages</code> or <code>directories</code> nodes will be used within <code>order</code>. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with directory-based relationships, a list of available directories will be provided to you prior to integration.</p>
+<p>Depending upon your partner relationship, either the &quot;packages&quot; or &quot;products&quot; nodes will be used within &quot;order&quot;. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.</p>
 
-<p>Only one of <code>packages</code> or <code>directories</code> may be specified within a request.</p>
+<p>Only one of &quot;packages&quot; or &quot;products&quot; may be specified within a request.</p>
 
 <h2 id="toc_5">Updating Business Data</h2>
 
 <p>When sending updated business data (after the initial submission), essentially the same request can be triggered with any number of data fields provided. In other words, if there is only a change to the business&#39; phone number, a request may be made that only includes the phone number; all other data will remain untouched.</p>
 
-<p>Please note that any content within the <code>order</code> or <code>user</code> blocks (detailed below) will be ignored in reubsmissions.</p>
+<p>Please note that any content within the &quot;order&quot; or &quot;user&quot; blocks (detailed below) will be ignored in reubsmissions.</p>
 
 <h3 id="toc_6">Request</h3>
 
 <h4 id="toc_7">Request Data Format</h4>
 
-<p>When preparing to submit business information to the API server, data must be packaged into JSON objects and organized in the following way. There are three main sections of data:
-business: all details about the business location, as well as related meta data.
-order: details about the services being requested (generally a list of product or package skus).
-contact: unpublished data about the primary contact at the location, typically so that we know who to ask for when performing phone verification.</p>
+<p>When preparing to submit business information to the API server, data must be packaged into JSON objects and organized in the following way. There are three main sections of data:</p>
+
+<ul>
+<li>business: all details about the business location, as well as related meta data.</li>
+<li>order: details about the services being requested (generally a list of product or package skus).</li>
+<li>contact: unpublished data about the primary contact at the location, typically so that we know who to ask for when performing phone verification.</li>
+</ul>
 
 <p>It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.</p>
 
@@ -57,77 +60,28 @@ contact: unpublished data about the primary contact at the location, typically s
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>A unique identifier to be used by developers to keep track of their own locations.</td>
+<td>The partner&#39;s unique identifier for the location</td>
 </tr>
 <tr>
 <td>order</td>
 <td align="center">object</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The details about which types of products or packages the developer wants applied to the locations in this order.</td>
+<td>Details related to the requested fulfillment of the location</td>
+</tr>
+<tr>
+<td>business</td>
+<td align="center">object</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>The location&#39;s NAP+W and any associated data</td>
 </tr>
 <tr>
 <td>contact</td>
 <td align="center">object</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The listing status of this listing</td>
-</tr>
-<tr>
-<td>url</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center">-</td>
-<td>Listing url</td>
-</tr>
-<tr>
-<td>duplicate_url</td>
-<td align="center">text</td>
-<td align="center"></td>
-<td align="center">-</td>
-<td>Any duplicate urls, comma delimited</td>
-</tr>
-<tr>
-<td>username</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center">-</td>
-<td>For login to this listing</td>
-</tr>
-<tr>
-<td>password</td>
-<td align="center">varchar</td>
-<td align="center"></td>
-<td align="center">-</td>
-<td>For login to this listing</td>
-</tr>
-<tr>
-<td>verification</td>
-<td align="center">enum</td>
-<td align="center"></td>
-<td align="center">-</td>
-<td>Verification type</td>
-</tr>
-<tr>
-<td>created_at</td>
-<td align="center">timestamp</td>
-<td align="center">*</td>
-<td align="center">-</td>
-<td>automatic</td>
-</tr>
-<tr>
-<td>updated_at</td>
-<td align="center">timestamp</td>
-<td align="center">*</td>
-<td align="center">-</td>
-<td>automatic</td>
-</tr>
-<tr>
-<td>deleted_at</td>
-<td align="center">timestamp</td>
-<td align="center"></td>
-<td align="center">-</td>
-<td>only if deleted</td>
+<td>The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published.</td>
 </tr>
 </tbody></table>
 
@@ -147,21 +101,21 @@ contact: unpublished data about the primary contact at the location, typically s
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Name of Partner for whome this order is being placed on behalf of.</td>
+<td>The business or entity name a phone verification specialist will use when calling on behalf of an organization.</td>
 </tr>
 <tr>
 <td>packages</td>
 <td align="center">array</td>
+<td align="center">*</td>
 <td align="center">-</td>
-<td align="center">-</td>
-<td>Array of string names representing packages available to developer. These will be custom provided by sales rep.</td>
+<td>Array of string names representing packages available to partner. These will be provided prior to integration.</td>
 </tr>
 <tr>
 <td>products</td>
 <td align="center">array</td>
+<td align="center">*</td>
 <td align="center">-</td>
-<td align="center">-</td>
-<td>Array of string names representing products available to developer. These will be custom provided by sales rep.</td>
+<td>Array of string names representing products available to partner. These will be provided prior to integration.</td>
 </tr>
 </tbody></table>
 
@@ -181,28 +135,28 @@ contact: unpublished data about the primary contact at the location, typically s
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>First name of person trustedsearch should contact for non public issues.</td>
+<td>First name of the primary contact for data- or verification-related issues.</td>
 </tr>
 <tr>
 <td>lastName</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Last name of person trustedsearch should contact for non public issues.</td>
+<td>Last name of the primary contact.</td>
 </tr>
 <tr>
 <td>email</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Email of person trustedsearch should contact for non public issues.</td>
+<td>Email address of the primary contact.</td>
 </tr>
 <tr>
 <td>phone</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Phone number of person trustedsearch should contact for non public issues.</td>
+<td>Phone number of the primary contact.</td>
 </tr>
 </tbody></table>
 
@@ -222,108 +176,129 @@ contact: unpublished data about the primary contact at the location, typically s
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>First name of person trustedsearch should contact for non public issues.</td>
+<td>The full name of the business as it should be published.</td>
 </tr>
 <tr>
 <td>street</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Last name of person trustedsearch should contact for non public issues.</td>
+<td>The physical street address of the business (may be standardized).</td>
+</tr>
+<tr>
+<td>privateStreet</td>
+<td align="center">boolean</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td>Indicates whether or not the street address should be published (defaults to true if not specified).</td>
 </tr>
 <tr>
 <td>city</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Email of person trustedsearch should contact for non public issues.</td>
+<td>The city in which the business is located (may be standardized).</td>
 </tr>
 <tr>
 <td>state</td>
 <td align="center">string(2)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>State abbreviation uppercased.</td>
+<td>The 2-digit state code in which the business is located (US only).</td>
 </tr>
 <tr>
 <td>postalCode</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>5 digit postal code</td>
+<td>The 5-digit ZIP code for the business (US only).</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td align="center">string(2)</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td>The 2-digit ISO 3166-1-alpha-2 country code (currently only US is accepted).</td>
 </tr>
 <tr>
 <td>phoneLocal</td>
 <td align="center">string</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Local phone number. Format: (555) 555-5555</td>
+<td>The 10-digit local (non-toll-free) phone number of the location. This number will be used for verification purposes and must ring at the business location. No extensions are allowed.</td>
 </tr>
 <tr>
 <td>phoneTollFree</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Toll Free phone number. Format: (800) 555-5555</td>
+<td>The 10-digit toll-free phone number of the location.</td>
 </tr>
 <tr>
 <td>fax</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Fax number</td>
+<td>The 10-digit fax number of the location.</td>
 </tr>
 <tr>
 <td>website</td>
 <td align="center">string</td>
-<td align="center">*</td>
 <td align="center">-</td>
-<td>Well formed url of the company. ex: <a href="http://www.trustedsearch.org">http://www.trustedsearch.org</a></td>
+<td align="center">-</td>
+<td>Well-formed URL of the company&#39;s website (strongly recommended). ex: <a href="http://www.trustedsearch.org">http://www.trustedsearch.org</a></td>
 </tr>
 <tr>
 <td>email</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Published contact email address. ex: <a href="mailto:info@yoursitehere.com">info@yoursitehere.com</a></td>
+<td>Business contact email address (to be published). ex: <a href="mailto:info@yoursitehere.com">info@yoursitehere.com</a></td>
 </tr>
 <tr>
 <td>slogan</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>&quot;A diamond is forever.&quot;</td>
+<td>A short motto or slogan for the business. ex: &quot;A diamond is forever.&quot;</td>
 </tr>
 <tr>
 <td>descriptionLong</td>
-<td align="center">string</td>
+<td align="center">string(1000)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>A long description describing the business.</td>
+<td>A long description for the business (max 1000 characters).</td>
+</tr>
+<tr>
+<td>descriptionMedium</td>
+<td align="center">string(200)</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td>A medium-length description for the business (max 200 characters).</td>
 </tr>
 <tr>
 <td>descriptionShort</td>
-<td align="center">string</td>
+<td align="center">string(140)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>A shorter description of the business.</td>
+<td>A short description for the business (max 140 characters).</td>
 </tr>
 <tr>
 <td>keywords</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>comma separated list of keywords that should be assigned to business for SEO purposes.</td>
+<td>A comma-separated list of keywords that are relevent to the business (for SEO purposes).</td>
 </tr>
 <tr>
 <td>paymentMethods</td>
 <td align="center">array</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Array of options business supports. Options : &quot;mastercard&quot;, &quot;visa&quot;, &quot;discover&quot;, &quot;amex&quot;, &quot;check&quot;, &quot;cash&quot;</td>
+<td>Array of payment methods the business accepts. Options: &quot;mastercard&quot;, &quot;visa&quot;, &quot;discover&quot;, &quot;amex&quot;, &quot;check&quot;, &quot;cash&quot;</td>
 </tr>
 <tr>
-<td>yearEstablish</td>
+<td>yearEstablished</td>
 <td align="center">string(4)</td>
 <td align="center">-</td>
 <td align="center">-</td>
@@ -334,56 +309,56 @@ contact: unpublished data about the primary contact at the location, typically s
 <td align="center">int</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Number of employees.</td>
+<td>The number of employees.</td>
 </tr>
 <tr>
 <td>productsOffered</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Comma separated list of products offered.</td>
+<td>Comma-separated list of products offered.</td>
 </tr>
 <tr>
 <td>languagesSpoken</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Comma separated list of languages spoken.</td>
+<td>Comma-separated list of languages spoken.</td>
 </tr>
 <tr>
 <td>hoursOfOperation</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>YellowPages standards for hours of operation.</td>
+<td>The business&#39; <a href="#/hours-of-operation-format">hours of operation</a>. ex: &quot;MF08001700H&quot; for Mon-Fri 8:00am-5:00pm</td>
 </tr>
 <tr>
 <td>logoUrl</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Well formed url of business logo.</td>
+<td>Well-formed URL of the business logo. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>logoSquaredUrl</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Well formed url for a square version of your business logo. Ideally 640px. We will scale it up so make it good quality.</td>
+<td>Well-formed URL for a square version of the business logo. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>imageUrl</td>
 <td align="center">array(5)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Well formed array of images.</td>
+<td>An array of well-formed URLs of images for the business. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>videoUrl</td>
 <td align="center">string</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>A youtube.com video url. ex: <a href="http://www.youtube.com/watch?v=VIrBecB746c">http://www.youtube.com/watch?v=VIrBecB746c</a></td>
+<td>A youtube.com video URL for the business. ex: <a href="http://www.youtube.com/watch?v=VIrBecB746c">http://www.youtube.com/watch?v=VIrBecB746c</a></td>
 </tr>
 </tbody></table>
 
@@ -396,7 +371,7 @@ contact: unpublished data about the primary contact at the location, typically s
          &quot;packages&quot;:[
             &quot;see note above&quot;
          ],
-         &quot;directories&quot;:[
+         &quot;products&quot;:[
             &quot;see note above&quot;
          ]
       },
@@ -453,7 +428,7 @@ contact: unpublished data about the primary contact at the location, typically s
 </code></pre></div>
 <h3 id="toc_13">Response</h3>
 
-<p>Sends back a collection of things.</p>
+<p>Sends back an array of JSON objects, one for each submitted location containing the status, externalId, and assigned UUID.</p>
 
 <p><code>Status: 200 OK</code>
 <code>[
@@ -464,7 +439,7 @@ contact: unpublished data about the primary contact at the location, typically s
    },...
 ]</code></p>
 
-<h3 id="toc_14">status codes and their meanings</h3>
+<h3 id="toc_14">Status codes and their meanings</h3>
 
 <p>The status will indicate the success of that particular location:</p>
 

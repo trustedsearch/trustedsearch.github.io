@@ -110,7 +110,8 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.
 
-```[
+```
+[
    {
       "externalId":"ABC12345678",
       "order":{
