@@ -132,13 +132,13 @@ For a /directory-listings/:uuid request, a response might look like:
      "yearEstablished":"1956",
      "numberEmployees":"varies",
      "languagesSpoken":"English",
-     "logoUrl":"http:\/\/clientimages.localmarketlaunch.com\/101478_51129a78d3e4d_.jpg",
+     "logoUrl":"http:\/\/clientimages.democompanydomain.com\/101478_51129a78d3e4d_.jpg",
      "imageUrl":[
-        "http:\/\/clientimages.localmarketlaunch.com\/101478_51129a7abb80c_1.jpg",
-        "http:\/\/clientimages.localmarketlaunch.com\/101478_51129a7b21121_2.jpg",
-        "http:\/\/clientimages.localmarketlaunch.com\/101478_51129a7bafeee_3.jpg",
-        "http:\/\/clientimages.localmarketlaunch.com\/101478_51129a7c55f0b_4.jpg",
-        "http:\/\/clientimages.localmarketlaunch.com\/101478_51129a7ca6bc2_5.jpg"
+        "http:\/\/clientimages.democompanydomain.com\/101478_51129a7abb80c_1.jpg",
+        "http:\/\/clientimages.democompanydomain.com\/101478_51129a7b21121_2.jpg",
+        "http:\/\/clientimages.democompanydomain.com\/101478_51129a7bafeee_3.jpg",
+        "http:\/\/clientimages.democompanydomain.com\/101478_51129a7c55f0b_4.jpg",
+        "http:\/\/clientimages.democompanydomain.com\/101478_51129a7ca6bc2_5.jpg"
      ],
      "videoUrl":"http:\/\/www.youtube.com\/watch?v=_la6watqZLw",
      "phoneTracking":[""],
