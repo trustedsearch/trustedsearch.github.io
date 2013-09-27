@@ -26,15 +26,15 @@ To facilitate this, A PVS must be on a phone call or an online chat with an empl
 
 ## Packages and Products
 
-Depending upon your partner relationship, either the ```packages``` or ```products``` nodes will be used within ```order```. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.
+Depending upon your partner relationship, either the `packages` or `products` nodes will be used within `order`. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.
 
-Only one of ```packages``` or ```products``` may be specified within a request.
+Only one of `packages` or `products` may be specified within a request.
 
 ## Updating Business Data
 
 When sending updated business data (after the initial submission), essentially the same request can be triggered with any number of data fields provided. In other words, if there is only a change to the business' phone number, a request may be made that only includes the phone number; all other data will remain untouched.
 
-Please note that any content within the ```order``` or ```user``` blocks (detailed below) will be ignored in reubsmissions.
+Please note that any content within the `order` or `user` blocks (detailed below) will be ignored in reubsmissions.
 
 ### Request
 
@@ -103,7 +103,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | numberEmployees | int | - |-| The number of employees. |
 | productsOffered | string | - |-| Comma-separated list of products offered. |
 | languagesSpoken | string | - |-| Comma-separated list of languages spoken. |
-| hoursOfOperation | string | - |-| YellowPages standard for hours of operation. ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
+| hoursOfOperation | string | - |-| The business' [hours of operation](#{% post_url 2012-12-27-hours-of-operation-format %}). ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
 | logoUrl | string | - |-| Well-formed URL of the business logo. (JPG, PNG, GIF) |
 | logoSquaredUrl | string | - |-| Well-formed URL for a square version of the business logo. (JPG, PNG, GIF) |
 | imageUrl | array(5) | - |-| An array of well-formed URLs of images for the business. (JPG, PNG, GIF) |
