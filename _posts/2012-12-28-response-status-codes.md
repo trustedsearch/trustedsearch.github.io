@@ -39,3 +39,8 @@ For a call with an invalid authentication token for example:
     code: 401,
     message: 'Access denied: invalid authentication token.'
 }```
+
+
+### Error Codes
+- 400 indicates a general error in the request
+- 401 indicates an authentication error
