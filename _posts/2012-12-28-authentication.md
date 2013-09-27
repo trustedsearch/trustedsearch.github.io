@@ -14,15 +14,15 @@ To sign each request, you will need the following:
 -	private_key - assigned during account creation.
 -	request_uri - Request URI. This does not include the hostname or query string. (e.g. "/v1/local-business")
 -	timestamp - Current epoch timestamp.
--	content_md5 - Content MD5 hash of the request body. For POST and PUT requests, this will be the value as specified in RFC 1864. For GET requests, this will generally be an empty string.
+-	content_md5 - Content MD5 hash of the request body. For POST and PUT requests, this will be the value as specified in RFC 1864 (the base64-encoded binary MD5 hash of the content). For GET requests, this will generally be an empty string.
 
-In the programming language of your choice, concatenate the request URI, MD5, and timestamp with no delimiters. Use an HMAC hashing method with the SHA1 algorithm to calculate the (binary) hashed value of the concatenated string, using the private key. After base64-encoding the result, you have a valid signature for the request.
+In the programming language of your choice, concatenate the request URI, Content MD5, and timestamp with no delimiters. Use an HMAC hashing method with the SHA1 algorithm to calculate the (binary) hashed value of the concatenated string, using the private key. After base64-encoding the result, you have a valid signature for the request.
 
 
-*php exmample*
+*php example*
 ```$privateKey = "12345privatekey67890";
-$stringToSign = request_uri . content_md5 . timestamp;
-$signature = base64_encode( hash_hmac( 'sha1', $stringToSign, $privateKey, true ) ); => wnl1AVcJAwHoCm7FK9l13ZuMx8g=
+$stringToSign = $request_uri . $content_md5 . $timestamp;
+$signature = base64_encode( hash_hmac( 'sha1', $stringToSign, $privateKey, true ) ); //wnl1AVcJAwHoCm7FK9l13ZuMx8g=
 ```
 
 #### Sample Post Data
@@ -50,19 +50,8 @@ __POST body__
 #### Request Params
 Once the signature is generated, simply append it to the query string of the request, along with the public key and timestamp from above:
 
-
 ```
 https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&timestamp=1362648813
 ```
-
-
-### Response
-
-Sends back a collection of things.
-
-```{
-    id: thing_2,
-    name: 'My second thing'
-}```
 
 For errors responses, see the [response status codes documentation](#{% post_url 2012-12-28-response-status-codes %}).

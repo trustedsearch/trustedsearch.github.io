@@ -1,36 +1,46 @@
 ---
 category: v1
-path: '/v1/directory-listings/:uuid'
+path: '/v1/directory-listings'
 title: 'Get Business Updates'
 type: 'GET'
 
 layout: nil
 ---
 
-## Polling for Updates
+# Receiving Location Updates
 
-At any time, a GET request can be made to retrieve the latest information about a business. Depending on the detail level, this call can include the full business data, the content of each directory listing associated with the account (e.g. data from Google+, Bing Local, etc.), as well as the current fulfillment status.
+A number of mechanisms are in place to allow a partner to receive the latest information about a location and its listings. Depending on the detail level requested, this call can include the full business data, the content of each directory listing associated with the account (e.g. data obtained directly from Google+, Bing Local, etc.), as well as the current fulfillment status.
 
-### Request
+## Requesting an update about a specific location
 
-As this is a GET request, there is no entity or body associated with the call. All filtering is done in the query string parameters, but at the most basic level, a request to obtain details about a specific business would look like the following. Of course, all requests must be signed and authenticated.
+As this is a GET request, there is no entity or body associated with the call. All filtering is done in the query string parameters, but at the most basic level, a request to obtain details about a specific location would look like the following. Of course, all requests must be signed and authenticated. ":uuid" would be replaced by the location's UUID provided in the response of the /local-business call.
 
 ```https://[api_endpoint]/v1/directory-listings/:uuid```
 
+## Regular Polling for Updates
 
 There is also a mechanism to request changes since a given point in time. This would be useful if there was a recurring call set up to poll for changes. By recording the timestamp of the previous request, that same timestamp can be used as a "since" parameter to indicate that only changes made since that last time should be returned. The since time is exclusive, meaning that any changes made at that second are not included in the response.
 
 ```https://[api_endpoint]/v1/directory-listings?since=1363385995```
 
+## Update Pushes (Callbacks)
+
+The API response described below is also available via a callback method. By providing an endpoint at which to receive callback messages, the most up-to-date information about a location and its listings can be pushed to a partner's servers. Currently, data is aggregated every thirty minutes, and it is immediately following those aggregations that a callback would be fired.
+
+If there have been no updates within a thirty minute window, no callback would be fired.
+
+## Pagination
+
+Due to the potential for large amounts of data, the detail level of /directory-listings without a UUID is set lower than that of /directory-listings/:uuid. When performing a non-UUID request for a large span of time (a "since" parameter far in the past), the response may be returned in a paged format, where subsequent pages would require a separate API call with a "page" parameter.
+
+
 ### Response
 
-The entity or body of the response will contact a JSON object with details specific to the request.
+The entity or body of the response will contain a JSON object with details specific to the request.
 
-For a /directory-listings?since=timestamp request, a response might look like:
+For a /directory-listings?since=:timestamp request, a response might look like:
 
-**If succeeds**, returns the created thing.
-
-```Status: 201 Created```
+```Status: 200 Success```
 ```{
   "uuid":"a043c791-72b2-4201-b19e-c6ca19a5108c",
   "externalId":"ABC2345",
@@ -81,7 +91,7 @@ For a /directory-listings?since=timestamp request, a response might look like:
 }```
 
 For a /directory-listings/:uuid request, a response might look like:
-
+```Status: 200 Success```
 ```{
   "uuid":"1c9636cc-d2aa-4ea3-bd00-dd8bde98b520",
   "externalId":"ABC1234",
@@ -133,20 +143,13 @@ For a /directory-listings/:uuid request, a response might look like:
         "longitude":-87.9141345
      }
   },
-  "searchQueries":[
-     "provencal construction in burr ridge, il",
-     "home builder in burr ridge, il",
-     "general contractor in burr ridge, il",
-     "custom home builder in burr ridge, il",
-     "commercial construction in burr ridge, il"
-  ],
   "received":1360144915,
   "updated":1363307015,
   "contact":{
      "firstName":"Jill",
-     "lastName":"Merk",
-     "email":"jill@elevatewebdesigns.com",
-     "phone":"(702) 480-3277"
+     "lastName":"Underwood",
+     "email":"jill@webdesignfirmabc.com",
+     "phone":"(702) 555-3279"
   },
   "directories":{
      "googleplus":{
