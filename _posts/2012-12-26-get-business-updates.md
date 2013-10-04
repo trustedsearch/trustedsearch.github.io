@@ -48,6 +48,18 @@ For a /directory-listings?since=:timestamp request, a response might look like:
 ```{
   "uuid":"a043c791-72b2-4201-b19e-c6ca19a5108c",
   "externalId":"ABC2345",
+  "business":{
+       "name":"Sample Business 1",
+       "street":"456 Cherry Tree Lane",
+       "city":"Burr Ridge",
+       "state":"CA",
+       "postalCode":"60527",
+       "phone":"(555) 555-5555",
+       "website":{
+          "url":"http:\/\/samplebusiness1.com",
+          "screenshot":"http:\/\/clients.trustedsearch.org\/37b194e7c44f06c3ce61b7f5059d0a31\/screenshot\/baseline\/"
+      }
+  },
   "directories":{
      "merchantcircle":{
         "label":"Merchant Circle",
@@ -72,6 +84,18 @@ For a /directory-listings?since=:timestamp request, a response might look like:
 {
   "uuid":"f4c639dd-6331-46d1-9021-ccc2637e8cae",
   "externalId":"DEF12345",
+  "business":{
+       "name":"Sample Business 2",
+       "street":"123 Cherry Tree Lane",
+       "city":"London",
+       "state":"CA",
+       "postalCode":"93333",
+       "phone":"(555) 555-5555",
+       "website":{
+          "url":"http:\/\/samplebusiness2.com",
+          "screenshot":"http:\/\/clients.trustedsearch.com\/37b194e7c44f06c3ce61b7f5059d0a31\/screenshot\/baseline\/"
+      }
+  },
   "directories":{
      "yelp":{
         "label":"Yelp",
