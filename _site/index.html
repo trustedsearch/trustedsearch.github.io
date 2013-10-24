@@ -27,6 +27,10 @@
     
   
     
+    <li><a href='#/directory-statuses'>Directory Statuses</a></li>
+    
+  
+    
   
     
     <li><a href='#/sdks'>Available Libraries</a></li>
@@ -260,6 +264,18 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 <code>{
   &quot;uuid&quot;:&quot;a043c791-72b2-4201-b19e-c6ca19a5108c&quot;,
   &quot;externalId&quot;:&quot;ABC2345&quot;,
+  &quot;business&quot;:{
+       &quot;name&quot;:&quot;Sample Business 1&quot;,
+       &quot;street&quot;:&quot;456 Cherry Tree Lane&quot;,
+       &quot;city&quot;:&quot;Burr Ridge&quot;,
+       &quot;state&quot;:&quot;CA&quot;,
+       &quot;postalCode&quot;:&quot;60527&quot;,
+       &quot;phone&quot;:&quot;(555) 555-5555&quot;,
+       &quot;website&quot;:{
+          &quot;url&quot;:&quot;http:\/\/samplebusiness1.com&quot;,
+          &quot;screenshot&quot;:&quot;http:\/\/clients.trustedsearch.org\/37b194e7c44f06c3ce61b7f5059d0a31\/screenshot\/baseline\/&quot;
+      }
+  },
   &quot;directories&quot;:{
      &quot;merchantcircle&quot;:{
         &quot;label&quot;:&quot;Merchant Circle&quot;,
@@ -284,6 +300,18 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 {
   &quot;uuid&quot;:&quot;f4c639dd-6331-46d1-9021-ccc2637e8cae&quot;,
   &quot;externalId&quot;:&quot;DEF12345&quot;,
+  &quot;business&quot;:{
+       &quot;name&quot;:&quot;Sample Business 2&quot;,
+       &quot;street&quot;:&quot;123 Cherry Tree Lane&quot;,
+       &quot;city&quot;:&quot;London&quot;,
+       &quot;state&quot;:&quot;CA&quot;,
+       &quot;postalCode&quot;:&quot;93333&quot;,
+       &quot;phone&quot;:&quot;(555) 555-5555&quot;,
+       &quot;website&quot;:{
+          &quot;url&quot;:&quot;http:\/\/samplebusiness2.com&quot;,
+          &quot;screenshot&quot;:&quot;http:\/\/clients.trustedsearch.com\/37b194e7c44f06c3ce61b7f5059d0a31\/screenshot\/baseline\/&quot;
+      }
+  },
   &quot;directories&quot;:{
      &quot;yelp&quot;:{
         &quot;label&quot;:&quot;Yelp&quot;,
@@ -445,6 +473,121 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
   }
 }
 </code></p>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/directory-statuses' href='#/directory-statuses'><h2>Directory Statuses</h2></a>
+    <section class='body'>
+      <table><thead>
+<tr>
+<th>status</th>
+<th align="center">type</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>10</td>
+<td align="center">informational</td>
+<td>Received</td>
+</tr>
+<tr>
+<td>11</td>
+<td align="center">informational</td>
+<td>In Progress</td>
+</tr>
+<tr>
+<td>20</td>
+<td align="center">success</td>
+<td>Submitted and Published</td>
+</tr>
+<tr>
+<td>21</td>
+<td align="center">success</td>
+<td>Submitted via InfoGroup</td>
+</tr>
+<tr>
+<td>30</td>
+<td align="center">pending</td>
+<td>Submitted and Awaiting Publishing</td>
+</tr>
+<tr>
+<td>31</td>
+<td align="center">pending</td>
+<td>Awaiting Phone Verification</td>
+</tr>
+<tr>
+<td>32</td>
+<td align="center">pending</td>
+<td>Awaiting Postcard Verification</td>
+</tr>
+<tr>
+<td>33</td>
+<td align="center">pending</td>
+<td>Awaiting Directory Account Activation</td>
+</tr>
+<tr>
+<td>40</td>
+<td align="center">client recommendations</td>
+<td>Claimed Listing</td>
+</tr>
+<tr>
+<td>41</td>
+<td align="center">client recommendations</td>
+<td>Client Declined Phone Verification</td>
+</tr>
+<tr>
+<td>42</td>
+<td align="center">client recommendations</td>
+<td>Client Declined Postcard Verification</td>
+</tr>
+<tr>
+<td>43</td>
+<td align="center">client recommendations</td>
+<td>Phone Verification Attempts Exhausted</td>
+</tr>
+<tr>
+<td>44</td>
+<td align="center">client recommendations</td>
+<td>Postcard Verification Attempts Exhausted</td>
+</tr>
+<tr>
+<td>50</td>
+<td align="center">fulfillment blocked</td>
+<td>Directory Temporarily Unavailable</td>
+</tr>
+<tr>
+<td>51</td>
+<td align="center">fulfillment blocked</td>
+<td>Directory No Longer Active</td>
+</tr>
+<tr>
+<td>52</td>
+<td align="center">fulfillment blocked</td>
+<td>Directory Blocking Third-party Listings</td>
+</tr>
+<tr>
+<td>53</td>
+<td align="center">fulfillment blocked</td>
+<td>Directory Temporarily Broken</td>
+</tr>
+<tr>
+<td>54</td>
+<td align="center">fulfillment blocked</td>
+<td>Directory Not Accepting New Listings</td>
+</tr>
+<tr>
+<td>55</td>
+<td align="center">fulfillment blocked</td>
+<td>Skipped by Client Request</td>
+</tr>
+<tr>
+<td>56</td>
+<td align="center">fulfillment blocked</td>
+<td>Submission Attempts Exhausted</td>
+</tr>
+</tbody></table>
 
     </section>
   </article>
