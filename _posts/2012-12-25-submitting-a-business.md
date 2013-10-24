@@ -193,7 +193,5 @@ Sends back an array of JSON objects, one for each submitted location containing 
 The status will indicate the success of that particular location:
 
 - 200 indicates general success
-- 201 indicates that a new business was created
-- 202 indicates that the data was received and enqueued (but not yet processed). No further action is needed.
 - 400 indicates an error in the request
 - 401 indicates an authentication error
