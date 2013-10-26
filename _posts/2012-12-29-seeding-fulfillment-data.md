@@ -1,6 +1,8 @@
 ---
-path: '/seeding-fulfillment-data'
+category: v1
+path: '/v1/test-fulfillment/:uuid'
 title: 'Seeding Fulfillment Data'
+type: 'PUT'
 
 layout: nil
 ---
