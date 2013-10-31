@@ -120,6 +120,7 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
          "packages":[
             "see note above"
          ],
+         "termsAccepted" : true,
          "products":[
             "see note above"
          ]
