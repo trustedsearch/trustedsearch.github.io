@@ -1,14 +1,13 @@
 ---
-path: '/server-status'
-title: 'Server Status / UpTime'
+path: '/uptime'
+title: 'Service Status / UpTime'
 
 layout: nil
 ---
 
-## Uptime / Server Status
 It is our goal to maintain high availability.
 
-In an effort to be completly transparent we provide you with a server status page.
+In an effort to be completly transparent we provide you with our service status page.
 
 You can check the status here: [status.trustedsearch.org](status.trustedsearch.org)
 
