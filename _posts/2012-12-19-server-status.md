@@ -8,8 +8,7 @@ layout: nil
 ## Uptime / Server Status
 It is our goal to maintain high availability.
 
-In an effort to be completly transparent we provide a public page from a server monitoring service.
-
+In an effort to be completly transparent we provide you with a server status page.
 
 You can check the status here: [status.trustedsearch.org](status.trustedsearch.org)
 
