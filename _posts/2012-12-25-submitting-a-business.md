@@ -72,42 +72,57 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 #### contact object
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| firstName | string | * |-| First name of the primary contact for data- or verification-related issues. |
-| lastName | string | * |-| Last name of the primary contact. |
-| email | string | * |-| Email address of the primary contact. |
-| phone | string | * |-| Phone number of the primary contact. |
+| firstName | string(40) | * |-| First name of the primary contact at the physical location. For data- or verification-related issues. No special characters.|
+| lastName | string(80) | * |-| Last name of the primary contact at the physical location. No Special characters |
+| email | string(80) | * |-| Email address of the primary contact at the physical location. |
+| phone | string(10) | * |-| Phone number of the primary contact. |
+
+#### Description Rules
+
+* At a minium please provide the descriptionLong in accordance with description formating rules.
+* The enhancement process will use the descriptionLong to generate the descriptionMedium and descriptionShort.
+* If you provide descriptionMedium or descriptionShort we will use exactly those values, however they may be reviewed for grammatical errors.
+* If you provide descriptionLong and it is larger then 1000 characters, the enhancement process will update it to a single version with a length that adheres to a majority of our publishers. The medium and short descriptions will be a trimmed down version of this version.
+
+#### Description Formating Rules
+
+* No Html or special characters. They will be stripped out.
+* Human readable.
+
 
 
 #### business object
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| name | string | * |-| The full name of the business as it should be published. |
-| street | string | * |-| The physical street address of the business (may be standardized). |
+| name | string(100) | * |-| The full name of the business as it should be published. "Doing Business As Name - Commonly known as name.  |
+|| | || name: Cannot be provide in ALL CAPS, (except for abreviations).|
+|| | || name: Cannot be a website. Business must have a physical store front, or be a service area business. (NO online-only businesses)|
+| street | string(255) | * |-| The street address of the physical company. This can include a suite number |
 | privateStreet | boolean | - |-| Indicates whether or not the street address should be published (defaults to true if not specified). |
-| city | string | * |-| The city in which the business is located (may be standardized). |
-| state | string(2) | * |-| The 2-digit state code in which the business is located (US only). |
-| postalCode | string | * |-| The 5-digit ZIP code for the business (US only). |
+| city | string(255) | * |-| City of the physical address. Alpha values only (period, hyphen and apostrophe allowed) |
+| state | string(2) | * |-| State of the physical address. Should be state abbreviation, not spelled out.  US States only (DC Included)}|
+| postalCode | string(5) | * |-| Zip code for the physical address. Zip code must be 5 digit (with leading zero if necessary).  Numeric values only.|
 | countryCode | string(2) | - |-| The 2-digit ISO 3166-1-alpha-2 country code (currently only US is accepted). |
-| phoneLocal | string | * |-| The 10-digit local (non-toll-free) phone number of the location. This number will be used for verification purposes and must ring at the business location. No extensions are allowed. |
-| phoneTollFree | string | - |-| The 10-digit toll-free phone number of the location. |
-| fax | string | - |-| The 10-digit fax number of the location. |
-| website | string | - |-| Well-formed URL of the company's website (strongly recommended). ex: http://www.trustedsearch.org |
-| email | string | - |-| Business contact email address (to be published). ex: info@yoursitehere.com |
-| slogan | string | - |-| A short motto or slogan for the business. ex: "A diamond is forever." |
-| descriptionLong | string(1000) | - |-| A long description for the business (max 1000 characters). |
-| descriptionMedium | string(200) | - |-| A medium-length description for the business (max 200 characters). |
-| descriptionShort | string(140) | - |-| A short description for the business (max 140 characters). |
-| keywords | string | - |-| A comma-separated list of keywords that are relevent to the business (for SEO purposes). |
-| paymentMethods | array | - |-| Array of payment methods the business accepts. Options: "mastercard", "visa", "discover", "amex", "check", "cash" |
+| phoneLocal | string(10) | * |-| The 10-digit local (non-toll-free) phone number of the location. This number will be used for verification purposes and must ring at the business location. No extensions are allowed. |
+| phoneTollFree | string(10) | - |-| The 10-digit toll-free phone number of the location. |
+| fax | string(10) | - |-| The 10-digit fax number of the location. |
+| website | string(255) | - |-| Well-formed URL of the company's website (strongly recommended). ex: http://www.trustedsearch.org |
+| email | string(80) | - |-| Business contact email address (to be published). ex: info@yoursitehere.com |
+| slogan | string(80) | - |-| A short motto or slogan for the business. ex: "A diamond is forever." |
+| descriptionLong | string(5000) | - |-| A long description for the business. *(see description rules) |
+| descriptionMedium | string(200) | - |-| A medium-length description for the business. *(see description rules)|
+| descriptionShort | string(140) | - |-| A short description for the business. *(see description rules) |
+| keywords | string(255) | - |-| A comma-separated list of keywords that are relevent to the business (for SEO purposes). |
+| paymentMethods | array | - |-| A comma-separated list of payment methods the business accepts. Options: 'Cash','Check','Mastercard','VISA','American Express','Discover','PayPal','Invoice' |
 | yearEstablished | string(4) | - |-| Year business was established. |
-| numberEmployees | int | - |-| The number of employees. |
-| productsOffered | string | - |-| Comma-separated list of products offered. |
-| languagesSpoken | string | - |-| Comma-separated list of languages spoken. |
-| hoursOfOperation | string | - |-| The business' [hours of operation](#{% post_url 2012-12-27-hours-of-operation-format %}). ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
-| logoUrl | string | - |-| Well-formed URL of the business logo. (JPG, PNG, GIF) |
+| numberEmployees | int | - |-| The number of employees at the physical location. |
+| productsOffered | string(255) | - |-| List the products and services that you offer. Free Text field, use a comma to separate multiple values. |
+| languagesSpoken | string(100) | - |-| Languages spoken. Free Text field, use a comma to separate multiple values.  ex: english,spanish |
+| hoursOfOperation | string(255) | - |-| The business' [hours of operation](#{% post_url 2012-12-27-hours-of-operation-format %}). ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
+| logoUrl | string(255) | - |-| Well-formed URL of the business logo. (JPG, PNG, GIF) |
 | logoSquaredUrl | string | - |-| Well-formed URL for a square version of the business logo. (JPG, PNG, GIF) |
-| imageUrl | array(5) | - |-| An array of well-formed URLs of images for the business. (JPG, PNG, GIF) |
-| videoUrl | string | - |-| A youtube.com video URL for the business. ex: http://www.youtube.com/watch?v=VIrBecB746c |
+| imageUrl | array(5) :: string(255) per element | - |-| An array of well-formed URLs of images for the business. (JPG, PNG, GIF) |
+| videoUrl | string(128) | - |-| A youtube.com video URL for the business. ex: http://www.youtube.com/watch?v=VIrBecB746c |
 
 Requests should be made with the POST method to ```https://[api_endpoint]/v1/local-business```.
 
