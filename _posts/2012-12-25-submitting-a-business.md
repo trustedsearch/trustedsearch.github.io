@@ -60,7 +60,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | contact | object | * |-| The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published. |
 
 
-#### order object
+#### Order Object
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | packages | array | * |-| Array of string names representing packages available to partner. These will be provided prior to integration. |
@@ -69,7 +69,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | onBehalfOf | string | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
 
 
-#### contact object
+#### Contact Object
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | firstName | string(40) | * |-| First name of the primary contact at the physical location. For data- or verification-related issues. No special characters.|
@@ -79,10 +79,11 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 #### Description Rules
 
-* At a minium please provide the descriptionLong in accordance with description formating rules.
+* At a __minimum__ please provide the descriptionLong in accordance with description __formatting__ rules.
 * The enhancement process will use the descriptionLong to generate the descriptionMedium and descriptionShort.
-* If you provide descriptionMedium or descriptionShort we will use exactly those values, however they may be reviewed for grammatical errors.
-* If you provide descriptionLong and it is larger then 1000 characters, the enhancement process will update it to a single version with a length that adheres to a majority of our publishers. The medium and short descriptions will be a trimmed down version of this version.
+* If you provide descriptionMedium and/or descriptionShort we will use exactly those values, however they may be reviewed for grammatical errors. 
+* Please make sure that all descriptions (descriptionLong, descriptionMedium, descriptionShort) adhere to the character limits expressed in "Business Object - Type (length)". 
+* Provided descriptions (short, medium, long) that are longer than the defined character limits, will be rejected. You will need to revise the descriptions to meet the specified character lengths prior to resubmitting your data.
 
 #### Description Formating Rules
 
@@ -91,7 +92,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 
 
-#### business object
+#### Business Object
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | name | string(100) | * |-| The full name of the business as it should be published. "Doing Business As Name - Commonly known as name.  |
