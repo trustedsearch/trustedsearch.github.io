@@ -54,7 +54,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 #### Top Level
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| externalId | string | * |-| The partner's unique identifier for the location |
+| externalId | string(36) | * |-| The partner's unique identifier for the location |
 | order | object | * |-| Details related to the requested fulfillment of the location |
 | business | object | * |-| The location's NAP+W and any associated data |
 | contact | object | * |-| The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published. |
@@ -66,7 +66,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | packages | array | * |-| Array of string names representing packages available to partner. These will be provided prior to integration. |
 | products | array | * |-| Array of string names representing products available to partner. These will be provided prior to integration. |
 | termsAccepted | boolean | * |true / false| Must be true to complete an order. Indicates acceptance of TOS. |
-| onBehalfOf | string | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
+| onBehalfOf | string(255) | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
 
 
 #### Contact Object
