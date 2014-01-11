@@ -46,81 +46,6 @@ For a /directory-listings?since=:timestamp request, a response might look like:
 
 ```Status: 200 Success```
 ```{
-  "uuid":"a043c791-72b2-4201-b19e-c6ca19a5108c",
-  "externalId":"ABC2345",
-  "business":{
-       "name":"Sample Business 1",
-       "street":"456 Cherry Tree Lane",
-       "city":"Burr Ridge",
-       "state":"CA",
-       "postalCode":"60527",
-       "phone":"(555) 555-5555",
-       "website":{
-          "url":"http:\/\/samplebusiness1.com",
-          "screenshot":"http:\/\/clients.trustedsearch.org\/37b194e7c44f06c3ce61b7f5059d0a31\/screenshot\/baseline\/"
-      }
-  },
-  "directories":{
-     "merchantcircle":{
-        "label":"Merchant Circle",
-        "lastupdate":1363367153,
-        "status":20,
-        "description":"Submitted and Published",
-     "listingUrl":"http:\/\/www.merchantcircle.com\/business\/A.AAA.A1.Fast.Guaranteed.Appliance.Service.Scottsdale.AZ.480-991-1188",
-        "duplicateUrl":null,
-        "notes":[""]
-     },
-     "superpages":{
-        "label":"Superpages",
-        "lastupdate":1363366882,
-        "status":30,
-        "description":"Submitted and Awaiting Publishing",
-        "listingUrl":null,
-        "duplicateUrl":null,
-        "notes":[""]
-     }
-  }
-},
-{
-  "uuid":"f4c639dd-6331-46d1-9021-ccc2637e8cae",
-  "externalId":"DEF12345",
-  "business":{
-       "name":"Sample Business 2",
-       "street":"123 Cherry Tree Lane",
-       "city":"London",
-       "state":"CA",
-       "postalCode":"93333",
-       "phone":"(555) 555-5555",
-       "website":{
-          "url":"http:\/\/samplebusiness2.com",
-          "screenshot":"http:\/\/clients.trustedsearch.com\/37b194e7c44f06c3ce61b7f5059d0a31\/screenshot\/baseline\/"
-      }
-  },
-  "directories":{
-     "yelp":{
-        "label":"Yelp",
-        "lastupdate":1363367118,
-        "status":31,
-        "description":"Awaiting Phone Verification",
-        "listingUrl":null,
-        "duplicateUrl":null,
-        "notes":[""]
-     },
-     "yahoolocal":{
-        "label":"Yahoo Local",
-        "lastupdate":1363367080,
-        "status":40,
-        "description":"Claimed Listing",
-        "listingUrl":"http:\/\/local.yahoo.com\/info-20078829-a-aaa-a1-fast-guaranteed-appliance-service-scottsdale",
-        "duplicateUrl":null,
-        "notes":[""]
-     }
-  }
-}```
-
-For a /directory-listings/:uuid request, a response might look like:
-```Status: 200 Success```
-```{
   "directories": {
     "googleplus": {
       "description": "Submitted and Published",
@@ -677,7 +602,9 @@ For a /directory-listings/:uuid request, a response might look like:
         "country": "",
         "country_iso_code": "",
         "email": "",
-        "errors": [],
+        "errors": [
+          "LML\\DirectoryBot\\Bots\\Manta_Bot: Could not get Business Information: Could not find ForeignKey from search. Could not get HTML from http://www.manta.com/mb?search=herb+shop+97526"
+        ],
         "fax": "",
         "foreign_key": "",
         "hours_of_operation": [],
@@ -1592,10 +1519,44 @@ For a /directory-listings/:uuid request, a response might look like:
     "street": "247 SW G St",
     "website": {
       "url": "http://www.bulkherbshop.com/"
-    }
+    },
+    "descriptionLong": "The Herb Shop, located in Grants Pass Oregon, has a large selection of high quality herbs and nutrients.   Many people seeking alternative medicine and lifestyles have enjoyed the store. Our main goal is to provide the largest selection of high quality herbs and nutrients and formulas (like Essiac) that are available on the market today. Most of our herbs are purchased from local growers in the Rogue Valley, providing organic or wild crafted herbs whenever possible. \n\nWe specialize in:\n\nBulk Organic Herbs\nTeas & Spices\nHighest Quality Vitamins & Supplements\nHerbal Extracts\nAromatherapy\nHomeopathy",
+    "descriptionMedium": null,
+    "descriptionShort": null,
+    "hoursOfOperation": "MF09001800HSS09001700H",
+    "imageUrl": {
+      "1": "http://clientimages.localmarketlaunch.com/4be9527dd153c6938dd16d427c1a465e/524e05eec8c1c_1.jpg"
+    },
+    "keywords": null,
+    "languagesSpoken": "",
+    "logoSquareUrl": null,
+    "logoUrl": null,
+    "numberEmployees": null,
+    "paymentMethods": [
+      "amex",
+      "cash",
+      "check",
+      "debit",
+      "discover",
+      "mastercard",
+      "visa"
+    ],
+    "phoneTracking": [
+      ""
+    ],
+    "productsOffered": null,
+    "slogan": "Herbs, Teas & Spices, Vitamins and More.",
+    "videoUrl": null,
+    "yearEstablished": null
   },
   "externalId": "f~29gcn1gv",
   "uuid": "f2c8f956-f886-5c3d-b874-c616a28f870b",
+  "contact": {
+    "email": "nmason@bulkherbshop.com",
+    "firstName": "Nicholas",
+    "lastName": "Mason",
+    "phone": "541 479 3602"
+  },
   "received": 1380845042,
   "updated": 1385512383
 }
