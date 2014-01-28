@@ -65,7 +65,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 |-------|:--------------:|:--------:|:-------:|-------------|
 | packages | array | * |-| Array of string names representing packages available to partner. These will be provided prior to integration. |
 | products | array | * |-| Array of string names representing products available to partner. These will be provided prior to integration. |
-| termsAccepted | boolean | * |true / false| Must be true to complete an order. Indicates acceptance of TOS. |
+| termsAccepted | boolean | - | true| Must be true to complete an order. Indicates acceptance of TOS. |
 | onBehalfOf | string(255) | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
 
 
