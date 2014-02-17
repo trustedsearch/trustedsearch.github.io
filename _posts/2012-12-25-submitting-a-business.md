@@ -63,7 +63,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 #### Order Object
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
-| packages | array | * |-| Array of string names representing packages available to partner. These will be provided prior to integration. |
+| packages | integer | * |-| id representing package to apply to location. These will be provided prior to integration. |
 | products | array | * |-| Array of string names representing products available to partner. These will be provided prior to integration. |
 | termsAccepted | boolean | - | true| Must be true to complete an order. Indicates acceptance of TOS. |
 | onBehalfOf | string(255) | - |-| The business or entity name a phone verification specialist will use when calling on behalf of an organization. |
@@ -134,9 +134,7 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
       "externalId":"ABC12345678",
       "order":{
          "onBehalfOf":"Partner ABC",
-         "packages":[
-            "see note above"
-         ],
+         "packages":555,
          "termsAccepted" : true,
          "products":[
             "see note above"
