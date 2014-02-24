@@ -99,7 +99,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 || | || name: Cannot be provide in ALL CAPS, (except for abreviations).|
 || | || name: Cannot be a website. Business must have a physical store front, or be a service area business. (NO online-only businesses)|
 | street | string(255) | * |-| The street address of the physical company. This can include a suite number |
-| privateStreet | boolean | - |-| Indicates whether or not the street address should be published (defaults to true if not specified). |
+| privateStreet | boolean | - |-| Indicates whether or not the street address should be published (defaults to false if not specified). |
 | city | string(255) | * |-| City of the physical address. Alpha values only (period, hyphen and apostrophe allowed) |
 | state | string(2) | * |-| State of the physical address. Should be state abbreviation, not spelled out.  US States only (DC Included)}|
 | postalCode | string(5) | * |-| Zip code for the physical address. Zip code must be 5 digit (with leading zero if necessary).  Numeric values only.|
