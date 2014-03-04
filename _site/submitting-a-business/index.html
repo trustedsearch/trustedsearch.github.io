@@ -57,7 +57,7 @@
 </thead><tbody>
 <tr>
 <td>externalId</td>
-<td align="center">string</td>
+<td align="center">string(36)</td>
 <td align="center">*</td>
 <td align="center">-</td>
 <td>The partner&#39;s unique identifier for the location</td>
@@ -85,7 +85,7 @@
 </tr>
 </tbody></table>
 
-<h4 id="toc_10">order object</h4>
+<h4 id="toc_10">Order Object</h4>
 
 <table><thead>
 <tr>
@@ -97,18 +97,11 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>onBehalfOf</td>
-<td align="center">string</td>
-<td align="center">-</td>
-<td align="center">-</td>
-<td>The business or entity name a phone verification specialist will use when calling on behalf of an organization.</td>
-</tr>
-<tr>
 <td>packages</td>
-<td align="center">array</td>
+<td align="center">integer</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Array of string names representing packages available to partner. These will be provided prior to integration.</td>
+<td>id representing package to apply to location. These will be provided prior to integration.</td>
 </tr>
 <tr>
 <td>products</td>
@@ -117,9 +110,23 @@
 <td align="center">-</td>
 <td>Array of string names representing products available to partner. These will be provided prior to integration.</td>
 </tr>
+<tr>
+<td>termsAccepted</td>
+<td align="center">boolean</td>
+<td align="center">-</td>
+<td align="center">true</td>
+<td>Must be true to complete an order. Indicates acceptance of TOS.</td>
+</tr>
+<tr>
+<td>onBehalfOf</td>
+<td align="center">string(255)</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td>The business or entity name a phone verification specialist will use when calling on behalf of an organization.</td>
+</tr>
 </tbody></table>
 
-<h4 id="toc_11">contact object</h4>
+<h4 id="toc_11">Contact Object</h4>
 
 <table><thead>
 <tr>
@@ -132,35 +139,52 @@
 </thead><tbody>
 <tr>
 <td>firstName</td>
-<td align="center">string</td>
+<td align="center">string(40)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>First name of the primary contact for data- or verification-related issues.</td>
+<td>First name of the primary contact at the physical location. For data- or verification-related issues. No special characters.</td>
 </tr>
 <tr>
 <td>lastName</td>
-<td align="center">string</td>
+<td align="center">string(80)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Last name of the primary contact.</td>
+<td>Last name of the primary contact at the physical location. No Special characters</td>
 </tr>
 <tr>
 <td>email</td>
-<td align="center">string</td>
+<td align="center">string(80)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>Email address of the primary contact.</td>
+<td>Email address of the primary contact at the physical location.</td>
 </tr>
 <tr>
 <td>phone</td>
-<td align="center">string</td>
+<td align="center">string(10)</td>
 <td align="center">*</td>
 <td align="center">-</td>
 <td>Phone number of the primary contact.</td>
 </tr>
 </tbody></table>
 
-<h4 id="toc_12">business object</h4>
+<h4 id="toc_12">Description Rules</h4>
+
+<ul>
+<li>At a <strong>minimum</strong> please provide the descriptionLong in accordance with description <strong>formatting</strong> rules.</li>
+<li>The enhancement process will use the descriptionLong to generate the descriptionMedium and descriptionShort.</li>
+<li>If you provide descriptionMedium and/or descriptionShort we will use exactly those values, however they may be reviewed for grammatical errors. </li>
+<li>Please make sure that all descriptions (descriptionLong, descriptionMedium, descriptionShort) adhere to the character limits expressed in &quot;Business Object - Type (length)&quot;. </li>
+<li>Provided descriptions (short, medium, long) that are longer than the defined character limits, will be rejected. You will need to revise the descriptions to meet the specified character lengths prior to resubmitting your data.</li>
+</ul>
+
+<h4 id="toc_13">Description Formating Rules</h4>
+
+<ul>
+<li>No Html or special characters. They will be stripped out.</li>
+<li>Human readable.</li>
+</ul>
+
+<h4 id="toc_14">Business Object</h4>
 
 <table><thead>
 <tr>
@@ -173,45 +197,59 @@
 </thead><tbody>
 <tr>
 <td>name</td>
-<td align="center">string</td>
+<td align="center">string(100)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The full name of the business as it should be published.</td>
+<td>The full name of the business as it should be published. &quot;Doing Business As Name - Commonly known as name.</td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td>name: Cannot be provide in ALL CAPS, (except for abreviations).</td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td>name: Cannot be a website. Business must have a physical store front, or be a service area business. (NO online-only businesses)</td>
 </tr>
 <tr>
 <td>street</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The physical street address of the business (may be standardized).</td>
+<td>The street address of the physical company. This can include a suite number</td>
 </tr>
 <tr>
 <td>privateStreet</td>
 <td align="center">boolean</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Indicates whether or not the street address should be published (defaults to true if not specified).</td>
+<td>Indicates whether or not the street address should be published (defaults to false if not specified).</td>
 </tr>
 <tr>
 <td>city</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The city in which the business is located (may be standardized).</td>
+<td>City of the physical address. Alpha values only (period, hyphen and apostrophe allowed)</td>
 </tr>
 <tr>
 <td>state</td>
 <td align="center">string(2)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The 2-digit state code in which the business is located (US only).</td>
+<td>State of the physical address. Should be state abbreviation, not spelled out.  US States only (DC Included)}</td>
 </tr>
 <tr>
 <td>postalCode</td>
-<td align="center">string</td>
+<td align="center">string(5)</td>
 <td align="center">*</td>
 <td align="center">-</td>
-<td>The 5-digit ZIP code for the business (US only).</td>
+<td>Zip code for the physical address. Zip code must be 5 digit (with leading zero if necessary).  Numeric values only.</td>
 </tr>
 <tr>
 <td>countryCode</td>
@@ -222,70 +260,70 @@
 </tr>
 <tr>
 <td>phoneLocal</td>
-<td align="center">string</td>
+<td align="center">string(10)</td>
 <td align="center">*</td>
 <td align="center">-</td>
 <td>The 10-digit local (non-toll-free) phone number of the location. This number will be used for verification purposes and must ring at the business location. No extensions are allowed.</td>
 </tr>
 <tr>
 <td>phoneTollFree</td>
-<td align="center">string</td>
+<td align="center">string(10)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>The 10-digit toll-free phone number of the location.</td>
 </tr>
 <tr>
 <td>fax</td>
-<td align="center">string</td>
+<td align="center">string(10)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>The 10-digit fax number of the location.</td>
 </tr>
 <tr>
 <td>website</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>Well-formed URL of the company&#39;s website (strongly recommended). ex: <a href="http://www.trustedsearch.org">http://www.trustedsearch.org</a></td>
 </tr>
 <tr>
 <td>email</td>
-<td align="center">string</td>
+<td align="center">string(80)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>Business contact email address (to be published). ex: <a href="mailto:info@yoursitehere.com">info@yoursitehere.com</a></td>
 </tr>
 <tr>
 <td>slogan</td>
-<td align="center">string</td>
+<td align="center">string(80)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>A short motto or slogan for the business. ex: &quot;A diamond is forever.&quot;</td>
 </tr>
 <tr>
 <td>descriptionLong</td>
-<td align="center">string(1000)</td>
+<td align="center">string(5000)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>A long description for the business (max 1000 characters).</td>
+<td>A long description for the business. *(see description rules)</td>
 </tr>
 <tr>
 <td>descriptionMedium</td>
 <td align="center">string(200)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>A medium-length description for the business (max 200 characters).</td>
+<td>A medium-length description for the business. *(see description rules)</td>
 </tr>
 <tr>
 <td>descriptionShort</td>
 <td align="center">string(140)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>A short description for the business (max 140 characters).</td>
+<td>A short description for the business. *(see description rules)</td>
 </tr>
 <tr>
 <td>keywords</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>A comma-separated list of keywords that are relevent to the business (for SEO purposes).</td>
@@ -294,8 +332,15 @@
 <td>paymentMethods</td>
 <td align="center">array</td>
 <td align="center">-</td>
+<td align="center">&#39;Cash&#39;,&#39;Check&#39;,&#39;Mastercard&#39;,&#39;VISA&#39;,&#39;American Express&#39;,&#39;Discover&#39;,&#39;PayPal&#39;,&#39;Invoice&#39;</td>
+<td>An array of payment methods the business accepts. Options: &#39;Cash&#39;,&#39;Check&#39;,&#39;Mastercard&#39;,&#39;VISA&#39;,&#39;American Express&#39;,&#39;Discover&#39;,&#39;PayPal&#39;,&#39;Invoice&#39;</td>
+</tr>
+<tr>
+<td>professionalAssociations</td>
+<td align="center">array</td>
 <td align="center">-</td>
-<td>Array of payment methods the business accepts. Options: &quot;mastercard&quot;, &quot;visa&quot;, &quot;discover&quot;, &quot;amex&quot;, &quot;check&quot;, &quot;cash&quot;</td>
+<td align="center">-</td>
+<td>An array of professional associations. Example: Better [&#39;Business Bureau&#39;, &#39;Local Search Association&#39;, &#39;Chicago Bar Association&#39;]</td>
 </tr>
 <tr>
 <td>yearEstablished</td>
@@ -309,32 +354,32 @@
 <td align="center">int</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>The number of employees.</td>
+<td>The number of employees at the physical location.</td>
 </tr>
 <tr>
 <td>productsOffered</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Comma-separated list of products offered.</td>
+<td>List the products and services that you offer. Free Text field, use a comma to separate multiple values.</td>
 </tr>
 <tr>
 <td>languagesSpoken</td>
-<td align="center">string</td>
+<td align="center">string(100)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>Comma-separated list of languages spoken.</td>
+<td>Languages spoken. Free Text field, use a comma to separate multiple values.  ex: english,spanish</td>
 </tr>
 <tr>
 <td>hoursOfOperation</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>The business&#39; <a href="#/hours-of-operation-format">hours of operation</a>. ex: &quot;MF08001700H&quot; for Mon-Fri 8:00am-5:00pm</td>
 </tr>
 <tr>
 <td>logoUrl</td>
-<td align="center">string</td>
+<td align="center">string(255)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>Well-formed URL of the business logo. (JPG, PNG, GIF)</td>
@@ -348,14 +393,14 @@
 </tr>
 <tr>
 <td>imageUrl</td>
-<td align="center">array(5)</td>
+<td align="center">array(5) :: string(255) per element</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>An array of well-formed URLs of images for the business. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>videoUrl</td>
-<td align="center">string</td>
+<td align="center">string(128)</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td>A youtube.com video URL for the business. ex: <a href="http://www.youtube.com/watch?v=VIrBecB746c">http://www.youtube.com/watch?v=VIrBecB746c</a></td>
@@ -368,9 +413,8 @@
       &quot;externalId&quot;:&quot;ABC12345678&quot;,
       &quot;order&quot;:{
          &quot;onBehalfOf&quot;:&quot;Partner ABC&quot;,
-         &quot;packages&quot;:[
-            &quot;see note above&quot;
-         ],
+         &quot;packages&quot;:555,
+         &quot;termsAccepted&quot; : true,
          &quot;products&quot;:[
             &quot;see note above&quot;
          ]
@@ -426,7 +470,7 @@
    },{...}
 ]
 </code></pre></div>
-<h3 id="toc_13">Response</h3>
+<h3 id="toc_15">Response</h3>
 
 <p>Sends back an array of JSON objects, one for each submitted location containing the status, externalId, and assigned UUID.</p>
 
@@ -439,7 +483,7 @@
    },...
 ]</code></p>
 
-<h3 id="toc_14">Status codes and their meanings</h3>
+<h3 id="toc_16">Status codes and their meanings</h3>
 
 <p>The status will indicate the success of that particular location:</p>
 

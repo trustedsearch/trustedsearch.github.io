@@ -8,6 +8,7 @@ layout: nil
 
 # Delete hook subscription
 
+
 ### Request
 Requests should be made with the DELETE method to ```https://[api_endpoint]/v2/hook-subscriptions/:id```
 

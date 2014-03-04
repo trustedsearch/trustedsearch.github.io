@@ -40,4 +40,4 @@ An audit's identification and extraction accuracy varies based upon many factors
 * A higher frequency can be set. (Requires Reporting product and additional costs)
 
 ## Hooks
-Refer to [Subscribing to Hooks](#{% post_url 2014-01-29-subscribing-to-hooks %}) to learn how you can recieve this data.
+Refer to [Subscribing to Hooks](#{% post_url 2014-01-29-hooks-about %}) to learn how you can recieve this data.
