@@ -37,6 +37,15 @@ If there have been no updates within a thirty minute window, no callback would b
 
 Due to the potential for large amounts of data, the detail level of /directory-listings without a UUID is set lower than that of /directory-listings/:uuid. When performing a non-UUID request for a large span of time (a "since" parameter far in the past), the response may be returned in a paged format, where subsequent pages would require a separate API call with a "page" parameter.
 
+### Understanding callback data:
+When looking at publishers data, if the errors block  is an empty array ex: [], you can assume that we correctly found the listing and there were no issues extracting the listing data from the publisher.
+
+### Errors
+If you see that the errors block is not empty, then there could be many reasons:
+* Publisher was down
+* Publisher website changed
+* Publisher search via api or crawl returned no records w/ a high enough match rate or not matches were found at all.
+
 
 ### Response
 
