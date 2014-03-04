@@ -1,7 +1,7 @@
 ---
 category: v2
 path: '/v2/hook-subscriptions/:id'
-title: 'Hook Subscriptions: Get current hook subscriptions'
+title: 'Hook Subscriptions: Index'
 type: 'GET'
 layout: nil
 ---
