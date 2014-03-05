@@ -34,7 +34,7 @@ Upon creation of a partner account, a user is automatically created as the defau
 ### Request
 
 Requests should be made with the PUT method to https://api_endpoint/v1/user/username?pwd=password, where username is the username of the user to create, and "password" is the SHA1 hash of the raw password. All requests must be 
-[authenticated](#{% post_url 2012-12-28-authentication %}) using the primary partner user's keys.
+[authenticated](#{% post_url 2012-12-28-general-authentication %}) using the primary partner user's keys.
 
 To create a user with username "lmluser09" and password "password123", the following PUT request should be made:
 

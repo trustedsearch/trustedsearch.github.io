@@ -23,6 +23,6 @@ There are separate credentials for each environment.
 
 At the time of your account creation, you will be provided initially with sandbox credentials to conduct integration and testing. Once you believe you are ready for the production environment, please contact support@trustedsearch.org for production credentials.
 
-To authenticate your requests we use an [hmac authenticaion protocol](#{% post_url 2012-12-28-authentication %}). 
+To authenticate your requests we use an [hmac authenticaion protocol](#{% post_url 2012-12-28-v1-authentication %}). 
 You will be provided with a public & private key for each environment.
 

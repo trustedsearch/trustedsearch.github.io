@@ -120,7 +120,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | numberEmployees | int | - |-| The number of employees at the physical location. |
 | productsOffered | string(255) | - |-| List the products and services that you offer. Free Text field, use a comma to separate multiple values. |
 | languagesSpoken | string(100) | - |-| Languages spoken. Free Text field, use a comma to separate multiple values.  ex: english,spanish |
-| hoursOfOperation | string(255) | - |-| The business' [hours of operation](#{% post_url 2012-12-27-hours-of-operation-format %}). ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
+| hoursOfOperation | string(255) | - |-| The business' [hours of operation](#{% post_url 2024-12-22-general-hours-of-operation-format %}). ex: "MF08001700H" for Mon-Fri 8:00am-5:00pm |
 | logoUrl | string(255) | - |-| Well-formed URL of the business logo. (JPG, PNG, GIF) |
 | logoSquaredUrl | string | - |-| Well-formed URL for a square version of the business logo. (JPG, PNG, GIF) |
 | imageUrl | array(5) :: string(255) per element | - |-| An array of well-formed URLs of images for the business. (JPG, PNG, GIF) |

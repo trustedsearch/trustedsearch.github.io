@@ -13,7 +13,41 @@
 <ul id='links'>
   
     
-    <li><a href='#/getting-started'>Getting Started</a></li>
+    <li><a href='#/general-getting-started'>Getting Started</a></li>
+    
+  
+    
+    <li><a href='#/general-support'>Support</a></li>
+    
+  
+    
+    <li><a href='#/general-hours-of-operation-format'>Hours of Operation</a></li>
+    
+  
+    
+  
+    
+    <li><a href='#/general-sdks'>Available Libraries</a></li>
+    
+  
+    
+    <li><a href='#/general-server-status'>Service Status / UpTime</a></li>
+    
+  
+    
+    <li><a href='#/general-reporting-vs-audits'>Hours of Operation</a></li>
+    
+  
+    
+    <li><a href='#/v1-authentication'>Authenticate</a></li>
+    
+  
+    
+  
+    
+  
+    
+    <li><a href='#/v1-directory-statuses'>Directory Statuses</a></li>
     
   
     
@@ -32,61 +66,7 @@
   
     
   
-    
-    <li><a href='#/authentication'>Authenticate</a></li>
-    
   
-    
-    <li><a href='#/hours-of-operation-format'>Hours of Operation</a></li>
-    
-  
-    
-  
-    
-    <li><a href='#/directory-statuses'>Directory Statuses</a></li>
-    
-  
-    
-  
-    
-  
-    
-    <li><a href='#/sdks'>Available Libraries</a></li>
-    
-  
-    
-    <li><a href='#/server-status'>Service Status / UpTime</a></li>
-    
-  
-    
-    <li><a href='#/reporting-vs-audits'>Hours of Operation</a></li>
-    
-  
-    
-    <li><a href='#/support'>Support</a></li>
-    
-  
-  
-  <li><h2>v1</h2>
-    <ul>
-    
-              
-        <li class=''><a href='#'></a></li>
-      
-    
-              
-        <li class='PUT'><a href='#/seeding-fulfillment-data'>Seeding Fulfillment Data</a></li>
-              
-        <li class='GET'><a href='#/get-business-updates'>Get Business Updates</a></li>
-              
-        <li class='POST'><a href='#/submitting-a-business'>Submitting a Business</a></li>
-              
-        <li class='GET'><a href='#/token-get'>Getting an Auth Token</a></li>
-      
-    
-    </ul>
-  </li>
-
   <li><h2>v2</h2>
     <ul>
     
@@ -95,19 +75,39 @@
       
     
               
-        <li class='POST'><a href='#/subscriptions-post'>Hook Subscriptions: Creating a new hook subscription</a></li>
+        <li class='POST'><a href='#/v2-subscriptions-post'>Hook Subscriptions: Create</a></li>
               
-        <li class='GET'><a href='#/subscriptions-index'>Hook Subscriptions: Get current hook subscriptions</a></li>
+        <li class='GET'><a href='#/v2-subscriptions-index'>Hook Subscriptions: Index</a></li>
               
-        <li class='GET'><a href='#/subscriptions-get'>Hook Subscriptions: Get a hook subscription</a></li>
+        <li class='GET'><a href='#/v2-subscriptions-get'>Hook Subscriptions: Get</a></li>
               
-        <li class='PUT'><a href='#/subscriptions-edit'>Hook Subscriptions: Editing a hook subscription.</a></li>
+        <li class='PUT'><a href='#/v2-subscriptions-edit'>Hook Subscriptions: Edit</a></li>
               
-        <li class='DELETE'><a href='#/subscriptions-delete'>Hook Subscriptions: Delete a hook subscription</a></li>
+        <li class='DELETE'><a href='#/v2-subscriptions-delete'>Hook Subscriptions: Delete</a></li>
               
-        <li class='GET'><a href='#/hooks-get'>Hooks: Get a list of hooks that can be subscribed to.</a></li>
+        <li class='GET'><a href='#/v2-hooks-get'>Hooks: Get a list of hooks that can be subscribed to.</a></li>
               
-        <li class=''><a href='#/hooks-about'>Hooks: About</a></li>
+        <li class=''><a href='#/v2-hooks-about'>Hooks: About</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>v1</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='PUT'><a href='#/general-seeding-fulfillment-data'>Seeding Fulfillment Data</a></li>
+              
+        <li class='GET'><a href='#/v1-token-get'>Getting an Auth Token</a></li>
+              
+        <li class='GET'><a href='#/v1-get-business-updates'>Get Business Updates</a></li>
+              
+        <li class='POST'><a href='#/v1-submitting-a-business'>Submitting a Business</a></li>
       
     
     </ul>
@@ -123,7 +123,7 @@ Contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a>
 
 
   <article class=''>
-    <a name='/getting-started' href='#/getting-started'><h2>Getting Started</h2></a>
+    <a name='/general-getting-started' href='#/general-getting-started'><h2>Getting Started</h2></a>
     <section class='body'>
       <h1 id="toc_0">Getting Started.</h1>
 
@@ -146,396 +146,24 @@ Contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a>
 
 <p>At the time of your account creation, you will be provided initially with sandbox credentials to conduct integration and testing. Once you believe you are ready for the production environment, please contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a> for production credentials.</p>
 
-<p>To authenticate your requests we use an <a href="#/authentication">hmac authenticaion protocol</a>. 
+<p>To authenticate your requests we use an <a href="#/v1-authentication">hmac authenticaion protocol</a>. 
 You will be provided with a public &amp; private key for each environment.</p>
 
     </section>
   </article>
 
-  <article class='POST'>
-    <a name='/subscriptions-post' href='#/subscriptions-post'><h2><code><b>POST</b> /v2/hook-subscriptions</code> Hook Subscriptions: Creating a new hook subscription</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Creating a new hook-subscription</h1>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the POST method to <code>https://[api_endpoint]/v2/hook-subscriptions</code>.</p>
-
-<p>Ex:
-```
-POST https://[api_endpoint]/v2/hook-subscriptions</p>
-
-<p>{
-  &quot;target_url&quot;: &quot;<a href="http://api.acme.com/trustedsearch/location-update">http://api.acme.com/trustedsearch/location-update</a>&quot;,
-  &quot;hook&quot;: &quot;location.updates&quot;
-}
-```</p>
-
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-  &quot;code&quot;: 200,
-  &quot;data&quot;: {
-    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
-    &quot;hook_id&quot;: 1,
-    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
-    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-update&quot;,
-    &quot;updated_at&quot;: &quot;2014-03-04 22:48:08&quot;,
-    &quot;user_id&quot;: 27
-  },
-  &quot;message&quot;: &quot;&quot;,
-  &quot;status&quot;: &quot;success&quot;
-}
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class='GET'>
-    <a name='/subscriptions-index' href='#/subscriptions-index'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Get current hook subscriptions</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Get a single subscription</h1>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions</code></p>
-
-<p>Ex:
-<code>
-GET https://[api_endpoint]/v2/hook-subscriptionsz
-</code></p>
-
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-  &quot;code&quot;: 200,
-  &quot;data&quot;: [
-    {
-      &quot;created_at&quot;: &quot;2014-03-04 23:40:37&quot;,
-      &quot;hook_id&quot;: 2,
-      &quot;id&quot;: &quot;20d01ac1-af2e-4c58-8e02-236c723ccfde&quot;,
-      &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-audit&quot;,
-      &quot;updated_at&quot;: &quot;2014-03-04 23:40:37&quot;,
-      &quot;user_id&quot;: 27
-    },
-    {
-      &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
-      &quot;hook_id&quot;: 1,
-      &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
-      &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
-      &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
-      &quot;user_id&quot;: 27
-    }
-  ],
-  &quot;message&quot;: &quot;&quot;,
-  &quot;status&quot;: &quot;success&quot;
-}
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class='GET'>
-    <a name='/subscriptions-get' href='#/subscriptions-get'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Get a hook subscription</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Get a hook subscription</h1>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
-
-<p>Ex:
-<code>
-GET https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
-</code></p>
-
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-  &quot;code&quot;: 200,
-  &quot;data&quot;: {
-    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
-    &quot;hook_id&quot;: 1,
-    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
-    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
-    &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
-    &quot;user_id&quot;: 27
-  },
-  &quot;message&quot;: &quot;&quot;,
-  &quot;status&quot;: &quot;success&quot;
-}
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class='PUT'>
-    <a name='/subscriptions-edit' href='#/subscriptions-edit'><h2><code><b>PUT</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Editing a hook subscription.</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Editing a hook subscription</h1>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the PUT method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
-
-<p>Ex:
-```
-PUT https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b</p>
-
-<p>{
-  &quot;target_url&quot;: &quot;<a href="http://api.acme.com/trustedsearch/location-updates">http://api.acme.com/trustedsearch/location-updates</a>&quot;,
-  &quot;hook&quot;: &quot;location.updates&quot;
-}
-```</p>
-
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-  &quot;code&quot;: 200,
-  &quot;data&quot;: {
-    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
-    &quot;hook_id&quot;: 1,
-    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
-    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
-    &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
-    &quot;user_id&quot;: 27
-  },
-  &quot;message&quot;: &quot;&quot;,
-  &quot;status&quot;: &quot;success&quot;
-}
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class='DELETE'>
-    <a name='/subscriptions-delete' href='#/subscriptions-delete'><h2><code><b>DELETE</b> /v2/hook-subscriptions</code> Hook Subscriptions: Delete a hook subscription</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Delete hook subscription</h1>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the DELETE method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code></p>
-
-<p>Ex:
-<code>
-DELETE https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
-</code></p>
-
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-  &quot;code&quot;: 200,
-  &quot;data&quot;: [
-
-  ],
-  &quot;message&quot;: &quot;Successfully removed subscription : 5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
-  &quot;status&quot;: &quot;success&quot;
-}
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class='GET'>
-    <a name='/hooks-get' href='#/hooks-get'><h2><code><b>GET</b> /v2/hooks</code> Hooks: Get a list of hooks that can be subscribed to.</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Hooks:</h1>
-
-<p>A call to this api, will provide you with a list of all the available REST hooks you can subscribe to.</p>
-
-<table><thead>
-<tr>
-<th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
-<th>description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td></td>
-</tr>
-</tbody></table>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hooks</code>.</p>
-
-<h3 id="toc_2">Response</h3>
-
-<p><code>Status: 200</code></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-   &quot;status&quot;:&quot;success&quot;,
-   &quot;code&quot;:200,
-   &quot;message&quot;:&quot;&quot;,
-   &quot;data&quot;:[
-      {
-         &quot;id&quot;:1,
-         &quot;name&quot;:&quot;location.updates&quot;,
-         &quot;description&quot;:&quot;Data for the location has been update within TRUSTEDSearch ecosystem.&quot;,
-         &quot;product_id&quot;:null,
-         &quot;created_at&quot;:&quot;0000-00-00 00:00:00&quot;,
-         &quot;updated_at&quot;:&quot;0000-00-00 00:00:00&quot;
-      },
-      {
-         &quot;id&quot;:2,
-         &quot;name&quot;:&quot;location.audit&quot;,
-         &quot;description&quot;:&quot;Results of an audit.&quot;,
-         &quot;product_id&quot;:63,
-         &quot;created_at&quot;:&quot;0000-00-00 00:00:00&quot;,
-         &quot;updated_at&quot;:&quot;0000-00-00 00:00:00&quot;
-      }’
-   ]
-}
-</code></pre></div>
-    </section>
-  </article>
-
   <article class=''>
-    <a name='/hooks-about' href='#/hooks-about'><h2><code><b></b> /v2/about-hooks</code> Hooks: About</h2></a>
+    <a name='/general-support' href='#/general-support'><h2>Support</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Hooks</h1>
+      <h2 id="toc_0">API &amp; Integration Support</h2>
 
-<p>Rather than needing to poll our system for changes to your locations or products, you can be notified about events that happen in our system by subscribing to hooks.</p>
-
-<p>You might then use these notifications on your end to do things like:</p>
-
-<h2 id="toc_1">WHY - You might want to use hooks.</h2>
-
-<ul>
-<li>Update your system.</li>
-<li>Notify your customers about status updates.</li>
-<li>Notify you customers about actions they need to perform.</li>
-<li>Notify members of your company about actions they need to perform.</li>
-</ul>
-
-<h2 id="toc_2">WHAT - Hooks are available</h2>
-
-<h3 id="toc_3">location.audit</h3>
-
-<p>A notification sent when an audit has completed.</p>
-
-<h5 id="toc_4">Usage</h5>
-
-<ul>
-<li>Subscribe to <code>location.audit</code> hook</li>
-<li>Submit an order for a location via the / POST v1/local-business API:
-
-<ul>
-<li>The package you specify must include the audit product.(Talk w/ your sales rep for this.)</li>
-<li>The <strong>audit</strong> flag must be set to true.</li>
-</ul></li>
-<li>After our system finishes the audit, a hook will be triggered and you will be notified at the resource you defined in your subscription.</li>
-</ul>
-
-<h5 id="toc_5">Notes</h5>
-
-<ul>
-<li>This is the only notification you will receive, however you can queue up another audit for a given location(Limits and Throttling of requests may apply)</li>
-<li>If there is an error, either update your system or disregard it. Regardless of the reason for an error,  results can change on  a daily basis as we continually improve  our audit match algorithm and update our bots when a publisher makes a change the layout of their site.</li>
-</ul>
-
-<h3 id="toc_6">Upcoming Hooks</h3>
-
-<ul>
-<li>location.updates</li>
-<li>location.fullfilment.update</li>
-<li>location.report</li>
-</ul>
-
-<h2 id="toc_7">HOW - to setup hooks</h2>
-
-<p>Integration is easy, lets say you want to know about changes that happen to a location.</p>
-
-<h4 id="toc_8">Step 1 - Configure your servers</h4>
-
-<p>Setup a resource on your servers:
-<a href="">https://api.acme.com/trustedsearch/location-updates</a>
-that could accept a JSON POST, in this case the JSON data will be the same as that of the GET v1/directory-listings api call.</p>
-
-<h4 id="toc_9">Step 2 - Subscribe</h4>
-
-<p>Subscribe to the <code>location.update</code> hook via the API.</p>
-
-<h4 id="toc_10">Step 3 - What happens now.</h4>
-
-<p>When ever any location data on our end changes, we queue up a process that will notify any subscribers associated with that location.</p>
-
-    </section>
-  </article>
-
-  <article class='PUT'>
-    <a name='/seeding-fulfillment-data' href='#/seeding-fulfillment-data'><h2><code><b>PUT</b> /v1/test-fulfillment/:uuid</code> Seeding Fulfillment Data</h2></a>
-    <section class='body'>
-      <h2 id="toc_0">Overview</h2>
-
-<p>Once a /local-business call has been made to the sandbox environment, there is no manual process taking place (i.e. fulfillment) to test the /directory-listings call.</p>
-
-<p>Making a PUT request to /v1/test-fulfillment/:uuid, where :uuid is the UUID provided in the response of the /local-business call, will seed fake fulfillment statuses so that subsequent calls will show altered data, mimicking the real fulfillment process.</p>
-
-<p>You may make as many calls to this API as necessary to complete integration testing of the /directory-listings call.</p>
-
-<h2 id="toc_1">Inner Workings</h2>
-
-<p>This call works by simply selecting two products (publishers) at random and altering the fulfillment status and associated listing URL and other timestamp data at random. The logic is not necessarily representative of the actual flow of data (that is, it will not necessarily move a particular product from &quot;Received&quot; to &quot;In Progress&quot; to &quot;Submitted and Awaiting Publishing&quot; to &quot;Submitted and Published&quot;). The logic is purely random and only for the purposes of testing the integration of the /directory-listings API.</p>
+<p>Email <a href="support@trustedsearch.org">support@trustedsearch.org</a> for all support requests.</p>
 
     </section>
   </article>
 
   <article class=''>
-    <a name='/authentication' href='#/authentication'><h2>Authenticate</h2></a>
-    <section class='body'>
-      <h2 id="toc_0">Request Signing</h2>
-
-<p>The API uses HMAC hashing with a public/private key pair to sign all requests.</p>
-
-<p>To sign each request, you will need the following:</p>
-
-<ul>
-<li>  public_key - assigned during account creation.</li>
-<li>  private_key - assigned during account creation.</li>
-<li>  request_uri - Request URI. This does not include the hostname or query string. (e.g. &quot;/v1/local-business&quot;)</li>
-<li>  timestamp - Current epoch timestamp.</li>
-<li>  content_md5 - Content MD5 hash of the request body. For POST and PUT requests, this will be the value as specified in RFC 1864 (the base64-encoded binary MD5 hash of the content). For GET requests, this will generally be an empty string.</li>
-</ul>
-
-<p>In the programming language of your choice, concatenate the request URI, Content MD5, and timestamp with no delimiters. Use an HMAC hashing method with the SHA1 algorithm to calculate the (binary) hashed value of the concatenated string, using the private key. After base64-encoding the result, you have a valid signature for the request.</p>
-
-<p><em>php example</em>
-<code>$privateKey = &quot;12345privatekey67890&quot;;
-$stringToSign = $request_uri . $content_md5 . $timestamp;
-$signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKey, true ) ); //wnl1AVcJAwHoCm7FK9l13ZuMx8g=
-</code></p>
-
-<h4 id="toc_1">Sample Post Data</h4>
-
-<ul>
-<li>  Public key: 1234567890abcdeffedcba0987654321</li>
-<li>  Private key: 12345privatekey67890</li>
-<li>  Request URI: /v1/local-business/47139840-870c-11e2-9e96-0800200c9a66</li>
-<li>  Epoch timestamp: 1362648813</li>
-<li>  Content MD5: Q2hlY2sgSW50ZWdyaXR5IQ==</li>
-</ul>
-
-<p><strong>POST body</strong></p>
-
-<p><code>{
-    business: {
-        name: &quot;Joe&#39;s Plumbing&quot;,
-        street: &quot;123 Main St&quot;,
-        city: &quot;Los Angeles&quot;,
-        state: &quot;CA&quot;,
-        postalCode: &quot;90008&quot;,
-        phoneLocal: &quot;2135559876&quot;
-    }
-}
-</code></p>
-
-<h4 id="toc_2">Request Params</h4>
-
-<p>Once the signature is generated, simply append it to the query string of the request, along with the public key and timestamp from above:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&amp;signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&amp;timestamp=1362648813
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/hours-of-operation-format' href='#/hours-of-operation-format'><h2>Hours of Operation</h2></a>
+    <a name='/general-hours-of-operation-format' href='#/general-hours-of-operation-format'><h2>Hours of Operation</h2></a>
     <section class='body'>
       <h1 id="toc_0">Standardized Hours Format</h1>
 
@@ -612,8 +240,232 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
     </section>
   </article>
 
+  <article class='PUT'>
+    <a name='/general-seeding-fulfillment-data' href='#/general-seeding-fulfillment-data'><h2><code><b>PUT</b> /v1/test-fulfillment/:uuid</code> Seeding Fulfillment Data</h2></a>
+    <section class='body'>
+      <h2 id="toc_0">Overview</h2>
+
+<p>Once a /local-business call has been made to the sandbox environment, there is no manual process taking place (i.e. fulfillment) to test the /directory-listings call.</p>
+
+<p>Making a PUT request to /v1/test-fulfillment/:uuid, where :uuid is the UUID provided in the response of the /local-business call, will seed fake fulfillment statuses so that subsequent calls will show altered data, mimicking the real fulfillment process.</p>
+
+<p>You may make as many calls to this API as necessary to complete integration testing of the /directory-listings call.</p>
+
+<h2 id="toc_1">Inner Workings</h2>
+
+<p>This call works by simply selecting two products (publishers) at random and altering the fulfillment status and associated listing URL and other timestamp data at random. The logic is not necessarily representative of the actual flow of data (that is, it will not necessarily move a particular product from &quot;Received&quot; to &quot;In Progress&quot; to &quot;Submitted and Awaiting Publishing&quot; to &quot;Submitted and Published&quot;). The logic is purely random and only for the purposes of testing the integration of the /directory-listings API.</p>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/general-sdks' href='#/general-sdks'><h2>Available Libraries</h2></a>
+    <section class='body'>
+      <h2 id="toc_0">Available SDK&#39;s</h2>
+
+<ul>
+<li><p><a href="https://github.com/trustedsearch/ruby-trustedsearch">Ruby Gem</a> - A Ruby Gem for the TRUSTEDSearch API.</p></li>
+<li><p><a href="https://github.com/trustedsearch/php-trustedsearch">PHP Package</a> - A PHP Package for the TRUSTEDSearch API.</p></li>
+</ul>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/general-server-status' href='#/general-server-status'><h2>Service Status / UpTime</h2></a>
+    <section class='body'>
+      <p>It is our goal to maintain high availability.</p>
+
+<p>In an effort to be completly transparent we provide you with our service status page.</p>
+
+<p>You can check the status here: <a href="status.trustedsearch.org">status.trustedsearch.org</a></p>
+
+<p>For your convienience, we have loaded that page here also.</p>
+
+<style>
+    
+    .status-page{
+        height:800px;
+        width:100%;
+    }
+</style>
+
+<iframe src="http://status.trustedsearch.org" frameborder="0" class='status-page'></iframe>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/general-reporting-vs-audits' href='#/general-reporting-vs-audits'><h2>Hours of Operation</h2></a>
+    <section class='body'>
+      <h2 id="toc_0">Audits:</h2>
+
+<ul>
+<li>An audit is a best guess attempt to find the listing on a publisher.</li>
+<li>An audit does not require a unique identifier, only basic NAPW and its data is considered temporary.</li>
+<li>An audit is a one time process. It does not recur on a given interval.</li>
+<li>An audit is not based upon known listing urls, its an attempt to identify the listing url via the data * provided by the partner to extract data from the page identified.</li>
+</ul>
+
+<p>There are two components to an audit:</p>
+
+<ul>
+<li>Listing identification
+
+<ul>
+<li>To identify a listing we employ many tactics:</li>
+<li>Api&#39;s</li>
+<li>Page crawling</li>
+<li>Filtering of the original content (NAPW)) to find the best match.</li>
+</ul></li>
+<li>Listing data extraction from detected page.
+
+<ul>
+<li>Once we identify the listing that has a match rate that is acceptable we then extract the listing data.</li>
+</ul></li>
+</ul>
+
+<p>An audit&#39;s identification and extraction accuracy varies based upon many factors: </p>
+
+<ul>
+<li>Location info provided to TRUSTEDSearch vs data publisher has</li>
+<li>Publisher search options:
+
+<ul>
+<li>Available publisher api </li>
+<li>Publisher website search</li>
+</ul></li>
+<li>Changes to publisher websites</li>
+</ul>
+
+<h2 id="toc_1">Reporting:</h2>
+
+<ul>
+<li>Reporting is based upon a known listing url that is verified during the fulfillment process.</li>
+<li>This verification process makes the identification and data accuracy very high.</li>
+<li>A report requires that the partner provides a unique external_id to refer back to  this location on their end.</li>
+<li>A report happens on a standard frequency which changes based upon publisher variables:
+publication times rate of website updates</li>
+<li>A higher frequency can be set. (Requires Reporting product and additional costs)</li>
+</ul>
+
+<h2 id="toc_2">Hooks</h2>
+
+<p>Refer to <a href="#/v2-hooks-about">Subscribing to Hooks</a> to learn how you can recieve this data.</p>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/v1-authentication' href='#/v1-authentication'><h2>Authenticate</h2></a>
+    <section class='body'>
+      <h2 id="toc_0">Request Signing</h2>
+
+<p>The API uses HMAC hashing with a public/private key pair to sign all requests.</p>
+
+<p>To sign each request, you will need the following:</p>
+
+<ul>
+<li>  public_key - assigned during account creation.</li>
+<li>  private_key - assigned during account creation.</li>
+<li>  request_uri - Request URI. This does not include the hostname or query string. (e.g. &quot;/v1/local-business&quot;)</li>
+<li>  timestamp - Current epoch timestamp.</li>
+<li>  content_md5 - Content MD5 hash of the request body. For POST and PUT requests, this will be the value as specified in RFC 1864 (the base64-encoded binary MD5 hash of the content). For GET requests, this will generally be an empty string.</li>
+</ul>
+
+<p>In the programming language of your choice, concatenate the request URI, Content MD5, and timestamp with no delimiters. Use an HMAC hashing method with the SHA1 algorithm to calculate the (binary) hashed value of the concatenated string, using the private key. After base64-encoding the result, you have a valid signature for the request.</p>
+
+<p><em>php example</em>
+<code>$privateKey = &quot;12345privatekey67890&quot;;
+$stringToSign = $request_uri . $content_md5 . $timestamp;
+$signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKey, true ) ); //wnl1AVcJAwHoCm7FK9l13ZuMx8g=
+</code></p>
+
+<h4 id="toc_1">Sample Post Data</h4>
+
+<ul>
+<li>  Public key: 1234567890abcdeffedcba0987654321</li>
+<li>  Private key: 12345privatekey67890</li>
+<li>  Request URI: /v1/local-business/47139840-870c-11e2-9e96-0800200c9a66</li>
+<li>  Epoch timestamp: 1362648813</li>
+<li>  Content MD5: Q2hlY2sgSW50ZWdyaXR5IQ==</li>
+</ul>
+
+<p><strong>POST body</strong></p>
+
+<p><code>{
+    business: {
+        name: &quot;Joe&#39;s Plumbing&quot;,
+        street: &quot;123 Main St&quot;,
+        city: &quot;Los Angeles&quot;,
+        state: &quot;CA&quot;,
+        postalCode: &quot;90008&quot;,
+        phoneLocal: &quot;2135559876&quot;
+    }
+}
+</code></p>
+
+<h4 id="toc_2">Request Params</h4>
+
+<p>Once the signature is generated, simply append it to the query string of the request, along with the public key and timestamp from above:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&amp;signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&amp;timestamp=1362648813
+</code></pre></div>
+    </section>
+  </article>
+
   <article class='GET'>
-    <a name='/get-business-updates' href='#/get-business-updates'><h2><code><b>GET</b> /v1/directory-listings</code> Get Business Updates</h2></a>
+    <a name='/v1-token-get' href='#/v1-token-get'><h2><code><b>GET</b> /v1/tokens/:username</code> Getting an Auth Token</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Auth Tokens</h1>
+
+<p>For many of TRUSTEDSearch&#39;s whitelabel products, you will need a token to pass along in your api/widget urls.</p>
+
+<h3 id="toc_1">Request</h3>
+
+<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v1/tokens/someUsername?pwd=somePassword</code></p>
+
+<h3 id="toc_2">Query String Params</h3>
+
+<table><thead>
+<tr>
+<th>field</th>
+<th align="center">type( length )</th>
+<th align="center">required</th>
+<th align="center">options</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pwd</td>
+<td align="center">string</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>The password for the user.</td>
+</tr>
+</tbody></table>
+
+<h3 id="toc_3">Response</h3>
+
+<p>Sends back an a JSON object w/ the token and related user settings.</p>
+
+<p><code>Status: 200 OK</code></p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+  <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="s2">&quot;0657f0a11479968cca72284861f656394c515f3a&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;expires&quot;</span><span class="o">:</span> <span class="mi">1386102685</span><span class="p">,</span>
+  <span class="s2">&quot;userSettings&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;kpi&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">&quot;home&quot;</span><span class="o">:</span> <span class="s2">&quot;/partner&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;audit&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">&quot;client&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">&quot;client_view&quot;</span><span class="o">:</span> <span class="s2">&quot;visibility&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/v1-get-business-updates' href='#/v1-get-business-updates'><h2><code><b>GET</b> /v1/directory-listings</code> Get Business Updates</h2></a>
     <section class='body'>
       <h1 id="toc_0">Receiving Location Updates</h1>
 
@@ -2178,7 +2030,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
   </article>
 
   <article class=''>
-    <a name='/directory-statuses' href='#/directory-statuses'><h2>Directory Statuses</h2></a>
+    <a name='/v1-directory-statuses' href='#/v1-directory-statuses'><h2>Directory Statuses</h2></a>
     <section class='body'>
       <table><thead>
 <tr>
@@ -2293,7 +2145,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
   </article>
 
   <article class='POST'>
-    <a name='/submitting-a-business' href='#/submitting-a-business'><h2><code><b>POST</b> /v1/local-business</code> Submitting a Business</h2></a>
+    <a name='/v1-submitting-a-business' href='#/v1-submitting-a-business'><h2><code><b>POST</b> /v1/local-business</code> Submitting a Business</h2></a>
     <section class='body'>
       <h1 id="toc_0">Submitting a Location</h1>
 
@@ -2672,7 +2524,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 <td align="center">string(255)</td>
 <td align="center">-</td>
 <td align="center">-</td>
-<td>The business&#39; <a href="#/hours-of-operation-format">hours of operation</a>. ex: &quot;MF08001700H&quot; for Mon-Fri 8:00am-5:00pm</td>
+<td>The business&#39; <a href="#/general-hours-of-operation-format">hours of operation</a>. ex: &quot;MF08001700H&quot; for Mon-Fri 8:00am-5:00pm</td>
 </tr>
 <tr>
 <td>logoUrl</td>
@@ -2793,18 +2645,187 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
     </section>
   </article>
 
-  <article class='GET'>
-    <a name='/token-get' href='#/token-get'><h2><code><b>GET</b> /v1/tokens/:username</code> Getting an Auth Token</h2></a>
+  <article class='POST'>
+    <a name='/v2-subscriptions-post' href='#/v2-subscriptions-post'><h2><code><b>POST</b> /v2/hook-subscriptions</code> Hook Subscriptions: Create</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Auth Tokens</h1>
-
-<p>For many of TRUSTEDSearch&#39;s whitelabel products, you will need a token to pass along in your api/widget urls.</p>
+      <h1 id="toc_0">Creating a new hook-subscription</h1>
 
 <h3 id="toc_1">Request</h3>
 
-<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v1/tokens/someUsername?pwd=somePassword</code></p>
+<p>Requests should be made with the POST method to <code>https://[api_endpoint]/v2/hook-subscriptions</code>.</p>
 
-<h3 id="toc_2">Query String Params</h3>
+<p>Ex:
+```
+POST https://[api_endpoint]/v2/hook-subscriptions</p>
+
+<p>{
+  &quot;target_url&quot;: &quot;<a href="http://api.acme.com/trustedsearch/location-update">http://api.acme.com/trustedsearch/location-update</a>&quot;,
+  &quot;hook&quot;: &quot;location.updates&quot;
+}
+```</p>
+
+<h3 id="toc_2">Response</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: {
+    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
+    &quot;hook_id&quot;: 1,
+    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
+    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-update&quot;,
+    &quot;updated_at&quot;: &quot;2014-03-04 22:48:08&quot;,
+    &quot;user_id&quot;: 27
+  },
+  &quot;message&quot;: &quot;&quot;,
+  &quot;status&quot;: &quot;success&quot;
+}
+</code></pre></div>
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/v2-subscriptions-index' href='#/v2-subscriptions-index'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Index</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Get a single subscription</h1>
+
+<h3 id="toc_1">Request</h3>
+
+<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions</code></p>
+
+<p>Ex:
+<code>
+GET https://[api_endpoint]/v2/hook-subscriptionsz
+</code></p>
+
+<h3 id="toc_2">Response</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: [
+    {
+      &quot;created_at&quot;: &quot;2014-03-04 23:40:37&quot;,
+      &quot;hook_id&quot;: 2,
+      &quot;id&quot;: &quot;20d01ac1-af2e-4c58-8e02-236c723ccfde&quot;,
+      &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-audit&quot;,
+      &quot;updated_at&quot;: &quot;2014-03-04 23:40:37&quot;,
+      &quot;user_id&quot;: 27
+    },
+    {
+      &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
+      &quot;hook_id&quot;: 1,
+      &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
+      &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
+      &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
+      &quot;user_id&quot;: 27
+    }
+  ],
+  &quot;message&quot;: &quot;&quot;,
+  &quot;status&quot;: &quot;success&quot;
+}
+</code></pre></div>
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/v2-subscriptions-get' href='#/v2-subscriptions-get'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Get</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Get a hook subscription</h1>
+
+<h3 id="toc_1">Request</h3>
+
+<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
+
+<p>Ex:
+<code>
+GET https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
+</code></p>
+
+<h3 id="toc_2">Response</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: {
+    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
+    &quot;hook_id&quot;: 1,
+    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
+    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
+    &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
+    &quot;user_id&quot;: 27
+  },
+  &quot;message&quot;: &quot;&quot;,
+  &quot;status&quot;: &quot;success&quot;
+}
+</code></pre></div>
+    </section>
+  </article>
+
+  <article class='PUT'>
+    <a name='/v2-subscriptions-edit' href='#/v2-subscriptions-edit'><h2><code><b>PUT</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Edit</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Editing a hook subscription</h1>
+
+<h3 id="toc_1">Request</h3>
+
+<p>Requests should be made with the PUT method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
+
+<p>Ex:
+```
+PUT https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b</p>
+
+<p>{
+  &quot;target_url&quot;: &quot;<a href="http://api.acme.com/trustedsearch/location-updates">http://api.acme.com/trustedsearch/location-updates</a>&quot;,
+  &quot;hook&quot;: &quot;location.updates&quot;
+}
+```</p>
+
+<h3 id="toc_2">Response</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: {
+    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
+    &quot;hook_id&quot;: 1,
+    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
+    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
+    &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
+    &quot;user_id&quot;: 27
+  },
+  &quot;message&quot;: &quot;&quot;,
+  &quot;status&quot;: &quot;success&quot;
+}
+</code></pre></div>
+    </section>
+  </article>
+
+  <article class='DELETE'>
+    <a name='/v2-subscriptions-delete' href='#/v2-subscriptions-delete'><h2><code><b>DELETE</b> /v2/hook-subscriptions</code> Hook Subscriptions: Delete</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Delete hook subscription</h1>
+
+<h3 id="toc_1">Request</h3>
+
+<p>Requests should be made with the DELETE method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code></p>
+
+<p>Ex:
+<code>
+DELETE https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
+</code></p>
+
+<h3 id="toc_2">Response</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: [
+
+  ],
+  &quot;message&quot;: &quot;Successfully removed subscription : 5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
+  &quot;status&quot;: &quot;success&quot;
+}
+</code></pre></div>
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/v2-hooks-get' href='#/v2-hooks-get'><h2><code><b>GET</b> /v2/hooks</code> Hooks: Get a list of hooks that can be subscribed to.</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Hooks:</h1>
+
+<p>A call to this api, will provide you with a list of all the available REST hooks you can subscribe to.</p>
 
 <table><thead>
 <tr>
@@ -2816,138 +2837,117 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 </tr>
 </thead><tbody>
 <tr>
-<td>pwd</td>
-<td align="center">string</td>
-<td align="center">*</td>
-<td align="center">-</td>
-<td>The password for the user.</td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
 </tr>
 </tbody></table>
 
-<h3 id="toc_3">Response</h3>
+<h3 id="toc_1">Request</h3>
 
-<p>Sends back an a JSON object w/ the token and related user settings.</p>
+<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hooks</code>.</p>
 
-<p><code>Status: 200 OK</code></p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
-  <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="s2">&quot;0657f0a11479968cca72284861f656394c515f3a&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;expires&quot;</span><span class="o">:</span> <span class="mi">1386102685</span><span class="p">,</span>
-  <span class="s2">&quot;userSettings&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;kpi&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">&quot;home&quot;</span><span class="o">:</span> <span class="s2">&quot;/partner&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;audit&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">&quot;client&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">&quot;client_view&quot;</span><span class="o">:</span> <span class="s2">&quot;visibility&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<h3 id="toc_2">Response</h3>
+
+<p><code>Status: 200</code></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;code&quot;:200,
+   &quot;message&quot;:&quot;&quot;,
+   &quot;data&quot;:[
+      {
+         &quot;id&quot;:1,
+         &quot;name&quot;:&quot;location.updates&quot;,
+         &quot;description&quot;:&quot;Data for the location has been update within TRUSTEDSearch ecosystem.&quot;,
+         &quot;product_id&quot;:null,
+         &quot;created_at&quot;:&quot;0000-00-00 00:00:00&quot;,
+         &quot;updated_at&quot;:&quot;0000-00-00 00:00:00&quot;
+      },
+      {
+         &quot;id&quot;:2,
+         &quot;name&quot;:&quot;location.audit&quot;,
+         &quot;description&quot;:&quot;Results of an audit.&quot;,
+         &quot;product_id&quot;:63,
+         &quot;created_at&quot;:&quot;0000-00-00 00:00:00&quot;,
+         &quot;updated_at&quot;:&quot;0000-00-00 00:00:00&quot;
+      }’
+   ]
+}
 </code></pre></div>
     </section>
   </article>
 
   <article class=''>
-    <a name='/sdks' href='#/sdks'><h2>Available Libraries</h2></a>
+    <a name='/v2-hooks-about' href='#/v2-hooks-about'><h2><code><b></b> /v2/about-hooks</code> Hooks: About</h2></a>
     <section class='body'>
-      <h2 id="toc_0">Available SDK&#39;s</h2>
+      <h1 id="toc_0">Hooks</h1>
+
+<p>Rather than needing to poll our system for changes to your locations or products, you can be notified about events that happen in our system by subscribing to hooks.</p>
+
+<p>You might then use these notifications on your end to do things like:</p>
+
+<h2 id="toc_1">WHY - You might want to use hooks.</h2>
 
 <ul>
-<li><p><a href="https://github.com/trustedsearch/ruby-trustedsearch">Ruby Gem</a> - A Ruby Gem for the TRUSTEDSearch API.</p></li>
-<li><p><a href="https://github.com/trustedsearch/php-trustedsearch">PHP Package</a> - A PHP Package for the TRUSTEDSearch API.</p></li>
+<li>Update your system.</li>
+<li>Notify your customers about status updates.</li>
+<li>Notify you customers about actions they need to perform.</li>
+<li>Notify members of your company about actions they need to perform.</li>
 </ul>
 
-    </section>
-  </article>
+<h2 id="toc_2">WHAT - Hooks are available</h2>
 
-  <article class=''>
-    <a name='/server-status' href='#/server-status'><h2>Service Status / UpTime</h2></a>
-    <section class='body'>
-      <p>It is our goal to maintain high availability.</p>
+<h3 id="toc_3">location.audit</h3>
 
-<p>In an effort to be completly transparent we provide you with our service status page.</p>
+<p>A notification sent when an audit has completed.</p>
 
-<p>You can check the status here: <a href="status.trustedsearch.org">status.trustedsearch.org</a></p>
-
-<p>For your convienience, we have loaded that page here also.</p>
-
-<style>
-    
-    .status-page{
-        height:800px;
-        width:100%;
-    }
-</style>
-
-<iframe src="http://status.trustedsearch.org" frameborder="0" class='status-page'></iframe>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/reporting-vs-audits' href='#/reporting-vs-audits'><h2>Hours of Operation</h2></a>
-    <section class='body'>
-      <h2 id="toc_0">Audits:</h2>
+<h5 id="toc_4">Usage</h5>
 
 <ul>
-<li>An audit is a best guess attempt to find the listing on a publisher.</li>
-<li>An audit does not require a unique identifier, only basic NAPW and its data is considered temporary.</li>
-<li>An audit is a one time process. It does not recur on a given interval.</li>
-<li>An audit is not based upon known listing urls, its an attempt to identify the listing url via the data * provided by the partner to extract data from the page identified.</li>
-</ul>
-
-<p>There are two components to an audit:</p>
+<li>Subscribe to <code>location.audit</code> hook</li>
+<li>Submit an order for a location via the / POST v1/local-business API:
 
 <ul>
-<li>Listing identification
-
-<ul>
-<li>To identify a listing we employ many tactics:</li>
-<li>Api&#39;s</li>
-<li>Page crawling</li>
-<li>Filtering of the original content (NAPW)) to find the best match.</li>
+<li>The package you specify must include the audit product.(Talk w/ your sales rep for this.)</li>
+<li>The <strong>audit</strong> flag must be set to true.</li>
 </ul></li>
-<li>Listing data extraction from detected page.
-
-<ul>
-<li>Once we identify the listing that has a match rate that is acceptable we then extract the listing data.</li>
-</ul></li>
+<li>After our system finishes the audit, a hook will be triggered and you will be notified at the resource you defined in your subscription.</li>
 </ul>
 
-<p>An audit&#39;s identification and extraction accuracy varies based upon many factors: </p>
+<h5 id="toc_5">Notes</h5>
 
 <ul>
-<li>Location info provided to TRUSTEDSearch vs data publisher has</li>
-<li>Publisher search options:
-
-<ul>
-<li>Available publisher api </li>
-<li>Publisher website search</li>
-</ul></li>
-<li>Changes to publisher websites</li>
+<li>This is the only notification you will receive, however you can queue up another audit for a given location(Limits and Throttling of requests may apply)</li>
+<li>If there is an error, either update your system or disregard it. Regardless of the reason for an error,  results can change on  a daily basis as we continually improve  our audit match algorithm and update our bots when a publisher makes a change the layout of their site.</li>
 </ul>
 
-<h2 id="toc_1">Reporting:</h2>
+<h3 id="toc_6">Upcoming Hooks</h3>
 
 <ul>
-<li>Reporting is based upon a known listing url that is verified during the fulfillment process.</li>
-<li>This verification process makes the identification and data accuracy very high.</li>
-<li>A report requires that the partner provides a unique external_id to refer back to  this location on their end.</li>
-<li>A report happens on a standard frequency which changes based upon publisher variables:
-publication times rate of website updates</li>
-<li>A higher frequency can be set. (Requires Reporting product and additional costs)</li>
+<li>location.updates</li>
+<li>location.fullfilment.update</li>
+<li>location.report</li>
 </ul>
 
-<h2 id="toc_2">Hooks</h2>
+<h2 id="toc_7">HOW - to setup hooks</h2>
 
-<p>Refer to <a href="#/hooks-about">Subscribing to Hooks</a> to learn how you can recieve this data.</p>
+<p>Integration is easy, lets say you want to know about changes that happen to a location.</p>
 
-    </section>
-  </article>
+<h4 id="toc_8">Step 1 - Configure your servers</h4>
 
-  <article class=''>
-    <a name='/support' href='#/support'><h2>Support</h2></a>
-    <section class='body'>
-      <h2 id="toc_0">API &amp; Integration Support</h2>
+<p>Setup a resource on your servers:
+<a href="">https://api.acme.com/trustedsearch/location-updates</a>
+that could accept a JSON POST, in this case the JSON data will be the same as that of the GET v1/directory-listings api call.</p>
 
-<p>Email <a href="support@trustedsearch.org">support@trustedsearch.org</a> for all support requests.</p>
+<h4 id="toc_9">Step 2 - Subscribe</h4>
+
+<p>Subscribe to the <code>location.update</code> hook via the API.</p>
+
+<h4 id="toc_10">Step 3 - What happens now.</h4>
+
+<p>When ever any location data on our end changes, we queue up a process that will notify any subscribers associated with that location.</p>
 
     </section>
   </article>
