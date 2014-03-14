@@ -77,6 +77,17 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | email | string(80) | * |-| Email address of the primary contact at the physical location. |
 | phone | string(10) | * |-| Phone number of the primary contact. |
 
+#### User Object (Optional)
+| field | type( length ) | required | options | description |
+|-------|:--------------:|:--------:|:-------:|-------------|
+| username | string(100) | * |-| unique email address for this user. We recommend USER@yourdomain.com to reduce errors regarding uniqueness.|
+| password | string(8:40) | * |-| A password for this user. |
+
+*The User object should only be supplied if you would like to assign this location to an additional user besides the user associated w/ your api credentials.
+
+This is primarily important if you are also using our [Dashboard Product](#{% post_url 2024-12-20-general-iframing-a-dashboard %}).
+
+
 #### Description Rules
 
 * At a __minimum__ please provide the descriptionLong in accordance with description __formatting__ rules.
@@ -145,6 +156,10 @@ Requests should be made with the POST method to ```https://[api_endpoint]/v1/loc
          "lastName":"Jones",
          "email":"bob@domain.com",
          "phone":"8005551234"
+      },
+      "user":{
+         "username":"BobJones@yourdomain.com",
+         "password":"somethingyouwillforget",
       },
       "business":{
          "name":"Bob's Fish Tacos",
