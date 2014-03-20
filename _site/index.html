@@ -31,6 +31,10 @@
     
   
     
+    <li><a href='#/general-iframing-a-dashboard'>Iframing a Dashboard</a></li>
+    
+  
+    
     <li><a href='#/general-server-status'>Service Status / UpTime</a></li>
     
   
@@ -75,11 +79,11 @@
       
     
               
+        <li class='GET'><a href='#/v2-subscriptions-show'>Hook Subscriptions: Show</a></li>
+              
         <li class='POST'><a href='#/v2-subscriptions-post'>Hook Subscriptions: Create</a></li>
               
         <li class='GET'><a href='#/v2-subscriptions-index'>Hook Subscriptions: Index</a></li>
-              
-        <li class='GET'><a href='#/v2-subscriptions-get'>Hook Subscriptions: Get</a></li>
               
         <li class='PUT'><a href='#/v2-subscriptions-edit'>Hook Subscriptions: Edit</a></li>
               
@@ -267,6 +271,31 @@ You will be provided with a public &amp; private key for each environment.</p>
 <li><p><a href="https://github.com/trustedsearch/ruby-trustedsearch">Ruby Gem</a> - A Ruby Gem for the TRUSTEDSearch API.</p></li>
 <li><p><a href="https://github.com/trustedsearch/php-trustedsearch">PHP Package</a> - A PHP Package for the TRUSTEDSearch API.</p></li>
 </ul>
+
+    </section>
+  </article>
+
+  <article class=''>
+    <a name='/general-iframing-a-dashboard' href='#/general-iframing-a-dashboard'><h2>Iframing a Dashboard</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Iframing a Dashboard.</h1>
+
+<h3 id="toc_1">Steps</h3>
+
+<ul>
+<li>Get an <a href="#/v1-token-get">auth token</a> for the user whom you want to load a dashboard for. </li>
+<li>Add an iframe in your website with the iframe url</li>
+</ul>
+
+<p>Lets say your token that you get is : abcdef12345</p>
+
+<p>The iframe url is:
+<a href="www.localsearchdashboard.com/partner?token=YOURTOKENHERE">www.localsearchdashboard.com/partner?token=YOURTOKENHERE</a></p>
+
+<p>So just add this into your html:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;iframe src=&quot;www.localsearchdashboard.com/partner?token=abcdef12345&quot;&gt;&lt;/iframe&gt;
+</code></pre></div>
+<p>By doing this, you will auto login your user to their dashboard where they can see the locations associated to them.</p>
 
     </section>
   </article>
@@ -2316,7 +2345,38 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 </tr>
 </tbody></table>
 
-<h4 id="toc_12">Description Rules</h4>
+<h4 id="toc_12">User Object (Optional)</h4>
+
+<table><thead>
+<tr>
+<th>field</th>
+<th align="center">type( length )</th>
+<th align="center">required</th>
+<th align="center">options</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td align="center">string(100)</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>unique email address for this user. We recommend <a href="mailto:USER@yourdomain.com">USER@yourdomain.com</a> to reduce errors regarding uniqueness.</td>
+</tr>
+<tr>
+<td>password</td>
+<td align="center">string(8:40)</td>
+<td align="center">*</td>
+<td align="center">-</td>
+<td>A password for this user.</td>
+</tr>
+</tbody></table>
+
+<p>*The User object should only be supplied if you would like to assign this location to an additional user besides the user associated w/ your api credentials.</p>
+
+<p>This is primarily important if you are also using our <a href="#/general-iframing-a-dashboard">Dashboard Product</a>.</p>
+
+<h4 id="toc_13">Description Rules</h4>
 
 <ul>
 <li>At a <strong>minimum</strong> please provide the descriptionLong in accordance with description <strong>formatting</strong> rules.</li>
@@ -2326,14 +2386,14 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 <li>Provided descriptions (short, medium, long) that are longer than the defined character limits, will be rejected. You will need to revise the descriptions to meet the specified character lengths prior to resubmitting your data.</li>
 </ul>
 
-<h4 id="toc_13">Description Formating Rules</h4>
+<h4 id="toc_14">Description Formating Rules</h4>
 
 <ul>
 <li>No Html or special characters. They will be stripped out.</li>
 <li>Human readable.</li>
 </ul>
 
-<h4 id="toc_14">Business Object</h4>
+<h4 id="toc_15">Business Object</h4>
 
 <table><thead>
 <tr>
@@ -2574,6 +2634,10 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
          &quot;email&quot;:&quot;bob@domain.com&quot;,
          &quot;phone&quot;:&quot;8005551234&quot;
       },
+      &quot;user&quot;:{
+         &quot;username&quot;:&quot;BobJones@yourdomain.com&quot;,
+         &quot;password&quot;:&quot;somethingyouwillforget&quot;,
+      },
       &quot;business&quot;:{
          &quot;name&quot;:&quot;Bob&#39;s Fish Tacos&quot;,
          &quot;street&quot;:&quot;247 Ocean Way&quot;,
@@ -2619,7 +2683,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
    },{...}
 ]
 </code></pre></div>
-<h3 id="toc_15">Response</h3>
+<h3 id="toc_16">Response</h3>
 
 <p>Sends back an array of JSON objects, one for each submitted location containing the status, externalId, and assigned UUID.</p>
 
@@ -2632,7 +2696,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
    },...
 ]</code></p>
 
-<h3 id="toc_16">Status codes and their meanings</h3>
+<h3 id="toc_17">Status codes and their meanings</h3>
 
 <p>The status will indicate the success of that particular location:</p>
 
@@ -2642,6 +2706,38 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 <li>401 indicates an authentication error</li>
 </ul>
 
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/v2-subscriptions-show' href='#/v2-subscriptions-show'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Show</h2></a>
+    <section class='body'>
+      <h1 id="toc_0">Show a hook subscription</h1>
+
+<h3 id="toc_1">Request</h3>
+
+<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
+
+<p>Ex:
+<code>
+GET https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
+</code></p>
+
+<h3 id="toc_2">Response</h3>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+  &quot;code&quot;: 200,
+  &quot;data&quot;: {
+    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
+    &quot;hook_id&quot;: 1,
+    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
+    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
+    &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
+    &quot;user_id&quot;: 27
+  },
+  &quot;message&quot;: &quot;&quot;,
+  &quot;status&quot;: &quot;success&quot;
+}
+</code></pre></div>
     </section>
   </article>
 
@@ -2717,38 +2813,6 @@ GET https://[api_endpoint]/v2/hook-subscriptionsz
       &quot;user_id&quot;: 27
     }
   ],
-  &quot;message&quot;: &quot;&quot;,
-  &quot;status&quot;: &quot;success&quot;
-}
-</code></pre></div>
-    </section>
-  </article>
-
-  <article class='GET'>
-    <a name='/v2-subscriptions-get' href='#/v2-subscriptions-get'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Get</h2></a>
-    <section class='body'>
-      <h1 id="toc_0">Get a hook subscription</h1>
-
-<h3 id="toc_1">Request</h3>
-
-<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
-
-<p>Ex:
-<code>
-GET https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
-</code></p>
-
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
-  &quot;code&quot;: 200,
-  &quot;data&quot;: {
-    &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
-    &quot;hook_id&quot;: 1,
-    &quot;id&quot;: &quot;5f091ee8-255c-40c9-b985-9afa4cd6de0b&quot;,
-    &quot;target_url&quot;: &quot;http://api.acme.com/trustedsearch/location-updates&quot;,
-    &quot;updated_at&quot;: &quot;2014-03-04 23:19:17&quot;,
-    &quot;user_id&quot;: 27
-  },
   &quot;message&quot;: &quot;&quot;,
   &quot;status&quot;: &quot;success&quot;
 }
@@ -2958,5 +3022,21 @@ that could accept a JSON POST, in this case the JSON data will be the same as th
   <!--[if lt IE 9]><script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script><![endif]-->
   <script src='assets.js' type='text/javascript'></script>
   <script>require('boot');</script>
+  <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+  <style type="text/css" media="screen, projection">
+    @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+  </style>
+  <script type="text/javascript">
+    if (typeof(Zenbox) !== "undefined") {
+      Zenbox.init({
+        dropboxID:   "20133290",
+        url:         "https://trustedsearch.zendesk.com",
+        tabTooltip:  "Support",
+        tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_support_right.png",
+        tabColor:    "black",
+        tabPosition: "Right"
+      });
+    }
+  </script>
 </body>
 </html>
