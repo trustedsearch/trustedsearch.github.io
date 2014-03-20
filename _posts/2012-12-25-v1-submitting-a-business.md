@@ -55,6 +55,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 | field | type( length ) | required | options | description |
 |-------|:--------------:|:--------:|:-------:|-------------|
 | externalId | string(36) | * |-| The partner's unique identifier for the location |
+| audit | boolean | - |-| Must be set if this should only be run as an audit. |
 | order | object | * |-| Details related to the requested fulfillment of the location |
 | business | object | * |-| The location's NAP+W and any associated data |
 | contact | object | * |-| The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published. |
