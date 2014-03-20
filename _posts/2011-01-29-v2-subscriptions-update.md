@@ -1,12 +1,12 @@
 ---
 category: v2
 path: '/v2/hook-subscriptions/:id'
-title: 'Hook Subscriptions: Edit'
+title: 'Hook Subscriptions: Update'
 type: 'PUT'
 layout: nil
 ---
 
-# Editing a hook subscription
+# Updating a hook subscription
 
 
 ### Request
