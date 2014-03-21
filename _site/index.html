@@ -2974,7 +2974,11 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
 
 <p>A notification sent when an audit has completed.</p>
 
-<h5 id="toc_4">Usage</h5>
+<h3 id="toc_4">business.updates</h3>
+
+<p>A notification sent anything in our system changes for a given business.</p>
+
+<h5 id="toc_5">Usage</h5>
 
 <ul>
 <li>Subscribe to <code>location.audit</code> hook</li>
@@ -2987,36 +2991,35 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
 <li>After our system finishes the audit, a hook will be triggered and you will be notified at the resource you defined in your subscription.</li>
 </ul>
 
-<h5 id="toc_5">Notes</h5>
+<h5 id="toc_6">Notes</h5>
 
 <ul>
 <li>This is the only notification you will receive, however you can queue up another audit for a given location(Limits and Throttling of requests may apply)</li>
 <li>If there is an error, either update your system or disregard it. Regardless of the reason for an error,  results can change on  a daily basis as we continually improve  our audit match algorithm and update our bots when a publisher makes a change the layout of their site.</li>
 </ul>
 
-<h3 id="toc_6">Upcoming Hooks</h3>
+<h3 id="toc_7">Upcoming Hooks</h3>
 
 <ul>
-<li>location.updates</li>
-<li>location.fullfilment.update</li>
+<li>business.updates</li>
 <li>location.report</li>
 </ul>
 
-<h2 id="toc_7">HOW - to setup hooks</h2>
+<h2 id="toc_8">HOW - to setup hooks</h2>
 
 <p>Integration is easy, lets say you want to know about changes that happen to a location.</p>
 
-<h4 id="toc_8">Step 1 - Configure your servers</h4>
+<h4 id="toc_9">Step 1 - Configure your servers</h4>
 
 <p>Setup a resource on your servers:
 <a href="">https://api.acme.com/trustedsearch/location-updates</a>
 that could accept a JSON POST, in this case the JSON data will be the same as that of the GET v1/directory-listings api call.</p>
 
-<h4 id="toc_9">Step 2 - Subscribe</h4>
+<h4 id="toc_10">Step 2 - Subscribe</h4>
 
 <p>Subscribe to the <code>location.update</code> hook via the API.</p>
 
-<h4 id="toc_10">Step 3 - What happens now.</h4>
+<h4 id="toc_11">Step 3 - What happens now.</h4>
 
 <p>When ever any location data on our end changes, we queue up a process that will notify any subscribers associated with that location.</p>
 

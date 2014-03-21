@@ -21,6 +21,8 @@ You might then use these notifications on your end to do things like:
 ## WHAT - Hooks are available
 ### location.audit
 A notification sent when an audit has completed.
+### business.updates
+A notification sent anything in our system changes for a given business.
 
 ##### Usage
 
@@ -35,13 +37,10 @@ A notification sent when an audit has completed.
 * If there is an error, either update your system or disregard it. Regardless of the reason for an error,  results can change on  a daily basis as we continually improve  our audit match algorithm and update our bots when a publisher makes a change the layout of their site.
 
 
-
 ### Upcoming Hooks
 
-* location.updates
-* location.fullfilment.update
+* business.updates
 * location.report
-
 
 ## HOW - to setup hooks
 Integration is easy, lets say you want to know about changes that happen to a location.
