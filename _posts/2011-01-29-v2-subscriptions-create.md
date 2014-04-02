@@ -38,3 +38,7 @@ POST https://[api_endpoint]/v2/hook-subscriptions
   "status": "success"
 }
 ```
+
+### Notes
+
+* If you create multiple subscriptions for the same hook, we will notify you multiple times. This allows for you to setup different endpoints for the same hook if needed.

@@ -49,10 +49,13 @@ Integration is easy, lets say you want to know about changes that happen to a lo
 #### Step 1 - Configure your servers
 Setup a resource on your servers:
 [https://api.acme.com/trustedsearch/location-updates]()
-that could accept a JSON POST, in this case the JSON data will be the same as that of the GET v1/directory-listings api call.
+
+This resource should expect a POST of JSON data.
+
+If your subscribing to business.updates the JSON data will be in the same format as that of  the GET v1/directory-listings api call.
 
 #### Step 2 - Subscribe
-Subscribe to the ```location.update``` hook via the API.
+Subscribe to the ```business.updates``` hook via the API.
 
 #### Step 3 - What happens now.
 When ever any location data on our end changes, we queue up a process that will notify any subscribers associated with that location.
