@@ -20,6 +20,8 @@ You might then use these notifications on your end to do things like:
 
 ## WHAT - Hooks are available
 ### location.audit
+### business.updates
+
 A notification sent when an audit has completed.
 ### business.updates
 A notification sent anything in our system changes for a given business.
@@ -39,7 +41,6 @@ A notification sent anything in our system changes for a given business.
 
 ### Upcoming Hooks
 
-* business.updates
 * location.report
 
 ## HOW - to setup hooks
