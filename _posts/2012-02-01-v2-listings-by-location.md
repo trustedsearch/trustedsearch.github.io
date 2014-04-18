@@ -10,7 +10,7 @@ layout: nil
 
 
 ### Request
-Requests should be made with the GET method to ```https://[api_endpoint]/v2/locations/:id/listings```.
+Requests should be made with the GET method to ```https://[api_endpoint]/v2/locations/:id/listings```
 
 Ex:
 ```
