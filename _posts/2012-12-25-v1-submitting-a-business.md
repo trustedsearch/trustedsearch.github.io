@@ -126,7 +126,7 @@ This is primarily important if you are also using our [Dashboard Product](#{% po
 | descriptionMedium | string(200) | - |-| A medium-length description for the business. *(see description rules)|
 | descriptionShort | string(140) | - |-| A short description for the business. *(see description rules) |
 | keywords | string(255) | - |-| A comma-separated list of keywords that are relevent to the business (for SEO purposes). |
-| paymentMethods | array | - | 'Cash','Check','Mastercard','VISA','American Express','Discover','PayPal','Invoice'| An array of payment methods the business accepts. Options: 'Cash','Check','Mastercard','VISA','American Express','Discover','PayPal','Invoice' |
+| paymentMethods | array | - | 'Cash','Check','MasterCard','VISA','American Express','Discover','PayPal','Invoice'| An array of payment methods the business accepts. Options: 'Cash','Check','Mastercard','VISA','American Express','Discover','PayPal','Invoice' |
 | professionalAssociations | array | - | - | An array of professional associations. Example: Better ['Business Bureau', 'Local Search Association', 'Chicago Bar Association']|
 | yearEstablished | string(4) | - |-| Year business was established. |
 | numberEmployees | int | - |-| The number of employees at the physical location. |
