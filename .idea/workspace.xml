@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1c3a4e9-8596-44ee-9c3a-ca50d7ff7afb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2012-12-26-v1-validate.md" />
-    </list>
+    <list default="true" id="c1c3a4e9-8596-44ee-9c3a-ca50d7ff7afb" name="Default" comment="" />
     <ignored path="trustedsearch.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
