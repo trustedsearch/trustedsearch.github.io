@@ -75,6 +75,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 |-------|:--------------:|:--------:|:-------:|-------------|
 | firstName | string(40) | * |-| First name of the primary contact at the physical location. For data- or verification-related issues. No special characters.|
 | lastName | string(80) | * |-| Last name of the primary contact at the physical location. No Special characters |
+| lastName | string(120) | - |-| See FullName Logic |
 | email | string(80) | * |-| Email address of the primary contact at the physical location. |
 | phone | string(10) | * |-| Phone number of the primary contact. |
 
@@ -88,6 +89,12 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 
 This is primarily important if you are also using our [Dashboard Product](#{% post_url 2024-12-20-general-iframing-a-dashboard %}).
 
+#### FullName Logic
+
+* If we receive a "fullName" and not a "firstName" and "lastName", we will split any content on the first space. (E.g. "James van de Kamp" will be "James" "van de Kamp"; "Le Bron James" will be "Le" "Bron James".)
+* If the fullName does not have any spaces, we will choose a random firstName and use fullName as lastName.
+* If we receive a complete first/last in additional to a full, we will prioritize the first/last.
+* If we receive an incomplete first/last in addition to a full, we will prioritize the full.
 
 #### Description Rules
 
