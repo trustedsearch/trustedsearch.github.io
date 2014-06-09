@@ -75,7 +75,7 @@ It is possible to submit multiple businesses within one call. Simply comma-separ
 |-------|:--------------:|:--------:|:-------:|-------------|
 | firstName | string(40) | * |-| First name of the primary contact at the physical location. For data- or verification-related issues. No special characters.|
 | lastName | string(80) | * |-| Last name of the primary contact at the physical location. No Special characters |
-| lastName | string(120) | - |-| See FullName Logic |
+| fullName | string(120) | - |-| See FullName Logic |
 | email | string(80) | * |-| Email address of the primary contact at the physical location. |
 | phone | string(10) | * |-| Phone number of the primary contact. |
 
