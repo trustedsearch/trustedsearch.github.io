@@ -11,7 +11,7 @@ layout: nil
 |--------|-------------|---------|
 | 10 | Received | The listing has been accepted by our system, but no work has been done |
 | 11 | In Progress | The listing is currently being fulfilled |
-| 12 | Listing Claimed - Credentials Provided | We have received credentials for a listing that was previously "Claimed Listing" (40) and can retry fulfilment |
+| 12 | Listing Claimed - Credentials Provided | We have received credentials for a listing that was previously "Claimed Listing" (40) and can retry fulfillment |
 | 20 | Submitted and Published | The listing is complete |
 | 22 | Ongoing Submission | The listing is complete and will continue to be resubmitted regularly |
 | 30 | Submitted and Awaiting Publishing | The listing has been submitted to the publisher but is not yet live (deprecated) |
