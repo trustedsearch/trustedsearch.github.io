@@ -7,7 +7,7 @@ layout: nil
 
 # White Labeling Email.
 
-There are 3 methods you can choose to setup email.
+There are currently 2 methods you can choose to setup email.
 
 ### Not Fully White Labeled
 
