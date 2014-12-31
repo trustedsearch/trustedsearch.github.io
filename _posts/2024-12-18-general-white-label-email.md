@@ -24,7 +24,8 @@ This is the easiest method, simply choose a subdomain tied to your business ex: 
 
 ## How to setup Direct SMTP Access emails
 
-Provide us with:
+Provide us with
+
 * smtp domain
 * port
 * username
