@@ -16,7 +16,6 @@ There are 3 methods you can choose to setup email.
 ### Fully WhiteLabeled
 
 * Direct SMTP Access
-* SPF & DKIM configuration
 
 ## How to setup Sub domain emails 
 This is the easiest method, simply choose a subdomain tied to your business ex: "harrys" and all your emails will come from "harrys.verifymylistings.com".
@@ -30,8 +29,3 @@ Provide us with
 * port
 * username
 * password
-
-
-
-## How to setup SPF & DKIM emails
-TODO
