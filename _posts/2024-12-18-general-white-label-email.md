@@ -9,10 +9,12 @@ layout: nil
 
 There are 3 methods you can choose to setup email.
 
-Not Fully White Labeled
+### Not Fully White Labeled
+
 * Sub Domain (Easiest) - ex: support@example.verifymylistings.com
 
-Fully WhiteLabeled
+### Fully WhiteLabeled
+
 * Direct SMTP Access
 * SPF & DKIM configuration
 
@@ -21,6 +23,7 @@ This is the easiest method, simply choose a subdomain tied to your business ex: 
 
 
 ## How to setup Direct SMTP Access emails
+
 Provide us with:
 * smtp domain
 * port
