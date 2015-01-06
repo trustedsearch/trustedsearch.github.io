@@ -17,6 +17,8 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectKey">
+    <option name="state" value="git@github.com:trustedsearch/trustedsearch.github.io.git" />
+  </component>
   <component name="ProjectRootManager" version="2" />
 </project>
-
