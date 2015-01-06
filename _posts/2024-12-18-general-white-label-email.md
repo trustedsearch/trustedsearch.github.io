@@ -24,7 +24,7 @@ This is the easiest method, simply choose a sub-domain tied to your business ex:
 
 ## How to configure Direct SMTP method
 
-Provide us with
+Provide us with:
 
 * smtp domain
 * port
@@ -32,7 +32,7 @@ Provide us with
 * password
 
 
-## How configure SPF method
+## [How configure SPF method](#spf-method)<a name="spf-method">&nbsp;</a>
 
 This is a 4 step process.
 
