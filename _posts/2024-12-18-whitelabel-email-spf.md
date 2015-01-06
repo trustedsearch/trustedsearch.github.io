@@ -7,7 +7,7 @@ layout: nil
 ---
 
 
-# [How configure SPF method](#spf-method)<a name="spf-method">&nbsp;</a>
+# How configure SPF method
 
 This is a 4 step process.
 
