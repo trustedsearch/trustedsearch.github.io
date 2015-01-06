@@ -7,7 +7,7 @@ layout: nil
 ---
 
 
-# How configure SPF method
+# How to configure SPF method
 
 This is a 4 step process.
 
@@ -21,7 +21,7 @@ Ex:
 ## Step 2
 
 Provide us with the sub domain, and we will configure it on our end. 
-We will then provide you with YourWhiteLabelIP ex: 192.168.1.1. address of server that we will use to send email from only for you.
+We will then provide you with YourWhiteLabelIP ex: 192.168.1.1. address for the server that we will use to send email on your behalf.
 
 * In the example below you would use "192.168.1.1" where you see the words "YourWhiteLabelIP"
 

@@ -6,7 +6,7 @@ title: 'Whitelabel Email'
 layout: nil
 ---
 
-# White Labeling Email.
+# White Labeling Email
 
 There are currently 3 methods you can choose to setup email.
 
