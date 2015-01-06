@@ -15,7 +15,7 @@ This is a 4 step process.
  
 You need to provide us with a unique sub-domain ( one you are not using anywhere else), all emails we send will originate from this domain.
 
-    Ex:
+Ex:
         If your site was www.abc.com, perhaps you chose "em.abc.com" for your unique email sub-domain. 
      
 ## Step 2
