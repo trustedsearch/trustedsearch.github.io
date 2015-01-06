@@ -62,4 +62,5 @@ We will then provide you with YourWhiteLabelIP ex: 192.168.1.1. address of serve
 
 ### Step 4
 
-That is it, just let us know when you are done, and we will confirm the rest on our end.
+You are done!
+Just let us know when you are done, and we will confirm the rest on our end.
