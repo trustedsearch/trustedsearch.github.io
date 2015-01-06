@@ -1,5 +1,5 @@
 ---
-category: whitelabel
+category: Email
 path: '/email-spf'
 title: 'Configure SPF Email'
 

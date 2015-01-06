@@ -1,5 +1,5 @@
 ---
-category: whitelabel
+category: Email
 path: '/email-smtp'
 title: 'Configure SMTP Email'
 

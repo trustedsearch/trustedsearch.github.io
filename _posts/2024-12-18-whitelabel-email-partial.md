@@ -1,5 +1,5 @@
 ---
-category: whitelabel
+category: Email
 path: '/email-partial'
 title: 'Configure Partial Whitelabel Email'
 layout: nil
