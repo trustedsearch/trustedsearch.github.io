@@ -1,7 +1,7 @@
 ---
 category: Email
 path: '/email-smtp'
-title: 'Configure SMTP Email'
+title: 'SMTP Method'
 
 layout: nil
 ---

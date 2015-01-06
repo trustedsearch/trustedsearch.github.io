@@ -1,7 +1,7 @@
 ---
 category: Email
 path: '/email-partial'
-title: 'Configure Partial Whitelabel Email'
+title: 'Partial Method'
 layout: nil
 ---
 

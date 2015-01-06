@@ -1,7 +1,7 @@
 ---
 category: Email
 path: '/email'
-title: 'Whitelabel Email'
+title: 'Overview'
 
 layout: nil
 ---

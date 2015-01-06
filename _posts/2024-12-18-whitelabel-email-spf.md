@@ -1,7 +1,7 @@
 ---
 category: Email
 path: '/email-spf'
-title: 'Configure SPF Email'
+title: 'SPF Method'
 
 layout: nil
 ---
