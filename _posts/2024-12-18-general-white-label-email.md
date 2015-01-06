@@ -51,7 +51,7 @@ use to send email from only for you.
 ### Step 3
     
 | Record Type | Host | Data| 
-|-------|:--------------:|:--------|
+|:-------:|:--------------|:--------|
 |A|YourWhiteLabelIP|em.abc.com|
 |CNAME|em.abc.com|sendgrid.net|
 |TXT|v=spf1 include:sendgrid.net ~all|abc.com|
