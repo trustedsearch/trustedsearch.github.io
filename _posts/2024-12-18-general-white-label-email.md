@@ -38,15 +38,17 @@ This is a 4 step process.
 
 ### Step 1
  
-You need to provide us with a unique sub-domain ( one you are not using anywhere else) that you want all emails from us to come.
+You need to provide us with a unique sub-domain ( one you are not using anywhere else), all emails we send will originate from this domain.
 
 Ex:
     If your site was www.abc.com, perhaps you chose "em.abc.com" for your unique email sub-domain. 
      
 ### Step 2
 
-Provide us with the sub domain, and we will configure it on our end. We will then provide you with a YourWhiteLabelIP ex: 192.168.1.1. address of server that we will 
-use to send email from only for you.
+Provide us with the sub domain, and we will configure it on our end. 
+We will then provide you with YourWhiteLabelIP ex: 192.168.1.1. address of server that we will use to send email from only for you.
+
+* In the example below you would use "192.168.1.1" where you see the words "YourWhiteLabelIP"
 
 ### Step 3
     
