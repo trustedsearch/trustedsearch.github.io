@@ -7,10 +7,6 @@ layout: default
 </nav>
 
 <section id='content'>
-  <h1>Welcome to the TRUSTEDSearch developer docs.</h1>
-
-  Contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a> for integration help.
-
   {% for post in site.posts %}
   <article class='{{ post.type }}'>
     <a name='{{ post.url }}' href='#{{ post.url }}'><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.path }}</code> {% endif %}{{ post.title }}</h2></a>

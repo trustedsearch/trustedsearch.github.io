@@ -1,7 +1,7 @@
 ---
-category: v2
+category: hooks
 path: '/v2/hook-subscriptions/:id'
-title: 'Hook Subscriptions: Update'
+title: 'Update Subscription'
 type: 'PUT'
 layout: nil
 ---

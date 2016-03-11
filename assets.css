@@ -558,7 +558,7 @@ code {
 }
 
 #content article > a {
-  background: #333;
+  background: #eee;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -572,7 +572,7 @@ code {
 }
 
 #content a h2 {
-  color: #fff;
+  color: #999;
   font-size: 18px;
   font-weight: normal;
   margin: 0;
@@ -594,7 +594,7 @@ code {
 
 /* Default */
 #content article {
-  border-color: #e2e7ea;
+  border-color: #333;
 }
 
 #content article a h2 code {

@@ -1,6 +1,7 @@
 ---
-path: '/hours-of-operation'
-title: 'Hours of Operation'
+category: reference
+path: '/general-reporting-vs-audits'
+title: 'Location Audits'
 
 layout: nil
 ---

@@ -1,25 +1,28 @@
 ---
+category: reference
 path: '/hours-of-operation'
 title: 'Hours of Operation'
 
 layout: nil
 ---
 
+# Specifying Hours of Operation
 
-# Standardized Hours Format
-This is specified in blocks of 11 characters in form of DDHHMMHHMMT, where
+Hours of operation should be passed in a standardized format, which consists of an 11-character block per period of open business hours. 
+
+The format is DDHHMMHHMMT, where
 
 - D = First day of week for this time period
 - D = Last day of week for this time period
-- HHMM = Opening time
-- HHMM = Closing time
+- HHMM = Opening time (24-hour notation)
+- HHMM = Closing time (24-hour notation)
 - T = Type of time period
 
-## Multiple blocks can be specified. No separator should be used.
+## Stringing multiple blocks
 
-An example of a block is “MF09001700H”. This indicates that the hours of operation are Monday through Friday, from 9:00am to 5:00pm.
+An example of a block is MF09001700H, which indicates that the business is open Monday through Friday, from 9:00am to 5:00pm.
 
-An example of multiple blocks is “MF10002000HSS10001800HNN12001700H”, which indicates the hours Monday-Friday 10 - 8, Saturday 10 - 6, Sunday 12 - 5.
+You can string multiple blocks together to indicate different hours for different days: MF10002000HSS10001800HNN12001700H, which indicates the hours Monday-Friday 10 - 8, Saturday 10 - 6, Sunday 12 - 5.
 
 ### D
 
@@ -35,24 +38,9 @@ The day of the week is specified as follows:
 
 ### HHMM
 
-The times use a 24-hour clock. For example, 5:00PM is 1700. If the business is open 24 hours, use 00000000. Alternatively, the following codes can be used instead of exact times:
+The times use a 24-hour clock. For example, 5:00PM is 1700. If the business is open 24 hours, use 00000000.
 
-- __ALLD__	All Day
-- __DAYS__	Daytime
-- __ERLY__	Early Morning
-- __MORN__	Morning
-- __AFTR__	Afternoon
-- __EVNG__	Evening
-- __LATE__	Late Evening
-- __NITE__	Night
-- __NONE__	Nothing Specified
-- __WKLY__	Weekly
-- __AFHR__	After Hours
-- __SEAS__	Seasonal
-
-An example of non-integer time periods would be “MFALLDALLDA”, which means that the business is open Monday-Friday all day by appointment.
-
-Another would be “SNNONENONEH” which means that no hours are specified.
+Another would be “MNNONENONEH” which means that no hours are specified.
 
 ### T
 
@@ -64,7 +52,22 @@ The type of timeperiod should be specified as follows. The most common type is H
 - __S__	Service
 - __D__	Delivery
 - __C__	Access
-- __M__ 	Same Day Service/Delivery
+- __M__ Same Day Service/Delivery
 - __N__	Next Day Service/Delivery
 - __1__	1 Hour Service
 - __L__	Closed
+
+
+## Multiple time blocks per day
+
+While we will accept multiple time blocks per day (e.g. Open Monday through Friday from 8am to 12pm, closed from 12pm to 1pm, open from 1pm to 6pm), most publishers cannot accept split hours
+
+The example above would be formatted as MF08001200HMF13001800H, however, we will omit the "closed" portion and publish Monday through Friday 8am to 6pm.
+
+## Common Scenarios:
+
+Open 24/7: MN00000000H
+
+Open 8am to 5pm, Monday through Friday: MF08001700H
+ 
+Hours not specified: MNNONENONEH

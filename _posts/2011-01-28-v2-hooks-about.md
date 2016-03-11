@@ -1,8 +1,7 @@
 ---
-category: v2
+category: hooks
 path: '/v2/about-hooks'
-title: 'Hooks: About'
-type: ''
+title: 'About Hooks'
 layout: nil
 ---
 

@@ -1,7 +1,7 @@
 ---
-category: v2
+category: hooks
 path: '/v2/hook-subscriptions'
-title: 'Hook Subscriptions: Create'
+title: 'Create Subscription'
 type: 'POST'
 layout: nil
 ---

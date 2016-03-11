@@ -1,4 +1,5 @@
 ---
+category: reference
 path: '/directory-statuses'
 title: 'Directory Statuses'
 

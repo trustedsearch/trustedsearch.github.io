@@ -1,7 +1,7 @@
 ---
-category: v2
+category: hooks
 path: '/v2/hook-subscriptions/:id'
-title: 'Hook Subscriptions: Show'
+title: 'Show a Subscription'
 type: 'GET'
 layout: nil
 ---

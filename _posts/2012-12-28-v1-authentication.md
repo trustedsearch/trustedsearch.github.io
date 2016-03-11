@@ -1,6 +1,6 @@
 ---
 path: '/auth'
-title: 'Authenticate'
+title: 'Authentication'
 
 layout: nil
 ---

@@ -1,7 +1,7 @@
 ---
-category: v2
+category: hooks
 path: '/v2/hook-subscriptions'
-title: 'Hook Subscriptions: Destroy'
+title: 'Delete Subscription'
 type: 'DELETE'
 layout: nil
 ---

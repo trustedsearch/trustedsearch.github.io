@@ -1,4 +1,5 @@
 ---
+category: reference
 path: '/sdks'
 title: 'Available Libraries'
 

@@ -9,7 +9,7 @@
 </head>
 <body>  
   <nav id='sidebar'>
-	<h1>TRUSTEDSearch Developers</h1>
+  <h1>TRUSTEDSearch Developers</h1>
 <ul id='links'>
   
     
@@ -21,29 +21,11 @@
     
   
     
-    <li><a href='#/general-hours-of-operation-format'>Hours of Operation</a></li>
-    
   
     
   
     
-    <li><a href='#/general-sdks'>Available Libraries</a></li>
-    
   
-    
-    <li><a href='#/general-iframing-a-dashboard'>Iframing a Dashboard</a></li>
-    
-  
-    
-    <li><a href='#/general-server-status'>Service Status / UpTime</a></li>
-    
-  
-    
-    <li><a href='#/general-reporting-vs-audits'>Hours of Operation</a></li>
-    
-  
-    
-    <li><a href='#/v1-authentication'>Authenticate</a></li>
     
   
     
@@ -51,7 +33,23 @@
     
   
     
-    <li><a href='#/v1-directory-statuses'>Directory Statuses</a></li>
+  
+    
+  
+    
+  
+    
+    <li><a href='#/v1-authentication'>Authentication</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -71,6 +69,32 @@
     
   
   
+  <li><h2>hooks</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='PUT'><a href='#/v2-subscriptions-update'>Update Subscription</a></li>
+              
+        <li class='GET'><a href='#/v2-subscriptions-show'>Show a Subscription</a></li>
+              
+        <li class='GET'><a href='#/v2-subscriptions-index'>Show all Subscriptions</a></li>
+              
+        <li class='DELETE'><a href='#/v2-subscriptions-destroy'>Delete Subscription</a></li>
+              
+        <li class='POST'><a href='#/v2-subscriptions-create'>Create Subscription</a></li>
+              
+        <li class='GET'><a href='#/v2-hooks-get'>Available Hooks</a></li>
+              
+        <li class=''><a href='#/v2-hooks-about'>About Hooks</a></li>
+      
+    
+    </ul>
+  </li>
+
   <li><h2>v2</h2>
     <ul>
     
@@ -79,19 +103,7 @@
       
     
               
-        <li class='PUT'><a href='#/v2-subscriptions-update'>Hook Subscriptions: Update</a></li>
-              
-        <li class='GET'><a href='#/v2-subscriptions-show'>Hook Subscriptions: Show</a></li>
-              
-        <li class='GET'><a href='#/v2-subscriptions-index'>Hook Subscriptions: Index</a></li>
-              
-        <li class='DELETE'><a href='#/v2-subscriptions-destroy'>Hook Subscriptions: Destroy</a></li>
-              
-        <li class='POST'><a href='#/v2-subscriptions-create'>Hook Subscriptions: Create</a></li>
-              
-        <li class='GET'><a href='#/v2-hooks-get'>Hooks: Get a list of hooks that can be subscribed to.</a></li>
-              
-        <li class=''><a href='#/v2-hooks-about'>Hooks: About</a></li>
+        <li class='GET'><a href='#/v2-listings-by-location'>Listings by Location</a></li>
       
     
     </ul>
@@ -109,9 +121,53 @@
               
         <li class='GET'><a href='#/v1-token-get'>Getting an Auth Token</a></li>
               
+        <li class='POST'><a href='#/v1-validate'>Validate a Business</a></li>
+              
         <li class='GET'><a href='#/v1-get-business-updates'>Get Business Updates</a></li>
               
         <li class='POST'><a href='#/v1-submitting-a-business'>Submitting a Business</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>reference</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class=''><a href='#/general-hours-of-operation-format'>Hours of Operation</a></li>
+              
+        <li class=''><a href='#/general-sdks'>Available Libraries</a></li>
+              
+        <li class=''><a href='#/general-reporting-vs-audits'>Location Audits</a></li>
+              
+        <li class=''><a href='#/v1-directory-statuses'>Directory Statuses</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>whitelabel</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class=''><a href='#/general-iframing-a-dashboard'>Iframing a Dashboard</a></li>
+              
+        <li class=''><a href='#/whitelabel-email-spf'>SPF Method</a></li>
+              
+        <li class=''><a href='#/whitelabel-email-smtp'>SMTP Method</a></li>
+              
+        <li class=''><a href='#/whitelabel-email-partial'>Partial Method</a></li>
+              
+        <li class=''><a href='#/whitelabel-email'>Overview</a></li>
       
     
     </ul>
@@ -121,19 +177,15 @@
 </nav>
 
 <section id='content'>
-<h1>Welcome to the TRUSTEDSearch developer docs.</h1>	
-
-Contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a> for integration help.
-
-
+  
   <article class=''>
     <a name='/general-getting-started' href='#/general-getting-started'><h2>Getting Started</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Getting Started.</h1>
+      <h1 id="getting-started">Getting Started.</h1>
 
 <p>Company Website: <a href="http://trustedsearch.org/">http://trustedsearch.org/</a></p>
 
-<h3 id="toc_1">Sandbox &amp; Production Environments</h3>
+<h3 id="sandbox-amp-production-environments">Sandbox &amp; Production Environments</h3>
 
 <p>There are two endpoints / environments.</p>
 
@@ -144,7 +196,7 @@ Contact <a href="mailto:support@trustedsearch.org">support@trustedsearch.org</a>
 
 <p>You can use the above endpoints in place of the [api_endpoint] references you will see throughout the api docs.</p>
 
-<h3 id="toc_2">Credentials</h3>
+<h3 id="credentials">Credentials</h3>
 
 <p>There are separate credentials for each environment.</p>
 
@@ -155,39 +207,41 @@ You will be provided with a public &amp; private key for each environment.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
     <a name='/general-support' href='#/general-support'><h2>Support</h2></a>
     <section class='body'>
-      <h2 id="toc_0">API &amp; Integration Support</h2>
+      <h2 id="api-amp-integration-support">API &amp; Integration Support</h2>
 
 <p>Email <a href="support@trustedsearch.org">support@trustedsearch.org</a> for all support requests.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
     <a name='/general-hours-of-operation-format' href='#/general-hours-of-operation-format'><h2>Hours of Operation</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Standardized Hours Format</h1>
+      <h1 id="specifying-hours-of-operation">Specifying Hours of Operation</h1>
 
-<p>This is specified in blocks of 11 characters in form of DDHHMMHHMMT, where</p>
+<p>Hours of operation should be passed in a standardized format, which consists of an 11-character block per period of open business hours. </p>
+
+<p>The format is DDHHMMHHMMT, where</p>
 
 <ul>
 <li>D = First day of week for this time period</li>
 <li>D = Last day of week for this time period</li>
-<li>HHMM = Opening time</li>
-<li>HHMM = Closing time</li>
+<li>HHMM = Opening time (24-hour notation)</li>
+<li>HHMM = Closing time (24-hour notation)</li>
 <li>T = Type of time period</li>
 </ul>
 
-<h2 id="toc_1">Multiple blocks can be specified. No separator should be used.</h2>
+<h2 id="stringing-multiple-blocks">Stringing multiple blocks</h2>
 
-<p>An example of a block is “MF09001700H”. This indicates that the hours of operation are Monday through Friday, from 9:00am to 5:00pm.</p>
+<p>An example of a block is MF09001700H, which indicates that the business is open Monday through Friday, from 9:00am to 5:00pm.</p>
 
-<p>An example of multiple blocks is “MF10002000HSS10001800HNN12001700H”, which indicates the hours Monday-Friday 10 - 8, Saturday 10 - 6, Sunday 12 - 5.</p>
+<p>You can string multiple blocks together to indicate different hours for different days: MF10002000HSS10001800HNN12001700H, which indicates the hours Monday-Friday 10 - 8, Saturday 10 - 6, Sunday 12 - 5.</p>
 
-<h3 id="toc_2">D</h3>
+<h3 id="d">D</h3>
 
 <p>The day of the week is specified as follows:</p>
 
@@ -201,30 +255,13 @@ You will be provided with a public &amp; private key for each environment.</p>
 <li><strong>N</strong> Sunday</li>
 </ul>
 
-<h3 id="toc_3">HHMM</h3>
+<h3 id="hhmm">HHMM</h3>
 
-<p>The times use a 24-hour clock. For example, 5:00PM is 1700. If the business is open 24 hours, use 00000000. Alternatively, the following codes can be used instead of exact times:</p>
+<p>The times use a 24-hour clock. For example, 5:00PM is 1700. If the business is open 24 hours, use 00000000.</p>
 
-<ul>
-<li><strong>ALLD</strong>  All Day</li>
-<li><strong>DAYS</strong>  Daytime</li>
-<li><strong>ERLY</strong>  Early Morning</li>
-<li><strong>MORN</strong>  Morning</li>
-<li><strong>AFTR</strong>  Afternoon</li>
-<li><strong>EVNG</strong>  Evening</li>
-<li><strong>LATE</strong>  Late Evening</li>
-<li><strong>NITE</strong>  Night</li>
-<li><strong>NONE</strong>  Nothing Specified</li>
-<li><strong>WKLY</strong>  Weekly</li>
-<li><strong>AFHR</strong>  After Hours</li>
-<li><strong>SEAS</strong>  Seasonal</li>
-</ul>
+<p>Another would be “MNNONENONEH” which means that no hours are specified.</p>
 
-<p>An example of non-integer time periods would be “MFALLDALLDA”, which means that the business is open Monday-Friday all day by appointment.</p>
-
-<p>Another would be “SNNONENONEH” which means that no hours are specified.</p>
-
-<h3 id="toc_4">T</h3>
+<h3 id="t">T</h3>
 
 <p>The type of timeperiod should be specified as follows. The most common type is H:</p>
 
@@ -235,19 +272,33 @@ You will be provided with a public &amp; private key for each environment.</p>
 <li><strong>S</strong> Service</li>
 <li><strong>D</strong> Delivery</li>
 <li><strong>C</strong> Access</li>
-<li><strong>M</strong>     Same Day Service/Delivery</li>
+<li><strong>M</strong> Same Day Service/Delivery</li>
 <li><strong>N</strong> Next Day Service/Delivery</li>
 <li><strong>1</strong> 1 Hour Service</li>
 <li><strong>L</strong> Closed</li>
 </ul>
 
+<h2 id="multiple-time-blocks-per-day">Multiple time blocks per day</h2>
+
+<p>While we will accept multiple time blocks per day (e.g. Open Monday through Friday from 8am to 12pm, closed from 12pm to 1pm, open from 1pm to 6pm), most publishers cannot accept split hours</p>
+
+<p>The example above would be formatted as MF08001200HMF13001800H, however, we will omit the &quot;closed&quot; portion and publish Monday through Friday 8am to 6pm.</p>
+
+<h2 id="common-scenarios">Common Scenarios:</h2>
+
+<p>Open 24/7: MN00000000H</p>
+
+<p>Open 8am to 5pm, Monday through Friday: MF08001700H</p>
+
+<p>Hours not specified: MNNONENONEH</p>
+
     </section>
   </article>
-
+  
   <article class='PUT'>
     <a name='/general-seeding-fulfillment-data' href='#/general-seeding-fulfillment-data'><h2><code><b>PUT</b> /v1/test-fulfillment/:uuid</code> Seeding Fulfillment Data</h2></a>
     <section class='body'>
-      <h2 id="toc_0">Overview</h2>
+      <h2 id="overview">Overview</h2>
 
 <p>Once a /local-business call has been made to the sandbox environment, there is no manual process taking place (i.e. fulfillment) to test the /directory-listings call.</p>
 
@@ -255,17 +306,17 @@ You will be provided with a public &amp; private key for each environment.</p>
 
 <p>You may make as many calls to this API as necessary to complete integration testing of the /directory-listings call.</p>
 
-<h2 id="toc_1">Inner Workings</h2>
+<h2 id="inner-workings">Inner Workings</h2>
 
 <p>This call works by simply selecting two products (publishers) at random and altering the fulfillment status and associated listing URL and other timestamp data at random. The logic is not necessarily representative of the actual flow of data (that is, it will not necessarily move a particular product from &quot;Received&quot; to &quot;In Progress&quot; to &quot;Submitted and Awaiting Publishing&quot; to &quot;Submitted and Published&quot;). The logic is purely random and only for the purposes of testing the integration of the /directory-listings API.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
     <a name='/general-sdks' href='#/general-sdks'><h2>Available Libraries</h2></a>
     <section class='body'>
-      <h2 id="toc_0">Available SDK&#39;s</h2>
+      <h2 id="available-sdk-39-s">Available SDK&#39;s</h2>
 
 <ul>
 <li><p><a href="https://github.com/trustedsearch/ruby-trustedsearch">Ruby Gem</a> - A Ruby Gem for the TRUSTEDSearch API.</p></li>
@@ -274,13 +325,13 @@ You will be provided with a public &amp; private key for each environment.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
     <a name='/general-iframing-a-dashboard' href='#/general-iframing-a-dashboard'><h2>Iframing a Dashboard</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Iframing a Dashboard.</h1>
+      <h1 id="iframing-a-dashboard">Iframing a Dashboard.</h1>
 
-<h3 id="toc_1">Steps</h3>
+<h3 id="steps">Steps</h3>
 
 <ul>
 <li>Get an <a href="#/v1-token-get">auth token</a> for the user whom you want to load a dashboard for. </li>
@@ -293,41 +344,133 @@ You will be provided with a public &amp; private key for each environment.</p>
 <a href="www.localsearchdashboard.com/partner?token=YOURTOKENHERE">www.localsearchdashboard.com/partner?token=YOURTOKENHERE</a></p>
 
 <p>So just add this into your html:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&lt;iframe src=&quot;www.localsearchdashboard.com/partner?token=abcdef12345&quot;&gt;&lt;/iframe&gt;
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;iframe src=&quot;www.localsearchdashboard.com/partner?token=abcdef12345&quot;&gt;&lt;/iframe&gt;
 </code></pre></div>
 <p>By doing this, you will auto login your user to their dashboard where they can see the locations associated to them.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
-    <a name='/general-server-status' href='#/general-server-status'><h2>Service Status / UpTime</h2></a>
+    <a name='/whitelabel-email-spf' href='#/whitelabel-email-spf'><h2>SPF Method</h2></a>
     <section class='body'>
-      <p>It is our goal to maintain high availability.</p>
+      <h1 id="how-to-configure-spf-method">How to configure SPF method</h1>
 
-<p>In an effort to be completly transparent we provide you with our service status page.</p>
+<p>This is a 4 step process.</p>
 
-<p>You can check the status here: <a href="status.trustedsearch.org">status.trustedsearch.org</a></p>
+<h2 id="step-1">Step 1</h2>
 
-<p>For your convienience, we have loaded that page here also.</p>
+<p>You need to provide us with a unique sub-domain ( one you are not using anywhere else), all emails we send will originate from this domain.</p>
 
-<style>
-    
-    .status-page{
-        height:800px;
-        width:100%;
-    }
-</style>
+<p>Ex:
+        If your site was <a href="http://www.abc.com">www.abc.com</a>, perhaps you chose &quot;em.abc.com&quot; for your unique email sub-domain. </p>
 
-<iframe src="http://status.trustedsearch.org" frameborder="0" class='status-page'></iframe>
+<h2 id="step-2">Step 2</h2>
+
+<p>Provide us with the sub domain, and we will configure it on our end. 
+We will then provide you with YourWhiteLabelIP ex: 192.168.1.1. address for the server that we will use to send email on your behalf.</p>
+
+<ul>
+<li>In the example below you would use &quot;192.168.1.1&quot; where you see the words &quot;YourWhiteLabelIP&quot;</li>
+</ul>
+
+<h2 id="step-3">Step 3</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Record Type</th>
+<th style="text-align: left">Host</th>
+<th style="text-align: left">Data</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">A</td>
+<td style="text-align: left">YourWhiteLabelIP</td>
+<td style="text-align: left">em.abc.com</td>
+</tr>
+<tr>
+<td style="text-align: center">CNAME</td>
+<td style="text-align: left">em.abc.com</td>
+<td style="text-align: left">sendgrid.net</td>
+</tr>
+<tr>
+<td style="text-align: center">TXT</td>
+<td style="text-align: left">v=spf1 include:sendgrid.net ~all</td>
+<td style="text-align: left">abc.com</td>
+</tr>
+<tr>
+<td style="text-align: center">TXT</td>
+<td style="text-align: left">smtpapi._domainkey.em.abc.com</td>
+<td style="text-align: left">k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB</td>
+</tr>
+<tr>
+<td style="text-align: center">TXT</td>
+<td style="text-align: left">smtpapi._domainkey.abc.com</td>
+<td style="text-align: left">k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB</td>
+</tr>
+</tbody></table>
+
+<h2 id="step-4">Step 4</h2>
+
+<p>You are done!
+Just let us know when you are done, and we will confirm the rest on our end.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
-    <a name='/general-reporting-vs-audits' href='#/general-reporting-vs-audits'><h2>Hours of Operation</h2></a>
+    <a name='/whitelabel-email-smtp' href='#/whitelabel-email-smtp'><h2>SMTP Method</h2></a>
     <section class='body'>
-      <h2 id="toc_0">Audits:</h2>
+      <h1 id="how-to-configure-direct-smtp-method">How to configure Direct SMTP method</h1>
+
+<p>Provide us with:</p>
+
+<ul>
+<li>smtp domain</li>
+<li>port</li>
+<li>username</li>
+<li>password</li>
+</ul>
+
+    </section>
+  </article>
+  
+  <article class=''>
+    <a name='/whitelabel-email-partial' href='#/whitelabel-email-partial'><h2>Partial Method</h2></a>
+    <section class='body'>
+      <h1 id="partially-whitelabeled-option">Partially WhiteLabeled Option</h1>
+
+<ul>
+<li>Sub Domain (Easiest) - ex: <a href="mailto:support@example.verifymylistings.com">support@example.verifymylistings.com</a></li>
+</ul>
+
+<h2 id="how-to-configure-partially-whitelabeled-method">How to configure Partially WhiteLabeled method</h2>
+
+<p>This is the easiest method, simply choose a sub-domain name tied to your business ex: &quot;harrys&quot; and all your emails will come from &quot;harrys.verifymylistings.com&quot;.</p>
+
+    </section>
+  </article>
+  
+  <article class=''>
+    <a name='/whitelabel-email' href='#/whitelabel-email'><h2>Overview</h2></a>
+    <section class='body'>
+      <h1 id="white-labeling-email">White Labeling Email</h1>
+
+<p>There are currently 3 methods you can choose to setup email.</p>
+
+<ul>
+<li><a href="#/whitelabel-email-partial">Partially Whitelabel</a></li>
+<li><a href="#/whitelabel-email-smtp">SMTP Whitelabel</a></li>
+<li><a href="#/whitelabel-email-spf">SPF Whitelabel</a></li>
+</ul>
+
+    </section>
+  </article>
+  
+  <article class=''>
+    <a name='/general-reporting-vs-audits' href='#/general-reporting-vs-audits'><h2>Location Audits</h2></a>
+    <section class='body'>
+      <h2 id="audits">Audits:</h2>
 
 <ul>
 <li>An audit is a best guess attempt to find the listing on a publisher.</li>
@@ -367,7 +510,7 @@ You will be provided with a public &amp; private key for each environment.</p>
 <li>Changes to publisher websites</li>
 </ul>
 
-<h2 id="toc_1">Reporting:</h2>
+<h2 id="reporting">Reporting:</h2>
 
 <ul>
 <li>Reporting is based upon a known listing url that is verified during the fulfillment process.</li>
@@ -378,17 +521,17 @@ publication times rate of website updates</li>
 <li>A higher frequency can be set. (Requires Reporting product and additional costs)</li>
 </ul>
 
-<h2 id="toc_2">Hooks</h2>
+<h2 id="hooks">Hooks</h2>
 
 <p>Refer to <a href="#/v2-hooks-about">Subscribing to Hooks</a> to learn how you can recieve this data.</p>
 
     </section>
   </article>
-
+  
   <article class=''>
-    <a name='/v1-authentication' href='#/v1-authentication'><h2>Authenticate</h2></a>
+    <a name='/v1-authentication' href='#/v1-authentication'><h2>Authentication</h2></a>
     <section class='body'>
-      <h2 id="toc_0">Request Signing</h2>
+      <h2 id="request-signing">Request Signing</h2>
 
 <p>The API uses HMAC hashing with a public/private key pair to sign all requests.</p>
 
@@ -410,7 +553,7 @@ $stringToSign = $request_uri . $content_md5 . $timestamp;
 $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKey, true ) ); //wnl1AVcJAwHoCm7FK9l13ZuMx8g=
 </code></p>
 
-<h4 id="toc_1">Sample Post Data</h4>
+<h4 id="sample-post-data">Sample Post Data</h4>
 
 <ul>
 <li>  Public key: 1234567890abcdeffedcba0987654321</li>
@@ -434,51 +577,51 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 }
 </code></p>
 
-<h4 id="toc_2">Request Params</h4>
+<h4 id="request-params">Request Params</h4>
 
 <p>Once the signature is generated, simply append it to the query string of the request, along with the public key and timestamp from above:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&amp;signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&amp;timestamp=1362648813
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://[api_endpoint]/v1/local-business?apikey=1234567890abcdeffedcba0987654321&amp;signature=wnl1AVcJAwHoCm7FK9l13ZuMx8g=&amp;timestamp=1362648813
 </code></pre></div>
     </section>
   </article>
-
+  
   <article class='GET'>
     <a name='/v1-token-get' href='#/v1-token-get'><h2><code><b>GET</b> /v1/tokens/:username</code> Getting an Auth Token</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Auth Tokens</h1>
+      <h1 id="auth-tokens">Auth Tokens</h1>
 
 <p>For many of TRUSTEDSearch&#39;s whitelabel products, you will need a token to pass along in your api/widget urls.</p>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the GET method to <code>https://[api_endpoint]/v1/tokens/someUsername?pwd=somePassword</code></p>
 
-<h3 id="toc_2">Query String Params</h3>
+<h3 id="query-string-params">Query String Params</h3>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>pwd</td>
-<td align="center">string</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The password for the user.</td>
 </tr>
 </tbody></table>
 
-<h3 id="toc_3">Response</h3>
+<h3 id="response">Response</h3>
 
 <p>Sends back an a JSON object w/ the token and related user settings.</p>
 
 <p><code>Status: 200 OK</code></p>
-<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">&quot;token&quot;</span><span class="o">:</span> <span class="s2">&quot;0657f0a11479968cca72284861f656394c515f3a&quot;</span><span class="p">,</span>
   <span class="s2">&quot;expires&quot;</span><span class="o">:</span> <span class="mi">1386102685</span><span class="p">,</span>
   <span class="s2">&quot;userSettings&quot;</span><span class="o">:</span> <span class="p">{</span>
@@ -492,46 +635,203 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 </code></pre></div>
     </section>
   </article>
+  
+  <article class='POST'>
+    <a name='/v1-validate' href='#/v1-validate'><h2><code><b>POST</b> /v1/validate</code> Validate a Business</h2></a>
+    <section class='body'>
+      <h1 id="validating-a-location">Validating a Location</h1>
 
+<p>This api is a simple validation api which can be used to pre-validate the Business Object and Contact Object 
+which is normally supplied when submitting a business to the <a href="#/v1-submitting-a-business">Submit a Business </a> api.</p>
+
+<p>This is for validating a single record only, where as the submission api does support sending multiple locations at once.</p>
+
+<h4 id="fields">Fields</h4>
+
+<h4 id="top-level">Top Level</h4>
+
+<table><thead>
+<tr>
+<th>field</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
+<th>description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>externalId</td>
+<td style="text-align: center">string(36)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
+<td>If specified, then a check to see if this location already exists matching name, street, city, state, postal code, phone. If so exception will be thrown.</td>
+</tr>
+<tr>
+<td>business</td>
+<td style="text-align: center">object</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
+<td>The location&#39;s NAP+W and any associated data</td>
+</tr>
+<tr>
+<td>contact</td>
+<td style="text-align: center">object</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
+<td>The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published.</td>
+</tr>
+</tbody></table>
+
+<h4 id="contact-object">Contact Object</h4>
+
+<p>Refer to Contact Object Definition defined here: <a href="#/v1-submitting-a-business">Submit a Business </a></p>
+
+<h4 id="business-object">Business Object</h4>
+
+<p>Refer to Business Object Definition defined here: <a href="#/v1-submitting-a-business">Submit a Business </a></p>
+
+<h4 id="rules">Rules</h4>
+
+<p>Refer to rules defined here: <a href="#/v1-submitting-a-business">Submit a Business </a></p>
+
+<p>Requests should be made with the POST method to <code>https://[api_endpoint]/v1/validate</code>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
+
+      &quot;externalId&quot;: &quot;abc123456&quot;,
+      &quot;contact&quot;:{
+         &quot;firstName&quot;:&quot;Bob&quot;,
+         &quot;lastName&quot;:&quot;Jones&quot;,
+         &quot;email&quot;:&quot;bob@domain.com&quot;,
+         &quot;phone&quot;:&quot;8005551234&quot;
+      },
+      &quot;business&quot;:{
+         &quot;name&quot;:&quot;Bob&#39;s Fish Tacos&quot;,
+         &quot;street&quot;:&quot;247 Ocean Way&quot;,
+         &quot;city&quot;:&quot;San Luis Obispo&quot;,
+         &quot;state&quot;:&quot;CA&quot;,
+         &quot;postalCode&quot;:&quot;93401&quot;,
+         &quot;phoneLocal&quot;:&quot;(805) 555-9876&quot;,
+         &quot;phoneTollFree&quot;:&quot;(800) 555-4567&quot;,
+         &quot;fax&quot;:&quot;(805) 555-0142&quot;,
+         &quot;website&quot;:&quot;http://www.bobsfishtacos.com&quot;,
+         &quot;email&quot;:&quot;greatfood@bobsfishtacos.com&quot;,
+         &quot;slogan&quot;:&quot;The freshest Mexican food you&#39;ll ever eat.&quot;,
+         &quot;descriptionLong&quot;:&quot;A really long description (maximum 1000 characters)&quot;,
+         &quot;descriptionMedium&quot;:A description that is no longer than 200 characters.&quot;,
+         &quot;descriptionShort&quot;:&quot;A description that is no longer than 140 characters.&quot;,
+         &quot;keywords&quot;:&quot;fish taco, mexican food, salsa&quot;,
+         &quot;paymentMethods&quot;:[
+            &quot;mastercard&quot;,
+            &quot;visa&quot;,
+            &quot;discover&quot;,
+            &quot;amex&quot;,
+            &quot;check&quot;,
+            &quot;cash&quot;
+         ],
+         &quot;yearEstablished&quot;:&quot;2011&quot;,
+         &quot;numberEmployees&quot;:&quot;7&quot;,
+         &quot;productsOffered&quot;:&quot;mexican food, fish tacos&quot;,
+         &quot;languagesSpoken&quot;:&quot;english, spanish&quot;,
+         &quot;hoursOfOperation&quot;:&quot;MF08001700H&quot;,
+         &quot;logoUrl&quot;:&quot;http://www.bobsfishtacos.com/logo.jpg&quot;,
+         &quot;logoSquareUrl&quot;:&quot;http://www.bobsfishtacos.com/logo.jpg&quot;,
+         &quot;imageUrl&quot;:[
+            &quot;http://images.bobsfishtacos.com/100702_5009d194859.jpg&quot;,
+            &quot;http://images.bobsfishtacos.com/100702_5009d195016.jpg&quot;,
+            &quot;http://images.bobsfishtacos.com/100702_5009d19577a.jpg&quot;,
+            &quot;http://images.bobsfishtacos.com/100702_5009ccdf005.jpg&quot;,
+            &quot;http://images.bobsfishtacos.com/100702_5009ccdf4d0.jpg&quot;
+         ],
+         &quot;videoUrl&quot;:[
+            &quot;http://www.youtube.com/watch?v=cXuTiAHdxTg&quot;
+         ]
+      }
+   }
+</code></pre></div>
+<h3 id="response">Response</h3>
+
+<p>Sends back an array of JSON objects, one for each submitted location containing the status, externalId, and assigned UUID.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+     &quot;status&quot;: &quot;success&quot;,
+     &quot;code&quot;: 200,
+     &quot;message&quot;: &quot;&quot;,
+     &quot;messages&quot;: [],
+     &quot;data&quot;: []
+   }
+</code></p>
+
+<h3 id="error-message-example">Error Message Example</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
+   &quot;status&quot;:&quot;error&quot;,
+   &quot;code&quot;:400,
+   &quot;message&quot;:&quot;Order Validation failed. See validations.&quot;,
+   &quot;messages&quot;:[
+      {
+         &quot;text&quot;:&quot;Order Validation failed. See validations.&quot;,
+         &quot;severity&quot;:&quot;warn&quot;
+      }
+   ],
+   &quot;error&quot;:&quot;InvalidDataException&quot;,
+   &quot;debug&quot;:&quot;The data specified is not of the right type or is not a valid option.&quot;,
+   &quot;validations&quot;:{
+      &quot;contact.email&quot;:[
+         &quot;The contact.email field is required.&quot;
+      ]
+   }
+}
+</code></pre></div>
+<h3 id="error-types">Error Types</h3>
+
+<ul>
+<li>InvalidDataException</li>
+<li>RequiredFieldMissingException</li>
+</ul>
+
+    </section>
+  </article>
+  
   <article class='GET'>
     <a name='/v1-get-business-updates' href='#/v1-get-business-updates'><h2><code><b>GET</b> /v1/directory-listings</code> Get Business Updates</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Receiving Location Updates</h1>
+      <h1 id="receiving-location-updates">Receiving Location Updates</h1>
 
 <p>A number of mechanisms are in place to allow a partner to receive the latest information about a location and its listings. Depending on the detail level requested, this call can include the full business data, the content of each directory listing associated with the account (e.g. data obtained directly from Google+, Bing Local, etc.), as well as the current fulfillment status.</p>
 
-<h2 id="toc_1">Requesting an update about a specific location</h2>
+<h2 id="requesting-an-update-about-a-specific-location">Requesting an update about a specific location</h2>
 
 <p>As this is a GET request, there is no entity or body associated with the call. All filtering is done in the query string parameters, but at the most basic level, a request to obtain details about a specific location would look like the following. Of course, all requests must be signed and authenticated. &quot;:uuid&quot; would be replaced by the location&#39;s UUID provided in the response of the /local-business call.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">https://[api_endpoint]/v1/directory-listings/:uuid
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://[api_endpoint]/v1/directory-listings/:uuid
 </code></pre></div>
-<h2 id="toc_2">Regular Polling for Updates</h2>
+<h2 id="regular-polling-for-updates">Regular Polling for Updates</h2>
 
 <p>There is also a mechanism to request changes since a given point in time. This would be useful if there was a recurring call set up to poll for changes. By recording the timestamp of the previous request, that same timestamp can be used as a &quot;since&quot; parameter to indicate that only changes made since that last time should be returned. The since time is exclusive, meaning that any changes made at that second are not included in the response.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">https://[api_endpoint]/v1/directory-listings?since=1363385995
+<div class="highlight"><pre><code class="language-text" data-lang="text">https://[api_endpoint]/v1/directory-listings?since=1363385995
 </code></pre></div>
-<h2 id="toc_3">Update Pushes (Callbacks)</h2>
+<h2 id="update-pushes-callbacks">Update Pushes (Callbacks)</h2>
 
 <p>The API response described below is also available via a callback method. By providing an endpoint at which to receive callback messages, the most up-to-date information about a location and its listings can be pushed to a partner&#39;s servers. Currently, data is aggregated every thirty minutes, and it is immediately following those aggregations that a callback would be fired.</p>
 
 <p>If there have been no updates within a thirty minute window, no callback would be fired.</p>
 
-<h2 id="toc_4">Pagination</h2>
+<h2 id="pagination">Pagination</h2>
 
 <p>Due to the potential for large amounts of data, the detail level of /directory-listings without a UUID is set lower than that of /directory-listings/:uuid. When performing a non-UUID request for a large span of time (a &quot;since&quot; parameter far in the past), the response may be returned in a paged format, where subsequent pages would require a separate API call with a &quot;page&quot; parameter.</p>
 
-<h3 id="toc_5">Understanding callback data:</h3>
+<h3 id="understanding-callback-data">Understanding callback data:</h3>
 
 <p>When looking at publishers data, if the errors block  is an empty array ex: [], you can assume that we correctly found the listing and there were no issues extracting the listing data from the publisher.</p>
 
-<h3 id="toc_6">Errors</h3>
+<h3 id="errors">Errors</h3>
 
 <p>If you see that the errors block is not empty, then there could be many reasons:
 * Publisher was down
 * Publisher website changed
 * Publisher search via api or crawl returned no records w/ a high enough match rate or not matches were found at all.</p>
 
-<h3 id="toc_7">Response</h3>
+<h3 id="response">Response</h3>
 
 <p>The entity or body of the response will contain a JSON object with details specific to the request.</p>
 
@@ -2057,158 +2357,168 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 
     </section>
   </article>
-
+  
   <article class=''>
     <a name='/v1-directory-statuses' href='#/v1-directory-statuses'><h2>Directory Statuses</h2></a>
     <section class='body'>
       <table><thead>
 <tr>
 <th>status</th>
-<th align="center">type</th>
 <th>description</th>
+<th>details</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>10</td>
-<td align="center">informational</td>
 <td>Received</td>
+<td>The listing has been accepted by our system, but no work has been done</td>
 </tr>
 <tr>
 <td>11</td>
-<td align="center">informational</td>
 <td>In Progress</td>
+<td>The listing is currently being fulfilled</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Listing Claimed - Credentials Provided</td>
+<td>We have received credentials for a listing that was previously &quot;Claimed Listing&quot; (40) and can retry fulfillment</td>
 </tr>
 <tr>
 <td>20</td>
-<td align="center">success</td>
 <td>Submitted and Published</td>
+<td>The listing is complete</td>
 </tr>
 <tr>
-<td>21</td>
-<td align="center">success</td>
-<td>Submitted via InfoGroup</td>
+<td>22</td>
+<td>Ongoing Submission</td>
+<td>The listing is complete and will continue to be resubmitted regularly</td>
 </tr>
 <tr>
 <td>30</td>
-<td align="center">pending</td>
 <td>Submitted and Awaiting Publishing</td>
+<td>The listing has been submitted to the publisher but is not yet live (deprecated)</td>
 </tr>
 <tr>
 <td>31</td>
-<td align="center">pending</td>
 <td>Awaiting Phone Verification</td>
+<td>The publisher requires phone verification from the business to publish</td>
 </tr>
 <tr>
 <td>32</td>
-<td align="center">pending</td>
 <td>Awaiting Postcard Verification</td>
+<td>The publisher requires postcard verification from the business to publish</td>
 </tr>
 <tr>
-<td>33</td>
-<td align="center">pending</td>
-<td>Awaiting Directory Account Activation</td>
+<td>34</td>
+<td>Pending Client Review of Data</td>
+<td>We are unable to fulfill the listing with the information provided. Awaiting update from client.</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Data Partially Accepted By Directory</td>
+<td>The publisher has accepted a portion of the data submitted and is reviewing the rest of the submission</td>
 </tr>
 <tr>
 <td>40</td>
-<td align="center">client recommendations</td>
 <td>Claimed Listing</td>
+<td>The listing is already in a claimed state. We cannot proceed without credentials.</td>
 </tr>
 <tr>
 <td>41</td>
-<td align="center">client recommendations</td>
 <td>Client Declined Phone Verification</td>
+<td>The merchant has explicitly declined phone verification</td>
 </tr>
 <tr>
 <td>42</td>
-<td align="center">client recommendations</td>
 <td>Client Declined Postcard Verification</td>
-</tr>
-<tr>
-<td>43</td>
-<td align="center">client recommendations</td>
-<td>Phone Verification Attempts Exhausted</td>
-</tr>
-<tr>
-<td>44</td>
-<td align="center">client recommendations</td>
-<td>Postcard Verification Attempts Exhausted</td>
+<td>The merchant has explicitly declined postcard verification</td>
 </tr>
 <tr>
 <td>50</td>
-<td align="center">fulfillment blocked</td>
 <td>Directory Temporarily Unavailable</td>
+<td>The publisher site is temporarily down or otherwise unavailable</td>
 </tr>
 <tr>
 <td>51</td>
-<td align="center">fulfillment blocked</td>
 <td>Directory No Longer Active</td>
+<td>The publisher site is no longer active</td>
 </tr>
 <tr>
 <td>52</td>
-<td align="center">fulfillment blocked</td>
 <td>Directory Blocking Third-party Listings</td>
+<td>The publisher site is not accepting listings created on behalf of the merchant</td>
 </tr>
 <tr>
 <td>53</td>
-<td align="center">fulfillment blocked</td>
 <td>Directory Temporarily Broken</td>
+<td>The publisher site is non-functioning for an extended period of time</td>
 </tr>
 <tr>
 <td>54</td>
-<td align="center">fulfillment blocked</td>
 <td>Directory Not Accepting New Listings</td>
+<td>The publisher site is actively refusing new listings</td>
 </tr>
 <tr>
 <td>55</td>
-<td align="center">fulfillment blocked</td>
 <td>Skipped by Client Request</td>
+<td>The merchant has explicitly requested that the listing not be fulfilled</td>
 </tr>
 <tr>
 <td>56</td>
-<td align="center">fulfillment blocked</td>
 <td>Submission Attempts Exhausted</td>
+<td>We have tried multiple times to claim a listing without success</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Pending SysOps Review</td>
+<td>The listing has been flagged for manual review</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Pending Corporate Contact Verification</td>
+<td>The listing is dependent on corporate verification</td>
 </tr>
 </tbody></table>
 
     </section>
   </article>
-
+  
   <article class='POST'>
     <a name='/v1-submitting-a-business' href='#/v1-submitting-a-business'><h2><code><b>POST</b> /v1/local-business</code> Submitting a Business</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Submitting a Location</h1>
+      <h1 id="submitting-a-location">Submitting a Location</h1>
 
 <p>Submitting a location is the equivalent of placing an order. The API request contains the information about the business (name, address, phone number, description, hours of operation, etc.), the primary contact for the location (unpublished), the products/packages to be fulfilled, some white-labelling options, and optionally a user account to associate with the location for dashboard access.</p>
 
-<h2 id="toc_1">External ID</h2>
+<h2 id="external-id">External ID</h2>
 
 <p>We provide a pass-through parameter for partners to specify their unique ID for each location. This external ID will be passed back in all API-based communcations about a location. The use of an external ID is required, and must be unique within the partner&#39;s account.</p>
 
-<h2 id="toc_2">Universally Unique Identifier (UUID)</h2>
+<h2 id="universally-unique-identifier-uuid">Universally Unique Identifier (UUID)</h2>
 
 <p>All locations are identified by a UUID (defined in <a href="http://www.ietf.org/rfc/rfc4122.txt">RFC 4122</a>). A UUID will be created for each location received and passed back in the response. An example of a UUID is: 94c459ea-7064-4ff0-8da1-43b669bf62f6.</p>
 
-<h2 id="toc_3">Phone Verification and &quot;On Behalf Of&quot;</h2>
+<h2 id="phone-verification-and-quot-on-behalf-of-quot">Phone Verification and &quot;On Behalf Of&quot;</h2>
 
 <p>There are a number of directories that require phone verification in order for a listing to publish and become owner-verified. To complete this verification process, a phone verification specialist (PVS) will trigger telephone calls to the business location phone number. That phone call (typically a robo-call) will either provide a PIN over the phone which must be communciated to the PVS in real time, or there will be a prompt for the merchant to enter a PIN, which will be provided by the PVS.</p>
 
 <p>To facilitate this, A PVS must be on a phone call or an online chat with an employee at the business location. We provide the option to our partners to request that a PVS call &quot;on behalf of&quot; a business or entity. The text provided in this field will be used verbatim in any communication with the location to maintain a white-labelled experience. Any online interaction (email, website) will be conducted in a similar manner.</p>
 
-<h2 id="toc_4">Packages and Products</h2>
+<h2 id="packages-and-products">Packages and Products</h2>
 
 <p>Depending upon your partner relationship, either the &quot;packages&quot; or &quot;products&quot; nodes will be used within &quot;order&quot;. If the partner agreement was based around one or more packages, those IDs will be provided to you; for those with product-based relationships, a list of available products will be provided to you prior to integration.</p>
 
 <p>Only one of &quot;packages&quot; or &quot;products&quot; may be specified within a request.</p>
 
-<h2 id="toc_5">Updating Business Data</h2>
+<h2 id="updating-business-data">Updating Business Data</h2>
 
 <p>When sending updated business data (after the initial submission), essentially the same request can be triggered with any number of data fields provided. In other words, if there is only a change to the business&#39; phone number, a request may be made that only includes the phone number; all other data will remain untouched.</p>
 
 <p>Please note that any content within the &quot;order&quot; or &quot;user&quot; blocks (detailed below) will be ignored in reubsmissions.</p>
 
-<h3 id="toc_6">Request</h3>
+<h3 id="request">Request</h3>
 
-<h4 id="toc_7">Request Data Format</h4>
+<h4 id="request-data-format">Request Data Format</h4>
 
 <p>When preparing to submit business information to the API server, data must be packaged into JSON objects and organized in the following way. There are three main sections of data:</p>
 
@@ -2220,161 +2530,168 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 
 <p>It is possible to submit multiple businesses within one call. Simply comma-separate individual location entries.</p>
 
-<h4 id="toc_8">Fields</h4>
+<h4 id="fields">Fields</h4>
 
-<h4 id="toc_9">Top Level</h4>
+<h4 id="top-level">Top Level</h4>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>externalId</td>
-<td align="center">string(36)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(36)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The partner&#39;s unique identifier for the location</td>
 </tr>
 <tr>
 <td>audit</td>
-<td align="center">boolean</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">boolean</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Must be set if this should only be run as an audit.</td>
 </tr>
 <tr>
 <td>order</td>
-<td align="center">object</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">object</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>Details related to the requested fulfillment of the location</td>
 </tr>
 <tr>
 <td>business</td>
-<td align="center">object</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">object</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The location&#39;s NAP+W and any associated data</td>
 </tr>
 <tr>
 <td>contact</td>
-<td align="center">object</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">object</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The primary contact at the location. This ideally is somebody aware of the work being performed. Any data contained herein will NOT be published.</td>
 </tr>
 </tbody></table>
 
-<h4 id="toc_10">Order Object</h4>
+<h4 id="order-object">Order Object</h4>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>packages</td>
-<td align="center">integer</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">integer</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>id representing package to apply to location. These will be provided prior to integration.</td>
 </tr>
 <tr>
 <td>products</td>
-<td align="center">array</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">array</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>Array of string names representing products available to partner. These will be provided prior to integration.</td>
 </tr>
 <tr>
 <td>termsAccepted</td>
-<td align="center">boolean</td>
-<td align="center">-</td>
-<td align="center">true</td>
+<td style="text-align: center">boolean</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">true</td>
 <td>Must be true to complete an order. Indicates acceptance of TOS.</td>
 </tr>
 <tr>
 <td>onBehalfOf</td>
-<td align="center">string(255)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>The business or entity name a phone verification specialist will use when calling on behalf of an organization.</td>
 </tr>
 </tbody></table>
 
-<h4 id="toc_11">Contact Object</h4>
+<h4 id="contact-object">Contact Object</h4>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>firstName</td>
-<td align="center">string(40)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(40)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>First name of the primary contact at the physical location. For data- or verification-related issues. No special characters.</td>
 </tr>
 <tr>
 <td>lastName</td>
-<td align="center">string(80)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(80)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>Last name of the primary contact at the physical location. No Special characters</td>
 </tr>
 <tr>
+<td>fullName</td>
+<td style="text-align: center">string(120)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
+<td>See &quot;FullName Logic&quot; below.</td>
+</tr>
+<tr>
 <td>email</td>
-<td align="center">string(80)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(80)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>Email address of the primary contact at the physical location.</td>
 </tr>
 <tr>
 <td>phone</td>
-<td align="center">string(10)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(10)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>Phone number of the primary contact.</td>
 </tr>
 </tbody></table>
 
-<h4 id="toc_12">User Object (Optional)</h4>
+<h4 id="user-object-optional">User Object (Optional)</h4>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>username</td>
-<td align="center">string(100)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(100)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>unique email address for this user. We recommend <a href="mailto:USER@yourdomain.com">USER@yourdomain.com</a> to reduce errors regarding uniqueness.</td>
 </tr>
 <tr>
 <td>password</td>
-<td align="center">string(8:40)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(8:40)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>A password for this user.</td>
 </tr>
 </tbody></table>
@@ -2383,7 +2700,16 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 
 <p>This is primarily important if you are also using our <a href="#/general-iframing-a-dashboard">Dashboard Product</a>.</p>
 
-<h4 id="toc_13">Description Rules</h4>
+<h4 id="fullname-logic">FullName Logic</h4>
+
+<ul>
+<li>If we receive a &quot;fullName&quot; and not a &quot;firstName&quot; and &quot;lastName&quot;, we will split any content on the first space. (E.g. &quot;James van de Kamp&quot; will be &quot;James&quot; &quot;van de Kamp&quot;; &quot;Le Bron James&quot; will be &quot;Le&quot; &quot;Bron James&quot;.)</li>
+<li>If the fullName does not have any spaces, we will choose a random firstName and use fullName as lastName.</li>
+<li>If we receive a complete first/last in additional to a full, we will prioritize the first/last.</li>
+<li>If we receive an incomplete first/last in addition to a full, we will prioritize the full.</li>
+</ul>
+
+<h4 id="description-rules">Description Rules</h4>
 
 <ul>
 <li>At a <strong>minimum</strong> please provide the descriptionLong in accordance with description <strong>formatting</strong> rules.</li>
@@ -2393,238 +2719,238 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 <li>Provided descriptions (short, medium, long) that are longer than the defined character limits, will be rejected. You will need to revise the descriptions to meet the specified character lengths prior to resubmitting your data.</li>
 </ul>
 
-<h4 id="toc_14">Description Formating Rules</h4>
+<h4 id="description-formating-rules">Description Formating Rules</h4>
 
 <ul>
 <li>No Html or special characters. They will be stripped out.</li>
 <li>Human readable.</li>
 </ul>
 
-<h4 id="toc_15">Business Object</h4>
+<h4 id="business-object">Business Object</h4>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>name</td>
-<td align="center">string(100)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(100)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The full name of the business as it should be published. &quot;Doing Business As Name - Commonly known as name.</td>
 </tr>
 <tr>
 <td></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
 <td>name: Cannot be provide in ALL CAPS, (except for abreviations).</td>
 </tr>
 <tr>
 <td></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
 <td>name: Cannot be a website. Business must have a physical store front, or be a service area business. (NO online-only businesses)</td>
 </tr>
 <tr>
 <td>street</td>
-<td align="center">string(255)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The street address of the physical company. This can include a suite number</td>
 </tr>
 <tr>
 <td>privateStreet</td>
-<td align="center">boolean</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">boolean</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Indicates whether or not the street address should be published (defaults to false if not specified).</td>
 </tr>
 <tr>
 <td>city</td>
-<td align="center">string(255)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>City of the physical address. Alpha values only (period, hyphen and apostrophe allowed)</td>
 </tr>
 <tr>
 <td>state</td>
-<td align="center">string(2)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(2)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>State of the physical address. Should be state abbreviation, not spelled out.  US States only (DC Included)}</td>
 </tr>
 <tr>
 <td>postalCode</td>
-<td align="center">string(5)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(5)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>Zip code for the physical address. Zip code must be 5 digit (with leading zero if necessary).  Numeric values only.</td>
 </tr>
 <tr>
 <td>countryCode</td>
-<td align="center">string(2)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(2)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>The 2-digit ISO 3166-1-alpha-2 country code (currently only US is accepted).</td>
 </tr>
 <tr>
 <td>phoneLocal</td>
-<td align="center">string(10)</td>
-<td align="center">*</td>
-<td align="center">-</td>
+<td style="text-align: center">string(10)</td>
+<td style="text-align: center">*</td>
+<td style="text-align: center">-</td>
 <td>The 10-digit local (non-toll-free) phone number of the location. This number will be used for verification purposes and must ring at the business location. No extensions are allowed.</td>
 </tr>
 <tr>
 <td>phoneTollFree</td>
-<td align="center">string(10)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(10)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>The 10-digit toll-free phone number of the location.</td>
 </tr>
 <tr>
 <td>fax</td>
-<td align="center">string(10)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(10)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>The 10-digit fax number of the location.</td>
 </tr>
 <tr>
 <td>website</td>
-<td align="center">string(255)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Well-formed URL of the company&#39;s website (strongly recommended). ex: <a href="http://www.trustedsearch.org">http://www.trustedsearch.org</a></td>
 </tr>
 <tr>
 <td>email</td>
-<td align="center">string(80)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(80)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Business contact email address (to be published). ex: <a href="mailto:info@yoursitehere.com">info@yoursitehere.com</a></td>
 </tr>
 <tr>
 <td>slogan</td>
-<td align="center">string(80)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(80)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>A short motto or slogan for the business. ex: &quot;A diamond is forever.&quot;</td>
 </tr>
 <tr>
 <td>descriptionLong</td>
-<td align="center">string(5000)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(5000)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>A long description for the business. *(see description rules)</td>
 </tr>
 <tr>
 <td>descriptionMedium</td>
-<td align="center">string(200)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(200)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>A medium-length description for the business. *(see description rules)</td>
 </tr>
 <tr>
 <td>descriptionShort</td>
-<td align="center">string(140)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(140)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>A short description for the business. *(see description rules)</td>
 </tr>
 <tr>
 <td>keywords</td>
-<td align="center">string(255)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>A comma-separated list of keywords that are relevent to the business (for SEO purposes).</td>
 </tr>
 <tr>
 <td>paymentMethods</td>
-<td align="center">array</td>
-<td align="center">-</td>
-<td align="center">&#39;Cash&#39;,&#39;Check&#39;,&#39;Mastercard&#39;,&#39;VISA&#39;,&#39;American Express&#39;,&#39;Discover&#39;,&#39;PayPal&#39;,&#39;Invoice&#39;</td>
+<td style="text-align: center">array</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">&#39;Cash&#39;,&#39;Check&#39;,&#39;MasterCard&#39;,&#39;VISA&#39;,&#39;American Express&#39;,&#39;Discover&#39;,&#39;PayPal&#39;,&#39;Invoice&#39;</td>
 <td>An array of payment methods the business accepts. Options: &#39;Cash&#39;,&#39;Check&#39;,&#39;Mastercard&#39;,&#39;VISA&#39;,&#39;American Express&#39;,&#39;Discover&#39;,&#39;PayPal&#39;,&#39;Invoice&#39;</td>
 </tr>
 <tr>
 <td>professionalAssociations</td>
-<td align="center">array</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">array</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>An array of professional associations. Example: Better [&#39;Business Bureau&#39;, &#39;Local Search Association&#39;, &#39;Chicago Bar Association&#39;]</td>
 </tr>
 <tr>
 <td>yearEstablished</td>
-<td align="center">string(4)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(4)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Year business was established.</td>
 </tr>
 <tr>
 <td>numberEmployees</td>
-<td align="center">int</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">int</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>The number of employees at the physical location.</td>
 </tr>
 <tr>
 <td>productsOffered</td>
-<td align="center">string(255)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>List the products and services that you offer. Free Text field, use a comma to separate multiple values.</td>
 </tr>
 <tr>
 <td>languagesSpoken</td>
-<td align="center">string(100)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(100)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Languages spoken. Free Text field, use a comma to separate multiple values.  ex: english,spanish</td>
 </tr>
 <tr>
 <td>hoursOfOperation</td>
-<td align="center">string(255)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>The business&#39; <a href="#/general-hours-of-operation-format">hours of operation</a>. ex: &quot;MF08001700H&quot; for Mon-Fri 8:00am-5:00pm</td>
 </tr>
 <tr>
 <td>logoUrl</td>
-<td align="center">string(255)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(255)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Well-formed URL of the business logo. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>logoSquaredUrl</td>
-<td align="center">string</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>Well-formed URL for a square version of the business logo. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>imageUrl</td>
-<td align="center">array(5) :: string(255) per element</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">array(5) :: string(255) per element</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>An array of well-formed URLs of images for the business. (JPG, PNG, GIF)</td>
 </tr>
 <tr>
 <td>videoUrl</td>
-<td align="center">string(128)</td>
-<td align="center">-</td>
-<td align="center">-</td>
+<td style="text-align: center">string(128)</td>
+<td style="text-align: center">-</td>
+<td style="text-align: center">-</td>
 <td>A youtube.com video URL for the business. ex: <a href="http://www.youtube.com/watch?v=VIrBecB746c">http://www.youtube.com/watch?v=VIrBecB746c</a></td>
 </tr>
 </tbody></table>
 
 <p>Requests should be made with the POST method to <code>https://[api_endpoint]/v1/local-business</code>.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">[
+<div class="highlight"><pre><code class="language-text" data-lang="text">[
    {
       &quot;externalId&quot;:&quot;ABC12345678&quot;,
       &quot;order&quot;:{
@@ -2690,7 +3016,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
    },{...}
 ]
 </code></pre></div>
-<h3 id="toc_16">Response</h3>
+<h3 id="response">Response</h3>
 
 <p>Sends back an array of JSON objects, one for each submitted location containing the status, externalId, and assigned UUID.</p>
 
@@ -2703,7 +3029,7 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
    },...
 ]</code></p>
 
-<h3 id="toc_17">Status codes and their meanings</h3>
+<h3 id="status-codes-and-their-meanings">Status codes and their meanings</h3>
 
 <p>The status will indicate the success of that particular location:</p>
 
@@ -2715,13 +3041,111 @@ $signature = base64_encode( hash_hmac( &#39;sha1&#39;, $stringToSign, $privateKe
 
     </section>
   </article>
-
-  <article class='PUT'>
-    <a name='/v2-subscriptions-update' href='#/v2-subscriptions-update'><h2><code><b>PUT</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Update</h2></a>
+  
+  <article class='GET'>
+    <a name='/v2-listings-by-location' href='#/v2-listings-by-location'><h2><code><b>GET</b> /v2/locations/:id/listings</code> Listings by Location</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Updating a hook subscription</h1>
+      <h1 id="retrieving-your-listings-based-upon-a-location-id">Retrieving your listings based upon a location id.</h1>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
+
+<p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/locations/:id/listings</code></p>
+
+<p>Ex:
+<code>
+PUT https://[api_endpoint]/v2/locations/c13bdr7y-4024-58be-8c23-b4782f309ad0/listings
+</code></p>
+
+<h3 id="response">Response</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
+   &quot;status&quot;:&quot;success&quot;,
+   &quot;code&quot;:200,
+   &quot;message&quot;:&quot;&quot;,
+   &quot;messages&quot;:[],
+   &quot;data&quot;:[
+      {
+         &quot;id&quot;:&quot;1794d5ee-52c2-4375-988d-a0c245a22d20&quot;,
+         &quot;location_id&quot;:&quot;c13bdr7y-4024-58be-8c23-b4782f309ad0&quot;,
+         &quot;product_id&quot;:31,
+         &quot;listing_status_id&quot;:1,
+         &quot;username&quot;:&quot;arandomusername@somedomain.com&quot;,
+         &quot;password&quot;:&quot;abc123927&quot;,
+         &quot;security_answer_1&quot;:&quot;chair&quot;,
+         &quot;security_answer_2&quot;:&quot;connection&quot;,
+         &quot;fulfillment_status_id&quot;:20,
+         &quot;url&quot;:null,
+         &quot;deleted_at&quot;:null,
+         &quot;created_at&quot;:&quot;2014-01-23 23:01:03&quot;,
+         &quot;updated_at&quot;:&quot;2014-03-17 23:23:06&quot;,
+         &quot;external_id&quot;:null,
+         &quot;notes&quot;:null
+      },
+      {
+         &quot;id&quot;:&quot;ec1a2d02-5016-429f-ab31-f213a0a0587b&quot;,
+         &quot;location_id&quot;:&quot;c13bdr7y-4024-58be-8c23-b4782f309ad0&quot;,
+         &quot;product_id&quot;:36,
+         &quot;listing_status_id&quot;:1,
+         &quot;username&quot;:&quot;arandomusername&quot;,
+         &quot;password&quot;:&quot;abc123927&quot;,
+         &quot;security_answer_1&quot;:&quot;chair&quot;,
+         &quot;security_answer_2&quot;:&quot;connection&quot;,
+         &quot;fulfillment_status_id&quot;:30,
+         &quot;url&quot;:&quot;http:\/\/www.abcd.com\/m\/yourte-Tree-Service-LLC-60618958&quot;,
+         &quot;duplicate_url&quot;:[],
+         &quot;deleted_at&quot;:null,
+         &quot;created_at&quot;:&quot;2014-01-23 23:01:03&quot;,
+         &quot;updated_at&quot;:&quot;2014-03-17 23:23:06&quot;,
+         &quot;external_id&quot;:null,
+         &quot;notes&quot;:null
+      },
+      {
+         &quot;id&quot;:&quot;00022220-4587-4020-88b2-057f8bca92e3&quot;,
+         &quot;location_id&quot;:&quot;c13bdr7y-4024-58be-8c23-b4782f309ad0&quot;,
+         &quot;product_id&quot;:40,
+         &quot;listing_status_id&quot;:1,
+         &quot;username&quot;:&quot;arandomusername@somedomain.com&quot;,
+         &quot;password&quot;:&quot;abc123927&quot;,
+         &quot;security_answer_1&quot;:&quot;chair&quot;,
+         &quot;security_answer_2&quot;:&quot;connection&quot;,
+         &quot;fulfillment_status_id&quot;:30,
+         &quot;url&quot;:null,
+         &quot;duplicate_url&quot;:[],
+         &quot;deleted_at&quot;:null,
+         &quot;created_at&quot;:&quot;2014-01-23 23:01:03&quot;,
+         &quot;updated_at&quot;:&quot;2014-03-17 23:23:06&quot;,
+         &quot;external_id&quot;:null,
+         &quot;notes&quot;:null
+      },
+      {
+         &quot;id&quot;:&quot;001f95c6-ba32-4024-8640-a923c41ee387&quot;,
+         &quot;location_id&quot;:&quot;c13bdr7y-4024-58be-8c23-b4782f309ad0&quot;,
+         &quot;product_id&quot;:43,
+         &quot;listing_status_id&quot;:1,
+         &quot;username&quot;:&quot;arandomusername@somedomain.com&quot;,
+         &quot;password&quot;:&quot;abc123927&quot;,
+         &quot;security_answer_1&quot;:&quot;chair&quot;,
+         &quot;security_answer_2&quot;:&quot;connection&quot;,
+         &quot;fulfillment_status_id&quot;:43,
+         &quot;url&quot;:&quot;http:\/\/www.hijklymno.com\/m\/yourte-Tree-Service-LLC-60618958&quot;,
+         &quot;duplicate_url&quot;:[],
+         &quot;deleted_at&quot;:null,
+         &quot;created_at&quot;:&quot;2014-01-23 23:01:03&quot;,
+         &quot;updated_at&quot;:&quot;2014-03-28 08:01:30&quot;,
+         &quot;external_id&quot;:null,
+         &quot;notes&quot;:null
+      }
+   ]
+}
+</code></pre></div>
+    </section>
+  </article>
+  
+  <article class='PUT'>
+    <a name='/v2-subscriptions-update' href='#/v2-subscriptions-update'><h2><code><b>PUT</b> /v2/hook-subscriptions/:id</code> Update Subscription</h2></a>
+    <section class='body'>
+      <h1 id="updating-a-hook-subscription">Updating a hook subscription</h1>
+
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the PUT method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
 
@@ -2735,8 +3159,8 @@ PUT https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd
 }
 ```</p>
 
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<h3 id="response">Response</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
   &quot;code&quot;: 200,
   &quot;data&quot;: {
     &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
@@ -2752,13 +3176,13 @@ PUT https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd
 </code></pre></div>
     </section>
   </article>
-
+  
   <article class='GET'>
-    <a name='/v2-subscriptions-show' href='#/v2-subscriptions-show'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Show</h2></a>
+    <a name='/v2-subscriptions-show' href='#/v2-subscriptions-show'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Show a Subscription</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Show a hook subscription</h1>
+      <h1 id="show-a-hook-subscription">Show a hook subscription</h1>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code>.</p>
 
@@ -2767,8 +3191,8 @@ PUT https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd
 GET https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
 </code></p>
 
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<h3 id="response">Response</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
   &quot;code&quot;: 200,
   &quot;data&quot;: {
     &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
@@ -2784,23 +3208,23 @@ GET https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd
 </code></pre></div>
     </section>
   </article>
-
+  
   <article class='GET'>
-    <a name='/v2-subscriptions-index' href='#/v2-subscriptions-index'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Hook Subscriptions: Index</h2></a>
+    <a name='/v2-subscriptions-index' href='#/v2-subscriptions-index'><h2><code><b>GET</b> /v2/hook-subscriptions/:id</code> Show all Subscriptions</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Get a single subscription</h1>
+      <h1 id="get-a-single-subscription">Get a single subscription</h1>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hook-subscriptions</code></p>
 
 <p>Ex:
 <code>
-GET https://[api_endpoint]/v2/hook-subscriptionsz
+GET https://[api_endpoint]/v2/hook-subscriptions
 </code></p>
 
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<h3 id="response">Response</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
   &quot;code&quot;: 200,
   &quot;data&quot;: [
     {
@@ -2826,13 +3250,13 @@ GET https://[api_endpoint]/v2/hook-subscriptionsz
 </code></pre></div>
     </section>
   </article>
-
+  
   <article class='DELETE'>
-    <a name='/v2-subscriptions-destroy' href='#/v2-subscriptions-destroy'><h2><code><b>DELETE</b> /v2/hook-subscriptions</code> Hook Subscriptions: Destroy</h2></a>
+    <a name='/v2-subscriptions-destroy' href='#/v2-subscriptions-destroy'><h2><code><b>DELETE</b> /v2/hook-subscriptions</code> Delete Subscription</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Destroy hook subscription</h1>
+      <h1 id="destroy-hook-subscription">Destroy hook subscription</h1>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the DELETE method to <code>https://[api_endpoint]/v2/hook-subscriptions/:id</code></p>
 
@@ -2841,8 +3265,8 @@ GET https://[api_endpoint]/v2/hook-subscriptionsz
 DELETE https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa4cd6de0b
 </code></p>
 
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<h3 id="response">Response</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
   &quot;code&quot;: 200,
   &quot;data&quot;: [
 
@@ -2853,13 +3277,13 @@ DELETE https://[api_endpoint]/v2/hook-subscriptions/5f091ee8-255c-40c9-b985-9afa
 </code></pre></div>
     </section>
   </article>
-
+  
   <article class='POST'>
-    <a name='/v2-subscriptions-create' href='#/v2-subscriptions-create'><h2><code><b>POST</b> /v2/hook-subscriptions</code> Hook Subscriptions: Create</h2></a>
+    <a name='/v2-subscriptions-create' href='#/v2-subscriptions-create'><h2><code><b>POST</b> /v2/hook-subscriptions</code> Create Subscription</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Creating a new hook-subscription</h1>
+      <h1 id="creating-a-new-hook-subscription">Creating a new hook-subscription</h1>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the POST method to <code>https://[api_endpoint]/v2/hook-subscriptions</code>.</p>
 
@@ -2873,8 +3297,8 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
 }
 ```</p>
 
-<h3 id="toc_2">Response</h3>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<h3 id="response">Response</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
   &quot;code&quot;: 200,
   &quot;data&quot;: {
     &quot;created_at&quot;: &quot;2014-03-04 22:48:08&quot;,
@@ -2888,42 +3312,48 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
   &quot;status&quot;: &quot;success&quot;
 }
 </code></pre></div>
+<h3 id="notes">Notes</h3>
+
+<ul>
+<li>If you create multiple subscriptions for the same hook, we will notify you multiple times. This allows for you to setup different endpoints for the same hook if needed.</li>
+</ul>
+
     </section>
   </article>
-
+  
   <article class='GET'>
-    <a name='/v2-hooks-get' href='#/v2-hooks-get'><h2><code><b>GET</b> /v2/hooks</code> Hooks: Get a list of hooks that can be subscribed to.</h2></a>
+    <a name='/v2-hooks-get' href='#/v2-hooks-get'><h2><code><b>GET</b> /v2/hooks</code> Available Hooks</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Hooks:</h1>
+      <h1 id="hooks">Hooks:</h1>
 
 <p>A call to this api, will provide you with a list of all the available REST hooks you can subscribe to.</p>
 
 <table><thead>
 <tr>
 <th>field</th>
-<th align="center">type( length )</th>
-<th align="center">required</th>
-<th align="center">options</th>
+<th style="text-align: center">type( length )</th>
+<th style="text-align: center">required</th>
+<th style="text-align: center">options</th>
 <th>description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
+<td style="text-align: center"></td>
 <td></td>
 </tr>
 </tbody></table>
 
-<h3 id="toc_1">Request</h3>
+<h3 id="request">Request</h3>
 
 <p>Requests should be made with the GET method to <code>https://[api_endpoint]/v2/hooks</code>.</p>
 
-<h3 id="toc_2">Response</h3>
+<h3 id="response">Response</h3>
 
 <p><code>Status: 200</code></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">{
+<div class="highlight"><pre><code class="language-text" data-lang="text">{
    &quot;status&quot;:&quot;success&quot;,
    &quot;code&quot;:200,
    &quot;message&quot;:&quot;&quot;,
@@ -2949,17 +3379,17 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
 </code></pre></div>
     </section>
   </article>
-
+  
   <article class=''>
-    <a name='/v2-hooks-about' href='#/v2-hooks-about'><h2><code><b></b> /v2/about-hooks</code> Hooks: About</h2></a>
+    <a name='/v2-hooks-about' href='#/v2-hooks-about'><h2>About Hooks</h2></a>
     <section class='body'>
-      <h1 id="toc_0">Hooks</h1>
+      <h1 id="hooks">Hooks</h1>
 
 <p>Rather than needing to poll our system for changes to your locations or products, you can be notified about events that happen in our system by subscribing to hooks.</p>
 
 <p>You might then use these notifications on your end to do things like:</p>
 
-<h2 id="toc_1">WHY - You might want to use hooks.</h2>
+<h2 id="why-you-might-want-to-use-hooks">WHY - You might want to use hooks.</h2>
 
 <ul>
 <li>Update your system.</li>
@@ -2968,17 +3398,19 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
 <li>Notify members of your company about actions they need to perform.</li>
 </ul>
 
-<h2 id="toc_2">WHAT - Hooks are available</h2>
+<h2 id="what-hooks-are-available">WHAT - Hooks are available</h2>
 
-<h3 id="toc_3">location.audit</h3>
+<h3 id="location-audit">location.audit</h3>
+
+<h3 id="business-updates">business.updates</h3>
 
 <p>A notification sent when an audit has completed.</p>
 
-<h3 id="toc_4">business.updates</h3>
+<h3 id="business-updates">business.updates</h3>
 
 <p>A notification sent anything in our system changes for a given business.</p>
 
-<h5 id="toc_5">Usage</h5>
+<h5 id="usage">Usage</h5>
 
 <ul>
 <li>Subscribe to <code>location.audit</code> hook</li>
@@ -2991,41 +3423,43 @@ POST https://[api_endpoint]/v2/hook-subscriptions</p>
 <li>After our system finishes the audit, a hook will be triggered and you will be notified at the resource you defined in your subscription.</li>
 </ul>
 
-<h5 id="toc_6">Notes</h5>
+<h5 id="notes">Notes</h5>
 
 <ul>
 <li>This is the only notification you will receive, however you can queue up another audit for a given location(Limits and Throttling of requests may apply)</li>
 <li>If there is an error, either update your system or disregard it. Regardless of the reason for an error,  results can change on  a daily basis as we continually improve  our audit match algorithm and update our bots when a publisher makes a change the layout of their site.</li>
 </ul>
 
-<h3 id="toc_7">Upcoming Hooks</h3>
+<h3 id="upcoming-hooks">Upcoming Hooks</h3>
 
 <ul>
-<li>business.updates</li>
 <li>location.report</li>
 </ul>
 
-<h2 id="toc_8">HOW - to setup hooks</h2>
+<h2 id="how-to-setup-hooks">HOW - to setup hooks</h2>
 
 <p>Integration is easy, lets say you want to know about changes that happen to a location.</p>
 
-<h4 id="toc_9">Step 1 - Configure your servers</h4>
+<h4 id="step-1-configure-your-servers">Step 1 - Configure your servers</h4>
 
 <p>Setup a resource on your servers:
-<a href="">https://api.acme.com/trustedsearch/location-updates</a>
-that could accept a JSON POST, in this case the JSON data will be the same as that of the GET v1/directory-listings api call.</p>
+<a href="">https://api.acme.com/trustedsearch/location-updates</a></p>
 
-<h4 id="toc_10">Step 2 - Subscribe</h4>
+<p>This resource should expect a POST of JSON data.</p>
 
-<p>Subscribe to the <code>location.update</code> hook via the API.</p>
+<p>If your subscribing to business.updates the JSON data will be in the same format as that of  the GET v1/directory-listings api call.</p>
 
-<h4 id="toc_11">Step 3 - What happens now.</h4>
+<h4 id="step-2-subscribe">Step 2 - Subscribe</h4>
+
+<p>Subscribe to the <code>business.updates</code> hook via the API.</p>
+
+<h4 id="step-3-what-happens-now">Step 3 - What happens now.</h4>
 
 <p>When ever any location data on our end changes, we queue up a process that will notify any subscribers associated with that location.</p>
 
     </section>
   </article>
-
+  
 </section>
 
   

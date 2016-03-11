@@ -1,5 +1,5 @@
 ---
-category: Email
+category: Whitelabel
 path: '/email'
 title: 'Overview'
 

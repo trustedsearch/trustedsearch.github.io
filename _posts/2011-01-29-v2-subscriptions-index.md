@@ -1,7 +1,7 @@
 ---
-category: v2
+category: hooks
 path: '/v2/hook-subscriptions/:id'
-title: 'Hook Subscriptions: Index'
+title: 'Show all Subscriptions'
 type: 'GET'
 layout: nil
 ---
@@ -14,7 +14,7 @@ Requests should be made with the GET method to ```https://[api_endpoint]/v2/hook
 
 Ex:
 ```
-GET https://[api_endpoint]/v2/hook-subscriptionsz
+GET https://[api_endpoint]/v2/hook-subscriptions
 ```
 
 ### Response

@@ -1,7 +1,7 @@
 ---
+category: Whitelabel
 path: '/iframing-a-dashboard'
 title: 'Iframing a Dashboard'
-
 layout: nil
 ---
 
