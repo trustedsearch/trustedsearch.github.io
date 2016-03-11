@@ -5,7 +5,7 @@ title: 'Iframing a Dashboard'
 layout: nil
 ---
 
-# Iframing a Dashboard.
+# IFRAMEing a Dashboard
 
 ### Steps
 
@@ -15,12 +15,12 @@ layout: nil
 Lets say your token that you get is : abcdef12345
 
 The iframe url is:
-[www.localsearchdashboard.com/partner?token=YOURTOKENHERE](www.localsearchdashboard.com/partner?token=YOURTOKENHERE)
+[https://local.report/#?token=abcdef12345](https://local.report/#?token=abcdef12345)
 
 So just add this into your html:
 
 ```
-<iframe src="www.localsearchdashboard.com/partner?token=abcdef12345"></iframe>
+<iframe src="https://local.report/#?token=abcdef12345"></iframe>
 ```
 
-By doing this, you will auto login your user to their dashboard where they can see the locations associated to them.
+By doing this, you will auto login your user to their dashboard where they can see the location(s) associated to them.

@@ -1,10 +1,7 @@
 ---
 exclude: ['README.markdown']
 permalink: ':title'
-highlighter: 'pygments'
 safe: false
 title: 'TRUSTEDSearch Developers'
 timezone: America/Los_Angeles
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+future: true
